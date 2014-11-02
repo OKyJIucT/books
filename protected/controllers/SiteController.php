@@ -58,13 +58,7 @@ class SiteController extends Controller {
 //            echo 'error';
 //        }
 
-        $this->render('index', array(
-            'citys' => Yii::app()->db->createCommand()
-                    ->select('id, username')
-                    ->from('users')
-                    ->limit(10)
-                    ->queryAll(),
-        ));
+        $this->render('index');
     }
 
     /**
@@ -94,6 +88,9 @@ class SiteController extends Controller {
         $this->render('login', array('model' => $model));
     }
 
+    /**
+     * Регистрация юзеров
+     */
     public function actionReg() {
         $this->layout = 'no_auth';
         $this->pageTitle = 'Регистрация';
@@ -130,12 +127,13 @@ class SiteController extends Controller {
         );
     }
 
+    /**
+     * Профиль пользователя
+     * @param type $id
+     */
     public function actionProfile($id) {
 
         $profile = Users::getProfile($id);
-
-        if (!$profile)
-            Y::error(404);
 
         $this->pageTitle = 'Профиль ' . $profile->username;
 
@@ -158,6 +156,10 @@ class SiteController extends Controller {
      * This is the action to handle external exceptions.
      */
     public function actionError() {
+
+        if (Y::isGuest())
+            $this->layout = 'no_auth';
+
         if ($error = Yii::app()->errorHandler->error) {
             if (Yii::app()->request->isAjaxRequest)
                 echo $error['message'];

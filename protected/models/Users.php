@@ -174,10 +174,13 @@ class Users extends CActiveRecord {
             $criteria = new CDbCriteria();
             $criteria->condition = 'id = :id';
             $criteria->params = array(':id' => $id);
-            $criteria->select = 'id, username, reg_date';
+            $criteria->select = 'id, username, reg_date, email';
             $criteria->with = array('invites');
             $criteria->limit = 1;
             $profile = Users::model()->find($criteria);
+
+            if (!$profile)
+                Y::error(404);
 
             C::set($cacheId, $profile);
         }
@@ -194,7 +197,7 @@ class Users extends CActiveRecord {
             $invite = Invites::model()->find($criteria);
 
             $this->ref_id = $invite->user_id;
-            
+
             // чистим кеш профиля приглащаюшего
             C::delete(C::prefix('profile', $invite->user_id));
 

@@ -94,6 +94,11 @@ class Invites extends CActiveRecord {
         return parent::model($className);
     }
 
+    /**
+     * Генерация инвайтов
+     * @param type $user_id
+     * @param type $count
+     */
     public static function generateInvite($user_id, $count = 1) {
         $arr = array('a', 'b', 'c', 'd', 'e', 'f',
             'g', 'h', 'i', 'j', 'k', 'l',

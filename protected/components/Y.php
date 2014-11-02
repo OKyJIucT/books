@@ -528,25 +528,28 @@ class Y {
      * @return string
      */
     public static function stats($return = false) {
-        $stats = '';
-        $dbStats = Yii::app()->getDb()->getStats();
 
-        if (is_array($dbStats)) {
-            $stats = 'Выполнено запросов: ' . $dbStats[0] . ' (за ' . round($dbStats[1], 5) . ' сек.)<br />';
+        if (Y::hasAccess('administrator')) {
+            $stats = '';
+            $dbStats = Yii::app()->getDb()->getStats();
+
+            if (is_array($dbStats)) {
+                $stats = 'Выполнено запросов: ' . $dbStats[0] . ' (за ' . round($dbStats[1], 5) . ' сек.)<br />';
+            }
+
+            $logger = Yii::getLogger();
+            $memory = round($logger->getMemoryUsage() / 1048576, 3);
+            $time = round($logger->getExecutionTime(), 3);
+
+            $stats .= 'Использовано памяти: ' . $memory . ' Мб<br />';
+            $stats .= 'Время выполнения: ' . $time . ' сек.';
+
+            if ($return) {
+                return $stats;
+            }
+
+            echo $stats;
         }
-
-        $logger = Yii::getLogger();
-        $memory = round($logger->getMemoryUsage() / 1048576, 3);
-        $time = round($logger->getExecutionTime(), 3);
-
-        $stats .= 'Использовано памяти: ' . $memory . ' Мб<br />';
-        $stats .= 'Время выполнения: ' . $time . ' сек.';
-
-        if ($return) {
-            return $stats;
-        }
-
-        echo $stats;
     }
 
     /**
@@ -707,7 +710,7 @@ class Y {
             case '403':
                 throw new CHttpException(403, 'Нет доступа к данному действию или разделу');
                 break;
-            
+
             case '404':
                 throw new CHttpException(404, 'Запрашиваемая страница не найдена');
                 break;
