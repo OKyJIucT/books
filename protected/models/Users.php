@@ -39,13 +39,20 @@ class Users extends CActiveRecord {
             array('email', 'required', 'message' => 'Не заполнено поле Email', 'on' => 'reg'),
             array('email', 'email', 'message' => 'Введите корректный Email', 'on' => 'reg'),
             array('email', 'unique', 'message' => 'Этот Email уже используется', 'on' => 'reg'),
+            
             array('username', 'required', 'message' => 'Не заполнено поле Логин', 'on' => 'reg'),
             array('username', 'unique', 'message' => 'Этот Логин уже используется', 'on' => 'reg'),
+            
             array('password', 'required', 'message' => 'Не заполнено поле Пароль', 'on' => 'reg'),
             array('password, username', 'length', 'min' => 5, 'on' => 'reg'),
+           
             array('email, username', 'length', 'max' => 32, 'on' => 'reg'),
+            
             array('password', 'length', 'max' => 255, 'on' => 'reg'),
+            
+            array('invite', 'required', 'message' => 'Не заполнено поле Код приглашения', 'on' => 'reg'),
             array('invite', 'exist', 'message' => 'Неверный код приглашения', 'attributeName' => 'code', 'className' => 'Invites', 'on' => 'reg'),
+            
             array('reg_date', 'required', 'on' => 'reg'),
             array('reg_date, ref_id', 'numerical', 'integerOnly' => true, 'on' => 'reg'),
             /* reg */
