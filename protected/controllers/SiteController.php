@@ -25,7 +25,7 @@ class SiteController extends Controller {
                 'users' => array('*'),
             ),
             array('allow',
-                'actions' => array('index', 'profile', 'logout'),
+                'actions' => array('index', 'profile', 'logout', 'editInvite'),
                 'users' => array('@'),
             ),
             array('allow',
@@ -141,6 +141,12 @@ class SiteController extends Controller {
             'profile' => $profile,
                 )
         );
+    }
+
+    public function actionEditInvite() {
+        if (Y::isAjaxRequest()) {
+            Invites::changeInvite($_POST['code']);
+        }
     }
 
     /**

@@ -66,7 +66,7 @@ return array(
             'rules' => array(
                 '' => 'site/index',
                 'profile/<id:\d+>' => 'site/profile/<id:\d+>',
-                '<action:(login|logout|reg|clearCache|getInvites)>' => 'site/<action>',
+                '<action:(login|logout|reg|clearCache|getInvites|editInvite)>' => 'site/<action>',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
