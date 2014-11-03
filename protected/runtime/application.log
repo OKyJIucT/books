@@ -1,0 +1,1941 @@
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:15:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/posts
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 14:16:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 15:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/jquery/jquery-ui.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/jquery/jquery-ui.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:32:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/css/theme-default.css".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/css/t...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/css/theme-default.css
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/icheck/icheck.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/icheck/icheck.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/actions.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/ac...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/actions.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/alert.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/alert.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/mcustomscrollbar/jquery.mcustomscrollbar.min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/js/plugins/morris/raphael-min.js".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/js/pl...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/js/plugins/morris/raphael-min.js
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:33:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/audio/fail.mp3".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/audio...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/audio/fail.mp3
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:40:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "fonts.googleapis.com/css@family=open sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('fonts.googleapi...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:40:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:40:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:40:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:40:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:40:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 16:40:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 16:44:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "fonts.googleapis.com/css@family=open sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('fonts.googleapi...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:44:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:44:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 16:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 16:44:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:07:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "fonts.googleapis.com/css@family=open sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('fonts.googleapi...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:07:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:07:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:07:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:07:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:08:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:08:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:18:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "fonts.googleapis.com/css@family=open sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('fonts.googleapi...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext
+HTTP_REFERER=http://22vk.ru/login
+---
+2014/10/31 18:18:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:18:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "fonts.googleapis.com/css@family=open sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('fonts.googleapi...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,cyrillic-ext
+HTTP_REFERER=http://22vk.ru/login
+---
+2014/10/31 18:23:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:23:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/backgrounds/wall_1.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/backgrounds/wall_1.jpg
+HTTP_REFERER=http://22vk.ru/login
+---
+2014/10/31 18:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:24:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:24:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:24:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:24:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:24:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:24:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:25:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user2.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user2.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:25:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:25:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user3.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user3.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:25:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/images/users/user6.jpg".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/images/u...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/images/users/user6.jpg
+HTTP_REFERER=http://22vk.ru/
+---
+2014/10/31 18:25:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:25:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:28:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:28:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:28:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:28:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 15:29:16 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:56)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 18:29:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/logo.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/l...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/logo.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 18:29:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "bootstrap/img/bg.png".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('bootstrap/img/b...')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bootstrap/img/bg.png
+HTTP_REFERER=http://22vk.ru/bootstrap/css/theme-default.css
+---
+2014/10/31 15:29:46 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:56)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 18:39:18 [error] [php] file_get_contents(): SSL: Соединение сброшено другой стороной (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 15:42:04 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:56)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 18:42:44 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: SSL: Соединение сброшено другой стороной (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 19:20:02 [error] [php] Invalid argument supplied for foreach() (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:16)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#2 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 19:40:01 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 20:00:02 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 20:30:01 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 21:10:04 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 21:20:07 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 21:40:02 [error] [php] Invalid argument supplied for foreach() (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:16)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#2 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 22:07:10 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:71)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 22:09:28 [error] [php] Invalid argument supplied for foreach() (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:16)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#2 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 22:10:01 [error] [php] print_r() expects at least 1 parameter, 0 given (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:42)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 22:10:07 [error] [php] Invalid argument supplied for foreach() (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:19)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#2 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
+2014/10/31 22:13:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2014/10/31 22:50:02 [error] [php] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty (/var/www/u0037915/data/www/22vk.ru/protected/commands/GrabCommand.php:74)
+Stack trace:
+#0 /var/www/u0037915/data/www/22vk.ru/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/u0037915/data/www/22vk.ru/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /var/www/u0037915/data/www/22vk.ru/framework/yiic.php(33): CConsoleApplication->run()
+#3 /var/www/u0037915/data/www/22vk.ru/protected/yiic.php(7): require_once()
+
