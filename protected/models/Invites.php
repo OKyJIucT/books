@@ -118,11 +118,27 @@ class Invites extends CActiveRecord {
                 $index = rand(0, count($arr) - 1);
                 $code .= $arr[$index];
             }
-            
+
             $invite = new Invites();
             $invite->user_id = $user_id;
             $invite->code = $code;
             $invite->save();
+        }
+    }
+
+    public static function changeInvite($code) {
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'code = :code';
+        $criteria->params = array(':code' => $code);
+
+        $invite = Invites::model()->find($criteria);
+
+        if ($invite->user_id == Yii::app()->user->id) {
+            $invite->hold = time() + 86400;
+            $invite->save();
+
+            // чистим кеш профиля приглащаюшего
+            C::delete(C::prefix('profile', $invite->user_id));
         }
     }
 
