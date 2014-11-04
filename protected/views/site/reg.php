@@ -2,7 +2,7 @@
 
     <div class="login-box animated fadeInDown">
         <div class="login-body">
-            <div class="login-title"><strong>Авторизация</strong></div>
+            <div class="login-title"><strong>Регистрация</strong></div>
 
             <?php
             $form = $this->beginWidget('CActiveForm', array(
