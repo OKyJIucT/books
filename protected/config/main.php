@@ -84,6 +84,7 @@ return array(
         'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=walhall',
             'enableProfiling' => YII_DEBUG,
+            'enableParamLogging' => YII_DEBUG,
             'username' => 'walhall',
             'password' => '5092503',
             'charset' => 'utf8',
@@ -98,6 +99,12 @@ return array(
                 array(
                     'class' => 'CFileLogRoute',
                     'levels' => 'error, warning',
+                ),
+            ),
+            'routes' => array(
+                array(
+                    'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+                    'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
                 ),
             ),
         ),
