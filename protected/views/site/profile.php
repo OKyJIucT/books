@@ -77,7 +77,5 @@ $this->breadcrumbs = array(
             ?>
         <?php endif; ?>  
     </div>
-
-    <?php Y::stats(); ?>
 </div>
 

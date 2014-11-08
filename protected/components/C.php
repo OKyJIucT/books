@@ -49,7 +49,7 @@ class C {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return boolean
      */
-    public static function set($id, $value, $expire = 600, $dependency = null, $cacheId = 'cache') {
+    public static function set($id, $value, $expire = 3600, $dependency = null, $cacheId = 'cache') {
         return self::_getComponent($cacheId)->set($id, $value, $expire, $dependency);
     }
 

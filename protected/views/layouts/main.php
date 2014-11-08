@@ -55,24 +55,28 @@
                                     </div>
                                 </div>                                                                        
                             </li>
-                            <li>
+                            <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
                             </li> 
+                            <li <?php echo Yii::app()->controller->getId() == 'translate' ? 'class="active"' : ''; ?>>
+                                <a href="/translate"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>  
+                                <div class="informer informer-warning"><?php echo Translate::countTranslates(); ?></div>
+                            </li> 
                             <?php if (Y::hasAccess('administrator')) : ?>
-                            <li class="xn-openable">
-                                <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="/rbac"><span class="fa fa-lock"></span> <span class="xn-text">Роли пользователей</span></a>                        
-                                    </li>
-                                    <li>
-                                        <a href="/clearCache"><span class="fa fa-trash-o"></span> <span class="xn-text">Очистить кеш</span></a>                        
-                                    </li>
-                                    <li>
-                                        <a href="/getInvites"><span class="fa fa-key"></span> <span class="xn-text">Сгенерировать инвайты</span></a>                        
-                                    </li>                           
-                                </ul>
-                            </li>
+                                <li class="xn-openable">
+                                    <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="/rbac"><span class="fa fa-lock"></span> <span class="xn-text">Роли пользователей</span></a>                        
+                                        </li>
+                                        <li>
+                                            <a href="/clearCache"><span class="fa fa-trash-o"></span> <span class="xn-text">Очистить кеш</span></a>                        
+                                        </li>
+                                        <li>
+                                            <a href="/getInvites"><span class="fa fa-key"></span> <span class="xn-text">Сгенерировать инвайты</span></a>                        
+                                        </li>                           
+                                    </ul>
+                                </li>
                             <?php endif; ?>
                         </ul>
                         <!-- END X-NAVIGATION -->
@@ -271,29 +275,9 @@
             Yii::app()->clientScript->registerScriptFile(
                     Yii::app()->request->baseUrl . '/bootstrap/js/ZeroClipboard.min.js'
             );
-            ?>
-            <script>
-                function get_id() {
-                    $('.click').on('click', function () {
-                        var e_id = $(this).attr("id");
-                        var client = new ZeroClipboard(document.getElementById(e_id));
-
-                        client.on("aftercopy", function (event) {
-                            event.target.style.display = "none";
-                            alert("Copied text to clipboard: " + event.data["text/plain"]);
-                        });
-
-                    });
-                }
-
-
-
-
-
-
-            </script>
-            <?php
         }
         ?>
+        
+    <?php Y::stats(); ?>
     </body>
 </html>

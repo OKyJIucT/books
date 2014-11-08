@@ -30,12 +30,12 @@ class WebUser extends CWebUser {
 
         if (!isset($this->_access[$operation]) && Yii::app()->cache->get($cachId) === false) {
             $access = Yii::app()->getAuthManager()->checkAccess($operation, $this->getId(), $params);
-            Yii::app()->cache->set($cachId, (int) $access, 60 * 60 * 10);
+            C::set($cachId, (int) $access, 60 * 60 * 10);
             return $this->_access[$operation] = $access;
         }
 
         if (!isset($this->_access[$operation])) {
-            $access = (boolean) Yii::app()->cache->get($cachId);
+            $access = (boolean) C::get($cachId);
             $this->_access[$operation] = $access;
             return $access;
         }
