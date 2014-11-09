@@ -173,7 +173,7 @@ class Users extends CActiveRecord {
      * @param type $id
      * @return type
      */
-    public static function getProfile($id) {
+    public static function getUser($id) {
 
         $cacheId = C::prefix('profile', $id);
 

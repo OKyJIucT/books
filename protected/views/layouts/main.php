@@ -50,7 +50,7 @@
                                         </div>
                                     </div>
                                     <div class="profile-controls">
-                                        <a href="/profile/<?= Yii::app()->user->id; ?>" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                        <a href="<?= Y::url('users/view', array('id' => Yii::app()->user->id));?>" class="profile-control-left"><span class="fa fa-info"></span></a>
                                         <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                                     </div>
                                 </div>                                                                        
@@ -58,22 +58,22 @@
                             <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
                             </li> 
-                            <li <?php echo Yii::app()->controller->getId() == 'translate' ? 'class="active"' : ''; ?>>
-                                <a href="/translate"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>  
-                                <div class="informer informer-warning"><?php echo Translate::countTranslates(); ?></div>
+                            <li <?php echo Yii::app()->controller->getId() == 'docs' ? 'class="active"' : ''; ?>>
+                                <a href="<?= Y::url('docs');?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>  
+                                <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
                             </li> 
                             <?php if (Y::hasAccess('administrator')) : ?>
                                 <li class="xn-openable">
                                     <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
                                     <ul>
                                         <li>
-                                            <a href="/rbac"><span class="fa fa-lock"></span> <span class="xn-text">Роли пользователей</span></a>                        
+                                            <a href="<?= Y::url('/rbac');?>"><span class="fa fa-lock"></span> <span class="xn-text">Роли пользователей</span></a>                        
                                         </li>
                                         <li>
-                                            <a href="/clearCache"><span class="fa fa-trash-o"></span> <span class="xn-text">Очистить кеш</span></a>                        
+                                            <a href="<?= Y::url('site/clearCache');?>"><span class="fa fa-trash-o"></span> <span class="xn-text">Очистить кеш</span></a>                        
                                         </li>
                                         <li>
-                                            <a href="/getInvites"><span class="fa fa-key"></span> <span class="xn-text">Сгенерировать инвайты</span></a>                        
+                                            <a href="<?= Y::url('site/getInvites');?>"><span class="fa fa-key"></span> <span class="xn-text">Сгенерировать инвайты</span></a>                        
                                         </li>                           
                                     </ul>
                                 </li>
@@ -211,9 +211,10 @@
                     <!-- START WIDGETS -->                    
                     <div class="row">
                         <?php echo $content; ?>
+                        <div class="clear"></div>
+                        <div class="col-md-12"><?php Y::stats(); ?></div>
                     </div>
                     <!-- END WIDGETS -->                    
-
 
 
                 </div>
@@ -277,7 +278,6 @@
             );
         }
         ?>
-        
-    <?php Y::stats(); ?>
+
     </body>
 </html>

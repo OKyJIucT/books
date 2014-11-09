@@ -1,27 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "translate".
+ * This is the model class for table "docs".
  *
- * The followings are the available columns in table 'translate':
+ * The followings are the available columns in table 'docs':
  * @property integer $id
- * @property string $name
- * @property string $en_name
+ * @property string $title
+ * @property string $title_en
+ * @property string $thumb
+ * @property string $text
  * @property integer $user_id
- * @property double $percent
+ * @property integer $date
  *
  * The followings are the available model relations:
  * @property Users $user
  */
-class Translate extends CActiveRecord {
-
-    public $file;
+class Docs extends CActiveRecord {
 
     /**
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'translate';
+        return 'docs';
     }
 
     /**
@@ -31,14 +31,12 @@ class Translate extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, en_name, user_id, date, type', 'required'),
+            array('title, title_en, author, text, user_id, date', 'required'),
             array('user_id, date', 'numerical', 'integerOnly' => true),
-            array('percent', 'numerical'),
-            array('name, en_name', 'length', 'max' => 255),
-            array('type', 'length', 'max' => 16),
+            array('title, title_en, author', 'length', 'max' => 255),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, name, en_name, user_id, percent, date, type', 'safe', 'on' => 'search'),
+            array('id, title, title_en, author, thumb, text, user_id, date', 'safe', 'on' => 'search'),
         );
     }
 
@@ -59,10 +57,13 @@ class Translate extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'name' => 'Name',
-            'en_name' => 'En Name',
-            'user_id' => 'User',
-            'percent' => 'Percent',
+            'title' => 'Название документа',
+            'title_en' => 'Оригинальное название',
+            'author' => 'Автор',
+            'thumb' => 'Обложка',
+            'text' => 'Краткое описание',
+            'user_id' => 'Автор',
+            'date' => 'Дата создания',
         );
     }
 
@@ -84,10 +85,13 @@ class Translate extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('en_name', $this->en_name, true);
+        $criteria->compare('title', $this->title, true);
+        $criteria->compare('title_en', $this->title_en, true);
+        $criteria->compare('author', $this->author, true);
+        $criteria->compare('thumb', $this->thumb, true);
+        $criteria->compare('text', $this->text, true);
         $criteria->compare('user_id', $this->user_id);
-        $criteria->compare('percent', $this->percent);
+        $criteria->compare('date', $this->date);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -98,23 +102,22 @@ class Translate extends CActiveRecord {
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!
      * @param string $className active record class name.
-     * @return Translate the static model class
+     * @return Docs the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
-    
-    
+
     /**
      * Количество документов для перевода
      * @return type
      */
-    public static function countTranslates() {
-        $cacheId = C::prefix('countTranslate');
+    public static function countDocs() {
+        $cacheId = C::prefix('countDocs');
 
         $count = C::get($cacheId);
         if ($count === false) {
-            $count = Translate::model()->count();
+            $count = Docs::model()->count();
             C::set($cacheId, $count);
         }
 
@@ -127,7 +130,7 @@ class Translate extends CActiveRecord {
      */
     public function afterSave() {
         if ($this->isNewRecord) {
-            C::delete(C::prefix('countTranslate'));
+            C::delete(C::prefix('countDocs'));
         }
         return parent::afterSave();
     }

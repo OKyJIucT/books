@@ -747,4 +747,28 @@ class Y {
         return $pass;
     }
 
+    /**
+     * Создаем папку по текущей дате и возвращаем к ней путь
+     * @return string
+     */
+    public static function getDir($date = false) {
+        if (!$date) {
+            $year = date('Y', time());
+            $month = date('m', time());
+            $day = date('d', time());
+
+            $dir = '/' . $year . '/' . $month . '/' . $day . '/';
+
+            $sub = Yii::app()->basePath . '/..' . $dir;
+
+            if (!is_dir($sub))
+                mkdir($sub, 0755, true);
+        } else {
+            return date("/Y/m/d/", $date);
+        }
+
+
+        return $sub;
+    }
+
 }

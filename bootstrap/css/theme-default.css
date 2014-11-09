@@ -243,3 +243,7 @@
         background-size: 220px 50px;
     }
 }
+
+.post h2 {
+    margin-bottom: 6px !important;
+}
