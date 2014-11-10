@@ -9,16 +9,6 @@ $this->breadcrumbs = array(
 ?>
 
 <div class="col-md-12">
-    <div class="btn-group">
-        <a href="/docs" class="btn btn-default"><i class="fa fa-list"></i> Список</a>
-        <a href="/docs/create" class="btn btn-default"><i class="fa fa-plus"></i> Добавить</a>
-        <?php if (Y::hasAccess('administrator')) : ?>
-            <a href="/docs/update/.<?= $model->id; ?>" class="btn btn-default"><i class="fa fa-cogs"></i> Изменить</a>
-            <a href="/docs/admin" class="btn btn-default"><i class="fa fa-cogs"></i> Управление</a>
-        <?php endif; ?>   
-    </div>
-
-    <div class="clearfix"></div>
 
     <div class="col-md-12 post">
         <h2><?= $model->title; ?></h2>

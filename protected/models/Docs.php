@@ -108,6 +108,22 @@ class Docs extends CActiveRecord {
         return parent::model($className);
     }
 
+    public static function getDoc($id) {
+        $cacheId = C::prefix('docs', $id);
+
+        $model = C::get($cacheId);
+        if ($model === false) {
+            $model = Docs::model()->with('user')->findByPk($id);
+
+            if (!$model)
+                Y::error(404);
+
+            C::set($cacheId, $model);
+        }
+
+        return $model;
+    }
+
     /**
      * Количество документов для перевода
      * @return type
@@ -131,6 +147,8 @@ class Docs extends CActiveRecord {
     public function afterSave() {
         if ($this->isNewRecord) {
             C::delete(C::prefix('countDocs'));
+        } else {
+            C::delete(C::prefix('docs', $this->id));
         }
         return parent::afterSave();
     }

@@ -184,7 +184,6 @@ class Users extends CActiveRecord {
             $criteria->params = array(':id' => $id);
             $criteria->select = 'id, username, reg_date, email';
             $criteria->with = array('invites');
-            $criteria->limit = 1;
             $profile = Users::model()->find($criteria);
 
             if (!$profile)

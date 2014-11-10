@@ -66,6 +66,10 @@ class C {
                 return 'profile::info::' . md5($id) . '::' . $id;
                 break;
 
+            case 'docs':
+                return 'docs::view::' . md5($id) . '::' . $id;
+                break;
+            
             default:
                 break;
         }

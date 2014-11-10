@@ -50,7 +50,7 @@
                                         </div>
                                     </div>
                                     <div class="profile-controls">
-                                        <a href="<?= Y::url('users/view', array('id' => Yii::app()->user->id));?>" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                        <a href="<?= Y::url('users/view', array('id' => Yii::app()->user->id)); ?>" class="profile-control-left"><span class="fa fa-info"></span></a>
                                         <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                                     </div>
                                 </div>                                                                        
@@ -58,22 +58,35 @@
                             <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
                             </li> 
-                            <li <?php echo Yii::app()->controller->getId() == 'docs' ? 'class="active"' : ''; ?>>
-                                <a href="<?= Y::url('docs');?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>  
-                                <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
+                            <li class="xn-openable <?php echo Yii::app()->controller->getId() == 'docs' ? 'active' : ''; ?>">
+                                <a href="<?= Y::url('/docs'); ?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>
+                                <ul>
+                                    <li <?php echo Yii::app()->controller->getId() == 'docs' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>
+                                        <a href="<?= Y::url('docs/create'); ?>"><span class="fa fa-plus"></span> Добавить</a>                        
+                                    </li>
+                                    <li <?php echo Yii::app()->controller->getId() == 'docs' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
+                                        <a href="<?= Y::url('docs/index'); ?>"><span class="fa fa-list"></span> Все документы</a> 
+                                        <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
+                                    </li>  
+                                    <?php if (Y::hasAccess('administrator')) : ?>
+                                        <li <?php echo Yii::app()->controller->getId() == 'docs' && $this->action->id == 'admin' ? 'class="active"' : ''; ?>>
+                                            <a href="<?= Y::url('docs/admin'); ?>"><span class="fa fa-cogs"></span> Управление</a> 
+                                        </li> 
+                                    <?php endif; ?>
+                                </ul>
                             </li> 
                             <?php if (Y::hasAccess('administrator')) : ?>
                                 <li class="xn-openable">
                                     <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
                                     <ul>
                                         <li>
-                                            <a href="<?= Y::url('/rbac');?>"><span class="fa fa-lock"></span> <span class="xn-text">Роли пользователей</span></a>                        
+                                            <a href="<?= Y::url('/rbac'); ?>"><span class="fa fa-lock"></span> Роли пользователей</a>                        
                                         </li>
                                         <li>
-                                            <a href="<?= Y::url('site/clearCache');?>"><span class="fa fa-trash-o"></span> <span class="xn-text">Очистить кеш</span></a>                        
+                                            <a href="<?= Y::url('site/clearCache'); ?>"><span class="fa fa-trash-o"></span> Очистить кеш</a>                        
                                         </li>
                                         <li>
-                                            <a href="<?= Y::url('site/getInvites');?>"><span class="fa fa-key"></span> <span class="xn-text">Сгенерировать инвайты</span></a>                        
+                                            <a href="<?= Y::url('site/getInvites'); ?>"><span class="fa fa-key"></span> Сгенерировать инвайты</a>                        
                                         </li>                           
                                     </ul>
                                 </li>

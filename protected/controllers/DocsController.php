@@ -150,10 +150,7 @@ class DocsController extends Controller {
      * @throws CHttpException
      */
     public function loadModel($id) {
-        $model = Docs::model()->findByPk($id);
-        if ($model === null)
-            throw new CHttpException(404, 'The requested page does not exist.');
-        return $model;
+        return Docs::getDoc($id);
     }
 
     /**
