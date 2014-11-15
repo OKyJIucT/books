@@ -32,9 +32,9 @@
                 <?= $data->text; ?>
             </div>
         </div>
-        
+
         <div class="clearfix"></div>
-        
+
         <a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>" class="btn btn-success pull-right">Подробней</a>
 
     </div>

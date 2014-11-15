@@ -10,6 +10,7 @@ class ARedisCache extends CCache {
     public $hostname = 'localhost';
     public $port = '6379';
     public $database = 0;
+
     /**
      * Holds the redis connection
      * @var ARedisConnection

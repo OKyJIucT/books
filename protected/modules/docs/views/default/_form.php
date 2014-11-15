@@ -23,7 +23,7 @@
     ?>
 
     <div class="form-group">
-        <label class="col-md-3 control-label">Название</label>
+        <?php echo $form->labelEx($model, 'title', array('class' => "col-md-3 control-label")); ?>
         <div class="col-md-9">
             <?php echo $form->textField($model, 'title', array('class' => 'form-control', 'placeholder' => "Название документа")); ?>
             <?php echo $form->error($model, 'title'); ?>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="form-group">
-        <label class="col-md-3 control-label">Оригинальное название</label>
+        <?php echo $form->labelEx($model, 'title_en', array('class' => "col-md-3 control-label")); ?>
         <div class="col-md-9">
             <?php echo $form->textField($model, 'title_en', array('class' => 'form-control', 'placeholder' => "Оригинальное название")); ?>
             <?php echo $form->error($model, 'title_en'); ?>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="form-group">
-        <label class="col-md-3 control-label">Автор</label>
+        <?php echo $form->labelEx($model, 'author', array('class' => "col-md-3 control-label")); ?>
         <div class="col-md-9">
             <?php echo $form->textField($model, 'author', array('class' => 'form-control', 'placeholder' => "Автор")); ?>
             <?php echo $form->error($model, 'author'); ?>
@@ -67,7 +67,7 @@
     </div>
 
     <div class="form-group">
-        <label class="col-md-3 control-label">Краткое описание</label>
+        <?php echo $form->labelEx($model, 'text', array('class' => "col-md-3 control-label")); ?>
         <div class="col-md-9">
             <?php echo $form->textArea($model, 'text', array('class' => 'form-control', 'placeholder' => "Краткое описание")); ?>
             <?php echo $form->error($model, 'text'); ?>

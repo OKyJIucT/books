@@ -83,10 +83,10 @@
                                             <a href="<?= Y::url('/rbac'); ?>"><span class="fa fa-lock"></span> Роли пользователей</a>                        
                                         </li>
                                         <li>
-                                            <a href="<?= Y::url('site/clearCache'); ?>"><span class="fa fa-trash-o"></span> Очистить кеш</a>                        
+                                            <a href="<?= Y::url('/site/clearCache'); ?>"><span class="fa fa-trash-o"></span> Очистить кеш</a>                        
                                         </li>
                                         <li>
-                                            <a href="<?= Y::url('site/getInvites'); ?>"><span class="fa fa-key"></span> Сгенерировать инвайты</a>                        
+                                            <a href="<?= Y::url('/site/getInvites'); ?>"><span class="fa fa-key"></span> Сгенерировать инвайты</a>                        
                                         </li>                           
                                     </ul>
                                 </li>

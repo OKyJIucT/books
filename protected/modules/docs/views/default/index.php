@@ -15,9 +15,9 @@ $this->menu = array(
 <div class="col-md-12">
 
     <div class="btn-group">
-        <a href="<?=Y::url('/docs/default/create');?>" class="btn btn-success"><i class="fa fa-plus"></i> Добавить</a>
+        <a href="<?= Y::url('/docs/default/create'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Добавить</a>
         <?php if (Y::hasAccess('administrator')) : ?>
-            <a href="<?=Y::url('/docs/default/admin');?>" class="btn btn-warning"><i class="fa fa-cogs"></i> Управление</a>
+            <a href="<?= Y::url('/docs/default/admin'); ?>" class="btn btn-warning"><i class="fa fa-cogs"></i> Управление</a>
         <?php endif; ?>   
     </div>
 

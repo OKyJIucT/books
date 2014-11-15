@@ -752,18 +752,19 @@ class Y {
      * @return string
      */
     public static function getDir($date = false, $startDir = false) {
+
+        $year = date('Y', time());
+        $month = date('m', time());
+        $day = date('d', time());
+
+        $dir = '/' . $year . '/' . $month . '/' . $day . '/';
+
+        if ($startDir)
+            $dir = '/' . $startDir . '/' . $dir;
+
+        $sub = Yii::app()->basePath . '/..' . $dir;
+
         if (!$date) {
-            $year = date('Y', time());
-            $month = date('m', time());
-            $day = date('d', time());
-
-            $dir = '/' . $year . '/' . $month . '/' . $day . '/';
-
-            if ($startDir)
-                $dir = '/' . $startDir . '/' . $dir;
-
-            $sub = Yii::app()->basePath . '/..' . $dir;
-
             if (!is_dir($sub))
                 mkdir($sub, 0755, true);
 

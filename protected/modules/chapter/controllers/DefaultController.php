@@ -28,11 +28,11 @@ class DefaultController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('index'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('view', 'create', 'update'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -60,18 +60,41 @@ class DefaultController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+
+        $this->pageTitle = 'Добавление главы';
+
+        $doc = Docs::getDoc(Yii::app()->request->getParam('docs'));
+
         $model = new Chapter;
 
         $this->performAjaxValidation($model);
 
         if (isset($_POST['Chapter'])) {
+
             $model->attributes = $_POST['Chapter'];
+            $model->docs_id = $doc->id;
+            $model->user_id = Yii::app()->user->id;
+            $model->date = time();
+
+            $thumbs = CUploadedFile::getInstancesByName('text');
+            if (isset($thumbs) && count($thumbs) > 0) {
+                // go through each uploaded image
+                foreach ($thumbs as $thumb => $file) {
+                    $ext = array_pop(explode('.', $file->name));
+                    $name = md5($file->name . time() . rand(100000, 9999999) . date("r", (time() - rand(100000, 9999999))));
+                    if ($file->saveAs(Y::getDir(false, 'documents') . $name . '.' . $ext)) {
+                        $model->path = $name . '.' . $ext;
+                    }
+                }
+            }
+
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
 
         $this->render('create', array(
             'model' => $model,
+            'doc' => $doc
         ));
     }
 
@@ -113,10 +136,7 @@ class DefaultController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Chapter');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
+        Y::redir(array('/docs'));
     }
 
     /**

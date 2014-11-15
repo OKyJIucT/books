@@ -2,17 +2,13 @@
 /* @var $this ChapterController */
 /* @var $model Chapter */
 
-$this->breadcrumbs=array(
-	'Chapters'=>array('index'),
-	'Create',
+$this->breadcrumbs = array(
+    'Главы' => array('index'),
+    'Добавить главу',
 );
 
-$this->menu=array(
-	array('label'=>'List Chapter', 'url'=>array('index')),
-	array('label'=>'Manage Chapter', 'url'=>array('admin')),
-);
 ?>
 
-<h1>Create Chapter</h1>
+<h1 class="text-center">Добавление главы</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model' => $model, 'doc' => $doc)); ?>

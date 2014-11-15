@@ -13,19 +13,19 @@
     ));
     ?>
 
-        <?php echo $form->errorSummary($model); ?>
+    <?php echo $form->errorSummary($model); ?>
 
     <div class="row">
         <?php echo $form->labelEx($model, 'item'); ?>
-<?php echo $form->dropDownList($model, 'item', array(), array('multiple' => true, 'size' => 10, 'style' => 'width:200px;')); ?>
-<?php echo $form->error($model, 'item'); ?>
+        <?php echo $form->dropDownList($model, 'item', array(), array('multiple' => true, 'size' => 10, 'style' => 'width:200px;')); ?>
+        <?php echo $form->error($model, 'item'); ?>
     </div>
 
     <div class="row">
-<?php echo $form->hiddenField($model, 'type'); ?>
-    <?php echo $form->hiddenField($model, 'action'); ?>
+        <?php echo $form->hiddenField($model, 'type'); ?>
+        <?php echo $form->hiddenField($model, 'action'); ?>
     </div>
 
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
 
 </div><!-- form -->

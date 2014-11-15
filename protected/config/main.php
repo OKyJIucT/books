@@ -106,12 +106,12 @@ return array(
                     'levels' => 'error, warning',
                 ),
             ),
-            'routes' => array(
-                array(
-                    'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
-                    'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
-                ),
-            ),
+//            'routes' => array(
+//                array(
+//                    'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+//                    'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
+//                ),
+//            ),
         ),
     ),
     // application-level parameters that can be accessed
