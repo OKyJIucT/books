@@ -15,6 +15,8 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'application.modules.docs.models.*',
+        'application.modules.users.models.*',
         'ext.YiiMailer.*',
     ),
     'modules' => array(
@@ -32,6 +34,9 @@ return array(
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
         ),
+        'chapter',
+        'docs',
+        'users',
     ),
     // application components
     'components' => array(
@@ -66,9 +71,11 @@ return array(
             'rules' => array(
                 '' => 'site/index',
                 '<action:(login|logout|reg|clearCache|getInvites|editInvite)>' => 'site/<action>',
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<module:\w+>' => '<module>/default/index',
+                '<module:\w+>/index' => '<module>/default/index',
+//                '<module:\w+>/<id:\d+>' => '<module>/default/view',
+                '<module:\w+>/<action>' => '<module>/default/<action>',
+                '<module:\w+>/<action>/<id:\d+>' => '<module>/default/<action>',
             ),
         ),
         'authManager' => array(

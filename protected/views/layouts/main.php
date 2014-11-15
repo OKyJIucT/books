@@ -58,19 +58,19 @@
                             <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
                             </li> 
-                            <li class="xn-openable <?php echo Yii::app()->controller->getId() == 'docs' ? 'active' : ''; ?>">
+                            <li class="xn-openable <?php echo Yii::app()->controller->module->id == 'docs' ? 'active' : ''; ?>">
                                 <a href="<?= Y::url('/docs'); ?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>
                                 <ul>
-                                    <li <?php echo Yii::app()->controller->getId() == 'docs' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>
-                                        <a href="<?= Y::url('docs/create'); ?>"><span class="fa fa-plus"></span> Добавить</a>                        
+                                    <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>
+                                        <a href="<?= Y::url('/docs/default/create'); ?>"><span class="fa fa-plus"></span> Добавить</a>                        
                                     </li>
-                                    <li <?php echo Yii::app()->controller->getId() == 'docs' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
-                                        <a href="<?= Y::url('docs/index'); ?>"><span class="fa fa-list"></span> Все документы</a> 
+                                    <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
+                                        <a href="<?= Y::url('/docs/default/index'); ?>"><span class="fa fa-list"></span> Все переводы</a> 
                                         <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
                                     </li>  
                                     <?php if (Y::hasAccess('administrator')) : ?>
-                                        <li <?php echo Yii::app()->controller->getId() == 'docs' && $this->action->id == 'admin' ? 'class="active"' : ''; ?>>
-                                            <a href="<?= Y::url('docs/admin'); ?>"><span class="fa fa-cogs"></span> Управление</a> 
+                                        <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'admin' ? 'class="active"' : ''; ?>>
+                                            <a href="<?= Y::url('/docs/default/admin'); ?>"><span class="fa fa-cogs"></span> Управление</a> 
                                         </li> 
                                     <?php endif; ?>
                                 </ul>
@@ -285,7 +285,7 @@
         </div>
         <div class="jvectormap-label"></div>
         <?php
-        if ($this->action->id == 'profile') {
+        if (Yii::app()->controller->module->id == 'users' && $this->action->id == 'view') {
             Yii::app()->clientScript->registerScriptFile(
                     Yii::app()->request->baseUrl . '/bootstrap/js/ZeroClipboard.min.js'
             );

@@ -247,3 +247,16 @@
 .post h2 {
     margin-bottom: 6px !important;
 }
+
+.mtop {
+    margin-top: 8px;
+}
+.mbottom {
+    margin-bottom: 8px;
+}
+.mleft {
+    margin-left: 8px;
+}
+.mright {
+    margin-right: 8px;
+}
