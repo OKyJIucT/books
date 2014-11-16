@@ -7,7 +7,6 @@ $this->breadcrumbs = array(
     $model->name => array('view', 'id' => $model->id),
     'Update',
 );
-
 ?>
 
 <h1>Update Chapter <?php echo $model->id; ?></h1>
@@ -17,7 +16,7 @@ $this->breadcrumbs = array(
 $this->widget('ImperaviRedactorWidget', array(
     // You can either use it for model attribute
     'model' => '',
-    'value' => file_get_contents('http://walhall.ru/documents'.Y::getDir($model->date) . $model->path),
+    'value' => file_get_contents('http://walhall.ru/documents' . Y::getDir($model->date) . $model->path),
     'attribute' => 'my_field',
     // or just for input field
     'name' => 'Chapter[text]',
@@ -26,10 +25,19 @@ $this->widget('ImperaviRedactorWidget', array(
         'lang' => 'ru',
         'toolbarFixed' => true,
         'minHeight' => 400,
-        'maxHeight' => 400
+        'maxHeight' => 400,
+        'shortcuts' => true
     ),
     'htmlOptions' => array(
         'row' => '12',
     ),
 ));
 ?>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".redactor-toolbar").dblclick(function () {
+            alert("The paragraph was double-clicked.");
+        });
+    });
+</script>
