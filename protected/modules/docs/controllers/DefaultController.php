@@ -54,9 +54,9 @@ class DefaultController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        
+
         $this->pageTitle = 'Добавление документа';
-        
+
         $model = new Docs;
 
         $this->performAjaxValidation($model);

@@ -8,9 +8,6 @@ $this->breadcrumbs = array(
 );
 ?>
 
-
-
-
 <div class="col-md-12">
     <h2><?= $model->title; ?></h2>
     <h4><?= $model->title_en; ?></h4>
@@ -44,16 +41,23 @@ $this->breadcrumbs = array(
 
     <?= $model->text; ?>
 
-</div>
+    <div class="clearfix"></div>
 
-<div class="col-md-12 mtop">
-
-    <div class="btn-group">
+    <div class="btn-group mtop mbottom">
         <a href="<?= Y::url('/chapter/default/create', array('docs' => $model->id)); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Добавить главу</a>
         <?php if (Y::hasAccess('administrator')) : ?>
             <a href="<?= Y::url('/chapter/default/admin'); ?>" class="btn btn-warning"><i class="fa fa-cogs"></i> Управление</a>
         <?php endif; ?>   
     </div>
+
+    <?php foreach ($model->chapters as $chapter) : ?>
+        <h4>
+            <a href="<?= Y::url('/chapter/default/view', array('id' => $chapter->id)); ?>"><?= $chapter->name . ' (' . $chapter->name_en . ')'; ?></a>
+        </h4>
+
+
+    <?php endforeach; ?>
+
 </div>
 
 
