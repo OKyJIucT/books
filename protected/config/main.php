@@ -50,6 +50,11 @@ return array(
             'hostname' => 'localhost',
             'port' => 6379,
             'database' => 1,
+            'behaviors' => array(
+                'clear' => array(
+                    'class' => 'application.components.TaggingBehavior',
+                ),
+            ),
         ),
         'file' => array(
             'class' => 'application.extensions.file.CFile',
@@ -71,9 +76,9 @@ return array(
             'rules' => array(
                 '' => 'site/index',
                 '<action:(login|logout|reg|clearCache|getInvites|editInvite)>' => 'site/<action>',
+                '<module:rbac>' => '<module>',
                 '<module:\w+>' => '<module>/default/index',
                 '<module:\w+>/index' => '<module>/default/index',
-//                '<module:\w+>/<id:\d+>' => '<module>/default/view',
                 '<module:\w+>/<action>' => '<module>/default/<action>',
                 '<module:\w+>/<action>/<id:\d+>' => '<module>/default/<action>',
             ),

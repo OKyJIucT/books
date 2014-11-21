@@ -22,7 +22,7 @@
         <div class="form-group">
             <label class="col-xs-4 control-label">Добавил:</label>
             <div class="col-xs-8">
-                <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $data->user->id)); ?>"><?= $data->user->email; ?></a></p>
+                <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $data->cache(300)->user->id)); ?>"><?= $data->cache(300)->user->email; ?></a></p>
             </div>
         </div>
 

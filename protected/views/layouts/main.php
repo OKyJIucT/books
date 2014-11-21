@@ -50,7 +50,7 @@
                                         </div>
                                     </div>
                                     <div class="profile-controls">
-                                        <a href="<?= Y::url('users/view', array('id' => Yii::app()->user->id)); ?>" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                        <a href="<?= Y::url('/users/default/view', array('id' => Yii::app()->user->id)); ?>" class="profile-control-left"><span class="fa fa-info"></span></a>
                                         <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                                     </div>
                                 </div>                                                                        
@@ -80,7 +80,7 @@
                                     <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
                                     <ul>
                                         <li>
-                                            <a href="<?= Y::url('/rbac'); ?>"><span class="fa fa-lock"></span> Роли пользователей</a>                        
+                                            <a href="<?= Y::url('/rbac/default/index'); ?>"><span class="fa fa-lock"></span> Роли пользователей</a>                        
                                         </li>
                                         <li>
                                             <a href="<?= Y::url('/site/clearCache'); ?>"><span class="fa fa-trash-o"></span> Очистить кеш</a>                        

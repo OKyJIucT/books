@@ -5,11 +5,6 @@
 $this->breadcrumbs = array(
     'Документы',
 );
-
-$this->menu = array(
-    array('label' => 'Create Docs', 'url' => array('create')),
-    array('label' => 'Manage Docs', 'url' => array('admin')),
-);
 ?>
 
 <div class="col-md-12">

@@ -45,6 +45,17 @@ class SiteController extends Controller {
     public function actionIndex() {
         $this->pageTitle = 'Главная';
 
+        $key = 'test';
+
+//        Yii::app()->cache->clear('tag2');
+
+        $data = Yii::app()->cache->get('test');
+
+        if ($data === false) {
+            Yii::app()->cache->set('test', mt_rand(1, 99999), 3, new Tags('tag1', 'tag2'));
+            $data = Yii::app()->cache->get('test');
+        }
+
 //        $mail = new YiiMailer();
 //        $mail->setFrom(Yii::app()->params['fromMail'], 'John Doe');
 //        $mail->setTo(Yii::app()->params['adminEmail']);
