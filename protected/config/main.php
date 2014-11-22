@@ -99,7 +99,7 @@ return array(
             'username' => 'walhall',
             'password' => '5092503',
             'charset' => 'utf8',
-//            'schemaCachingDuration' => 86400,
+            'schemaCachingDuration' => 86400,
         ),
         'errorHandler' => array(
             'errorAction' => 'site/error',
@@ -112,12 +112,12 @@ return array(
                     'levels' => 'error, warning',
                 ),
             ),
-//            'routes' => array(
-//                array(
-//                    'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
-//                    'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
-//                ),
-//            ),
+            'routes' => array(
+                array(
+                    'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+                    'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
+                ),
+            ),
         ),
     ),
     // application-level parameters that can be accessed

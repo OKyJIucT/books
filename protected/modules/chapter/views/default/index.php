@@ -1,22 +1,32 @@
-<?php
-/* @var $this ChapterController */
-/* @var $dataProvider CActiveDataProvider */
+<div class="col-md-12">
+    <h1><?= $dataProvider->getData()[0]->docs->title . ' - ' . $dataProvider->getData()[0]->chapter->name; ?></h1>
+</div>
 
-$this->breadcrumbs = array(
-    'Chapters',
-);
 
-$this->menu = array(
-    array('label' => 'Create Chapter', 'url' => array('create')),
-    array('label' => 'Manage Chapter', 'url' => array('admin')),
-);
-?>
-
-<h1>Chapters</h1>
 
 <?php
+
 $this->widget('zii.widgets.CListView', array(
     'dataProvider' => $dataProvider,
     'itemView' => '_view',
+    'ajaxUpdate' => false,
+    'template' => "<div class='col-md-12'>{pager}<div class='clearfix'></div>{items}<div class='clearfix'></div>{pager}</div>",
+    'pager' => array(
+        'maxButtonCount' => '10',
+        'prevPageLabel' => '',
+        'firstPageLabel' => 'Первая',
+        'nextPageLabel' => '',
+        'lastPageLabel' => 'Последняя',
+        'header' => '',
+        'htmlOptions' => array('class' => 'pagination pagination-sm pull-left push-down-20'),
+        'firstPageCssClass' => '', //default "first"
+        'lastPageCssClass' => '', //default "last"
+        'previousPageCssClass' => 'hidden', //default "previours"
+        'nextPageCssClass' => 'hidden', //default "next"
+        'internalPageCssClass' => '', //default "page"
+        'selectedPageCssClass' => 'active', //default "selected"
+        'hiddenPageCssClass' => ''//default "hidden"
+    ),
 ));
 ?>
+

@@ -1,29 +1,13 @@
 <?php
-/* @var $this ChapterController */
-/* @var $data Chapter */
+$this->breadcrumbs = array(
+    $data->docs->title . ' - ' . $data->chapter->name,
+);
 ?>
 
 <div class="view">
 
-    <b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-    <?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
-    <br />
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('docs_id')); ?>:</b>
-    <?php echo CHtml::encode($data->docs_id); ?>
-    <br />
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-    <?php echo CHtml::encode($data->name); ?>
-    <br />
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
-    <?php echo CHtml::encode($data->user_id); ?>
-    <br />
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
-    <?php echo CHtml::encode($data->date); ?>
-    <br />
-
+    <?php
+    echo $data->text . '<hr /><br/>';
+    ?>
 
 </div>

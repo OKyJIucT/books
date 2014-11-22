@@ -27,17 +27,13 @@ class DefaultController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index'),
-                'users' => array('*'),
-            ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('view', 'create', 'update'),
+                'actions' => array('index', 'view', 'create', 'update'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
                 'actions' => array('admin', 'delete'),
-                'users' => array('admin'),
+                'roles' => array('administrator'),
             ),
             array('deny', // deny all users
                 'users' => array('*'),
@@ -46,13 +42,32 @@ class DefaultController extends Controller {
     }
 
     /**
+     * Lists all models.
+     */
+    public function actionIndex() {
+        Y::redir(array('/docs'));
+    }
+
+    /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
 
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
+        $array = array(
+            'criteria' => array(
+                'condition' => 'chapter_id = :chapter_id',
+                'params' => array(':chapter_id' => $id)
+            ),
+            'pagination' => array(
+                'pageSize' => 2,
+            )
+        );
+
+        $dataProvider = new CActiveDataProvider(Parts::model()->with('docs', 'chapter')->cache(60 * 15, new Tags('partsList', 'part_' . $id), 2), $array);
+
+        $this->render('index', array(
+            'dataProvider' => $dataProvider,
         ));
     }
 
@@ -109,11 +124,27 @@ class DefaultController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
+
         $model = $this->loadModel($id);
 
         $this->performAjaxValidation($model);
 
         if (isset($_POST['Chapter'])) {
+            $parts = explode("<hr>", $_POST['Chapter']['text']);
+
+            foreach ($parts as $item) {
+                $part = new Parts();
+                $part->docs_id = $model->docs->id;
+                $part->chapter_id = $model->id;
+                $part->user_id = Yii::app()->user->id;
+                $part->version = Y::getHash();
+                $part->date = time();
+                $part->text = $item;
+
+                $part->save();
+            }
+
+            Y::dump($parts);
             $model->attributes = $_POST['Chapter'];
             if ($model->save()) {
                 C::clear('chapter_' . $id);
@@ -137,13 +168,6 @@ class DefaultController extends Controller {
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-    }
-
-    /**
-     * Lists all models.
-     */
-    public function actionIndex() {
-        Y::redir(array('/docs'));
     }
 
     /**
@@ -173,7 +197,7 @@ class DefaultController extends Controller {
 
         $model = C::get($cacheId);
         if ($model === false) {
-            $model = Chapter::model()->findByPk($id);
+            $model = Chapter::model()->with('docs')->findByPk($id);
 
             if (!$model)
                 Y::error(404);
