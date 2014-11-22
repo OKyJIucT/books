@@ -773,4 +773,8 @@ class Y {
             return date("/Y/m/d/", $date);
     }
 
+    public static function getHash() {
+        return hash('crc32b', strrev(md5(time() . rand(100000, 9999999))));
+    }
+
 }

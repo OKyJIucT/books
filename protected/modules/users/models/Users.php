@@ -67,6 +67,7 @@ class Users extends CActiveRecord {
             'chapters' => array(self::HAS_MANY, 'Chapter', 'user_id'),
             'docs' => array(self::HAS_MANY, 'Docs', 'user_id'),
             'invites' => array(self::HAS_MANY, 'Invites', 'user_id'),
+            'parts' => array(self::HAS_MANY, 'Parts', 'user_id'),
         );
     }
 
@@ -174,15 +175,12 @@ class Users extends CActiveRecord {
 
         $profile = C::get($cacheId);
         if ($profile === false) {
-            $criteria = new CDbCriteria();
-            $criteria->select = 'id, username, reg_date, email';
-            $criteria->with = 'invites';
-            $profile = Users::model()->findByPk($id, $criteria);
+            $profile = Users::model()->with('invites')->findByPk($id, array('select' => 'id, username, reg_date, email'));
 
             if (!$profile)
                 Y::error(404);
 
-            C::set($cacheId, $profile);
+            C::set($cacheId, $profile, 3600, new Tags('userItem', 'user_' . $id));
         }
 
         return $profile;

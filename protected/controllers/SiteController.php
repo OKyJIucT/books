@@ -55,6 +55,7 @@ class SiteController extends Controller {
             Yii::app()->cache->set('test', mt_rand(1, 99999), 3, new Tags('tag1', 'tag2'));
             $data = Yii::app()->cache->get('test');
         }
+        
 
 //        $mail = new YiiMailer();
 //        $mail->setFrom(Yii::app()->params['fromMail'], 'John Doe');

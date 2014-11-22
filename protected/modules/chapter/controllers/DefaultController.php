@@ -50,6 +50,7 @@ class DefaultController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+
         $this->render('view', array(
             'model' => $this->loadModel($id),
         ));
@@ -63,7 +64,9 @@ class DefaultController extends Controller {
 
         $this->pageTitle = 'Добавление главы';
 
-        $doc = Docs::getDoc(Yii::app()->request->getParam('docs'));
+        $id = intval(Yii::app()->request->getParam('docs'));
+
+        $doc = Docs::getDoc($id);
 
         $model = new Chapter;
 
@@ -88,8 +91,10 @@ class DefaultController extends Controller {
                 }
             }
 
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()) {
+                C::clear('doc_' . $id);
+                $this->redirect(array('/chapter/default/update', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(
@@ -110,8 +115,10 @@ class DefaultController extends Controller {
 
         if (isset($_POST['Chapter'])) {
             $model->attributes = $_POST['Chapter'];
-            if ($model->save())
+            if ($model->save()) {
+                C::clear('chapter_' . $id);
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('update', array(
@@ -126,7 +133,7 @@ class DefaultController extends Controller {
      */
     public function actionDelete($id) {
         $this->loadModel($id)->delete();
-
+        C::clear('chapter_' . $id);
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -161,6 +168,21 @@ class DefaultController extends Controller {
      * @throws CHttpException
      */
     public function loadModel($id) {
+
+        $cacheId = C::prefix('chapters', $id);
+
+        $model = C::get($cacheId);
+        if ($model === false) {
+            $model = Chapter::model()->findByPk($id);
+
+            if (!$model)
+                Y::error(404);
+
+            C::set($cacheId, $model, '', new Tags('chapterItem', 'chapter_' . $id));
+        }
+
+        return $model;
+
         $model = Chapter::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');

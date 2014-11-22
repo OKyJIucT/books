@@ -40,12 +40,26 @@ class DefaultController extends Controller {
     }
 
     /**
+     * Lists all models.
+     */
+    public function actionIndex() {
+        $dataProvider = new CActiveDataProvider(Docs::model()->with('user')->cache(60 * 15, new Tags('docsList'), 2));
+
+        $this->render('index', array(
+            'dataProvider' => $dataProvider,
+        ));
+    }
+
+    /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+
+        $model = $this->loadModel($id);
+
         $this->render('view', array(
-            'model' => $this->loadModel($id)->cache(300),
+            'model' => $model
         ));
     }
 
@@ -78,8 +92,10 @@ class DefaultController extends Controller {
                 }
             }
 
-            if ($model->save())
+            if ($model->save()) {
+                C::clear('docsList');
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(
@@ -100,6 +116,7 @@ class DefaultController extends Controller {
         if (isset($_POST['Docs'])) {
             $model->attributes = $_POST['Docs'];
             if ($model->save())
+                C::clear('docsList');
                 $this->redirect(array('view', 'id' => $model->id));
         }
 
@@ -116,19 +133,12 @@ class DefaultController extends Controller {
     public function actionDelete($id) {
         $this->loadModel($id)->delete();
 
+        // очищаем кеш по документам
+        C::clear('docsList');
+
 // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-    }
-
-    /**
-     * Lists all models.
-     */
-    public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Docs');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
     }
 
     /**
@@ -153,7 +163,20 @@ class DefaultController extends Controller {
      * @throws CHttpException
      */
     public function loadModel($id) {
-        return Docs::getDoc($id);
+
+        $cacheId = C::prefix('docs', $id);
+
+        $model = C::get($cacheId);
+        if ($model === false) {
+            $model = Docs::model()->with('user', 'chapters')->findByPk($id);
+
+            if (!$model)
+                Y::error(404);
+
+            C::set($cacheId, $model, '', new Tags('docItem', 'doc_' . $id));
+        }
+
+        return $model;
     }
 
     /**

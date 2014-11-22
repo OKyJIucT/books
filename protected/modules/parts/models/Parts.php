@@ -1,27 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "chapter".
+ * This is the model class for table "parts".
  *
- * The followings are the available columns in table 'chapter':
+ * The followings are the available columns in table 'parts':
  * @property integer $id
  * @property integer $docs_id
- * @property string $name
- * @property string $name_en
+ * @property integer $chapter_id
  * @property integer $user_id
+ * @property string $version
+ * @property string $text
  * @property integer $date
  *
  * The followings are the available model relations:
- * @property Docs $docs
  * @property Users $user
+ * @property Docs $docs
+ * @property Chapter $chapter
  */
-class Chapter extends CActiveRecord {
+class Parts extends CActiveRecord {
 
     /**
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'chapter';
+        return 'parts';
     }
 
     /**
@@ -31,12 +33,12 @@ class Chapter extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('docs_id, name, name_en, user_id, date', 'required'),
-            array('docs_id, user_id, date', 'numerical', 'integerOnly' => true),
-            array('name, name_en', 'length', 'max' => 32),
+            array('docs_id, chapter_id, user_id, version, text, date', 'required'),
+            array('docs_id, chapter_id, user_id, date', 'numerical', 'integerOnly' => true),
+            array('version', 'length', 'max' => 8),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, docs_id, name, name_en, path, user_id, date', 'safe', 'on' => 'search'),
+            array('id, docs_id, chapter_id, user_id, version, text, date', 'safe', 'on' => 'search'),
         );
     }
 
@@ -47,9 +49,9 @@ class Chapter extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'docs' => array(self::BELONGS_TO, 'Docs', 'docs_id'),
             'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-            'parts' => array(self::HAS_MANY, 'Parts', 'chapter_id'),
+            'docs' => array(self::BELONGS_TO, 'Docs', 'docs_id'),
+            'chapter' => array(self::BELONGS_TO, 'Chapter', 'chapter_id'),
         );
     }
 
@@ -58,13 +60,13 @@ class Chapter extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'ID документа',
+            'id' => 'ID',
             'docs_id' => 'Docs',
-            'name' => 'Название главы',
-            'name_en' => 'Оригинальное название',
-            'path' => 'Путь к файлу',
-            'user_id' => 'ID пользователя',
-            'date' => 'Дата добавления',
+            'chapter_id' => 'Chapter',
+            'user_id' => 'User',
+            'version' => 'Version',
+            'text' => 'Text',
+            'date' => 'Date',
         );
     }
 
@@ -87,10 +89,10 @@ class Chapter extends CActiveRecord {
 
         $criteria->compare('id', $this->id);
         $criteria->compare('docs_id', $this->docs_id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('name_en', $this->name_en, true);
-        $criteria->compare('path', $this->path, true);
+        $criteria->compare('chapter_id', $this->chapter_id);
         $criteria->compare('user_id', $this->user_id);
+        $criteria->compare('version', $this->version, true);
+        $criteria->compare('text', $this->text, true);
         $criteria->compare('date', $this->date);
 
         return new CActiveDataProvider($this, array(
@@ -102,7 +104,7 @@ class Chapter extends CActiveRecord {
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!
      * @param string $className active record class name.
-     * @return Chapter the static model class
+     * @return Parts the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);

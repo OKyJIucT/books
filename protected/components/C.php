@@ -49,7 +49,7 @@ class C {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return boolean
      */
-    public static function set($id, $value, $expire = 3600, $tags = array(), $dependency = null, $cacheId = 'cache') {
+    public static function set($id, $value, $expire = 900, $dependency = null, $cacheId = 'cache') {
         return self::_getComponent($cacheId)->set($id, $value, $expire, $dependency);
     }
 
@@ -68,6 +68,14 @@ class C {
 
             case 'docs':
                 return 'docs::view::' . md5($id) . '::' . $id;
+                break;
+
+            case 'relation':
+                return 'relation::view::' . md5($id) . '::' . $id;
+                break;
+
+            case 'chapters':
+                return 'chapters::view::' . md5($id) . '::' . $id;
                 break;
 
             default:
@@ -90,8 +98,12 @@ class C {
         return self::$_componentsCache[$componentName];
     }
 
-    public static function clear($tag) {
-        Yii::app()->cache->clear($tag);
+    /**
+     * Удаление кеша по тегу
+     * @param type $tag
+     */
+    public static function clear($tag, $cacheId = 'cache') {
+        self::_getComponent($cacheId)->clear($tag);
     }
 
 }

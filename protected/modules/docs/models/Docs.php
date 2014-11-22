@@ -49,6 +49,7 @@ class Docs extends CActiveRecord {
         return array(
             'chapters' => array(self::HAS_MANY, 'Chapter', 'docs_id'),
             'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+            'parts' => array(self::HAS_MANY, 'Parts', 'docs_id'),
         );
     }
 

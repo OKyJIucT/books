@@ -1,7 +1,5 @@
 <?php
-
-// https://oauth.vk.com/authorize?client_id=4593686&scope=wall,photos,video&redirect_uri=https://oauth.vk.com/blank.html&display=page&v=5.24&response_type=token
-//// uncomment the following to define a path alias
+// uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -15,7 +13,9 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'application.modules.chapter.models.*',
         'application.modules.docs.models.*',
+        'application.modules.parts.models.*',
         'application.modules.users.models.*',
         'ext.YiiMailer.*',
     ),
@@ -36,6 +36,7 @@ return array(
         ),
         'chapter',
         'docs',
+        'parts',
         'users',
     ),
     // application components
