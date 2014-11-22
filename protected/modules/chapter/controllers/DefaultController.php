@@ -137,7 +137,6 @@ class DefaultController extends Controller {
                 $part->docs_id = $model->docs->id;
                 $part->chapter_id = $model->id;
                 $part->user_id = Yii::app()->user->id;
-                $part->version = Y::getHash();
                 $part->date = time();
                 $part->text = $item;
 

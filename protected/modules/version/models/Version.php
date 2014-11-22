@@ -1,28 +1,28 @@
 <?php
 
 /**
- * This is the model class for table "parts".
+ * This is the model class for table "version".
  *
- * The followings are the available columns in table 'parts':
+ * The followings are the available columns in table 'version':
  * @property integer $id
- * @property integer $docs_id
- * @property integer $chapter_id
- * @property integer $user_id
  * @property string $text
+ * @property integer $user_id
  * @property integer $date
+ * @property integer $version
+ * @property integer $part_id
+ * @property string $hash
  *
  * The followings are the available model relations:
  * @property Users $user
- * @property Docs $docs
- * @property Chapter $chapter
+ * @property Parts $part
  */
-class Parts extends CActiveRecord {
+class Version extends CActiveRecord {
 
     /**
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'parts';
+        return 'version';
     }
 
     /**
@@ -32,11 +32,12 @@ class Parts extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('docs_id, chapter_id, user_id, text, date', 'required'),
-            array('docs_id, chapter_id, user_id, date', 'numerical', 'integerOnly' => true),
+            array('text, user_id, date, version, part_id, hash', 'required'),
+            array('user_id, date, version, part_id', 'numerical', 'integerOnly' => true),
+            array('hash', 'length', 'max' => 8),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, docs_id, chapter_id, user_id, text, date', 'safe', 'on' => 'search'),
+            array('id, text, user_id, date, version, part_id, hash', 'safe', 'on' => 'search'),
         );
     }
 
@@ -48,9 +49,7 @@ class Parts extends CActiveRecord {
         // class name for the relations automatically generated below.
         return array(
             'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-            'docs' => array(self::BELONGS_TO, 'Docs', 'docs_id'),
-            'chapter' => array(self::BELONGS_TO, 'Chapter', 'chapter_id'),
-            'versions' => array(self::HAS_MANY, 'Version', 'part_id'),
+            'part' => array(self::BELONGS_TO, 'Parts', 'part_id'),
         );
     }
 
@@ -60,11 +59,12 @@ class Parts extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'docs_id' => 'Docs',
-            'chapter_id' => 'Chapter',
-            'user_id' => 'User',
             'text' => 'Text',
+            'user_id' => 'User',
             'date' => 'Date',
+            'version' => 'Version',
+            'part_id' => 'Part',
+            'hash' => 'Hash',
         );
     }
 
@@ -86,11 +86,12 @@ class Parts extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('docs_id', $this->docs_id);
-        $criteria->compare('chapter_id', $this->chapter_id);
-        $criteria->compare('user_id', $this->user_id);
         $criteria->compare('text', $this->text, true);
+        $criteria->compare('user_id', $this->user_id);
         $criteria->compare('date', $this->date);
+        $criteria->compare('version', $this->version);
+        $criteria->compare('part_id', $this->part_id);
+        $criteria->compare('hash', $this->hash, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -101,7 +102,7 @@ class Parts extends CActiveRecord {
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!
      * @param string $className active record class name.
-     * @return Parts the static model class
+     * @return Version the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);

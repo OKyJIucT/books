@@ -99,7 +99,7 @@ return array(
             'username' => 'walhall',
             'password' => '5092503',
             'charset' => 'utf8',
-            'schemaCachingDuration' => 86400,
+            //'schemaCachingDuration' => 86400,
         ),
         'errorHandler' => array(
             'errorAction' => 'site/error',
