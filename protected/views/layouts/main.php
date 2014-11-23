@@ -16,99 +16,60 @@
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
-        <div class="page-container page-navigation-top-fixed">
+        <div class="page-container page-navigation-top">
 
-            <!-- START PAGE SIDEBAR -->
-            <div class="page-sidebar page-sidebar-fixed scroll mCustomScrollbar _mCS_1 mCS-autoHide">
-                <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0">
-                    <div id="mCSB_1_container" class="mCSB_container" dir="ltr">
-                        <!-- START X-NAVIGATION -->
-                        <ul class="x-navigation x-navigation-custom">
-                            <li class="xn-logo">
-                                <a href="/">Walhall</a>
-                                <a href="#" class="x-navigation-control"></a>
-                            </li>
-                            <li class="xn-profile">
-                                <a href="#" class="profile-mini">
-                                    <img src="/assets/images/users/avatar.jpg" alt="John Doe">
-                                </a>
-                                <div class="profile">
-                                    <div class="profile-image">
-                                        <img src="/assets/images/users/avatar.png" />
-                                    </div>
-                                    <div class="profile-data">
-                                        <div class="profile-data-name"><?php echo Yii::app()->user->name; ?></div>
-                                        <div class="profile-data-title">
-                                            <?php
-                                            if (Y::hasAccess('administrator')) {
-                                                echo 'Администратор';
-                                            } elseif (Y::hasAccess('redactor')) {
-                                                echo 'Редактор';
-                                            } else
-                                                echo 'Переводчик';
-                                            ?>
-                                        </div>
-                                    </div>
-                                    <div class="profile-controls">
-                                        <a href="<?= Y::url('/users/default/view', array('id' => Yii::app()->user->id)); ?>" class="profile-control-left"><span class="fa fa-info"></span></a>
-                                        <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
-                                    </div>
-                                </div>                                                                        
-                            </li>
-                            <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
-                                <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
-                            </li> 
-                            <li class="xn-openable <?php echo Yii::app()->controller->module->id == 'docs' ? 'active' : ''; ?>">
-                                <a href="<?= Y::url('/docs'); ?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>
-                                <ul>
-                                    <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>
-                                        <a href="<?= Y::url('/docs/default/create'); ?>"><span class="fa fa-plus"></span> Добавить</a>                        
-                                    </li>
-                                    <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
-                                        <a href="<?= Y::url('/docs/default/index'); ?>"><span class="fa fa-list"></span> Все переводы</a> 
-                                        <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
-                                    </li>  
-                                    <?php if (Y::hasAccess('administrator')) : ?>
-                                        <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'admin' ? 'class="active"' : ''; ?>>
-                                            <a href="<?= Y::url('/docs/default/admin'); ?>"><span class="fa fa-cogs"></span> Управление</a> 
-                                        </li> 
-                                    <?php endif; ?>
-                                </ul>
-                            </li> 
-                            <?php if (Y::hasAccess('administrator')) : ?>
-                                <li class="xn-openable">
-                                    <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= Y::url('/rbac/default/index'); ?>"><span class="fa fa-lock"></span> Роли пользователей</a>                        
-                                        </li>
-                                        <li>
-                                            <a href="<?= Y::url('/site/clearCache'); ?>"><span class="fa fa-trash-o"></span> Очистить кеш</a>                        
-                                        </li>
-                                        <li>
-                                            <a href="<?= Y::url('/site/getInvites'); ?>"><span class="fa fa-key"></span> Сгенерировать инвайты</a>                        
-                                        </li>                           
-                                    </ul>
-                                </li>
-                            <?php endif; ?>
-                        </ul>
-                        <!-- END X-NAVIGATION -->
-                    </div>
-                    <div id="mCSB_1_scrollbar_vertical"></div>
-                </div>
-            </div>
-            <!-- END PAGE SIDEBAR -->
+            
 
             <!-- PAGE CONTENT -->
             <div class="page-content">
 
                 <!-- START X-NAVIGATION VERTICAL -->
-                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
-                    <!-- TOGGLE NAVIGATION -->
-                    <li class="xn-icon-button">
-                        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                <ul class="x-navigation x-navigation-horizontal">
+
+                    <li class="xn-logo">
+                        <a href="/">ATLANT</a>
+                        <a href="#" class="x-navigation-control"></a>
                     </li>
-                    <!-- END TOGGLE NAVIGATION -->
+
+                    <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
+                        <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
+                    </li> 
+                    <li class="xn-openable <?php echo Yii::app()->controller->module->id == 'docs' ? 'active' : ''; ?>">
+                        <a href="<?= Y::url('/docs'); ?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>
+                        <ul>
+                            <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>
+                                <a href="<?= Y::url('/docs/default/create'); ?>"><span class="fa fa-plus"></span> Добавить</a>                        
+                            </li>
+                            <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
+                                <a href="<?= Y::url('/docs/default/index'); ?>"><span class="fa fa-list"></span> Все переводы</a> 
+                                <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
+                            </li>  
+                            <?php if (Y::hasAccess('administrator')) : ?>
+                                <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'admin' ? 'class="active"' : ''; ?>>
+                                    <a href="<?= Y::url('/docs/default/admin'); ?>"><span class="fa fa-cogs"></span> Управление</a> 
+                                </li> 
+                            <?php endif; ?>
+                        </ul>
+                    </li> 
+                    <?php if (Y::hasAccess('administrator')) : ?>
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
+                            <ul>
+                                <li>
+                                    <a href="<?= Y::url('/rbac/default/index'); ?>"><span class="fa fa-lock"></span> Роли пользователей</a>                        
+                                </li>
+                                <li>
+                                    <a href="<?= Y::url('/site/clearCache'); ?>"><span class="fa fa-trash-o"></span> Очистить кеш</a>                        
+                                </li>
+                                <li>
+                                    <a href="<?= Y::url('/site/getInvites'); ?>"><span class="fa fa-key"></span> Сгенерировать инвайты</a>                        
+                                </li>                           
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+
+
+
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
                         <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        

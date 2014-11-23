@@ -45,6 +45,27 @@ class DefaultController extends Controller {
 
     public function actionSaveTranslate() {
         if (Y::isAjaxRequest()) {
+
+            $part_id = intval($_POST['part_id']);
+
+            if (Version::partExist(Yii::app()->user->id, $part_id)) {
+                $criteria = new CDbCriteria();
+                $criteria->condition = 'user_id = :user_id AND part_id = :part_id';
+                $criteria->params = array(':user_id' => Yii::app()->user->id, ':part_id' => $part_id);
+                $attributes = array('text' => array_shift($_POST['translate']));
+                
+                Version::model()->updateAll($attributes, $criteria);
+            } else {
+                $version = new Version();
+                $version->text = array_shift($_POST['translate']);
+                $version->user_id = Yii::app()->user->id;
+                $version->date = time();
+                $version->part_id = $part_id;
+                $version->hash = Y::getHash();
+                $version->save();
+            }
+
+
             echo CHtml::encode('Сохранено');
             // Завершаем приложение
             Yii::app()->end();

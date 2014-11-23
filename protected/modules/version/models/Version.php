@@ -18,6 +18,22 @@
  */
 class Version extends CActiveRecord {
 
+    public function behaviors() {
+        return array(
+            'PurifyText' => array(
+                'class' => 'DPurifyTextBehavior',
+                'sourceAttribute' => 'text',
+                'destinationAttribute' => 'text',
+                // 'enableMarkdown'=>true,
+                'purifierOptions' => array(
+                    'AutoFormat.RemoveEmpty' => true,
+                    'HTML.Allowed' => 'p,ul,li,b,i,a[href]',
+                    'Core.EscapeInvalidTags' => true,
+                ),
+            ),
+        );
+    }
+
     /**
      * @return string the associated database table name
      */
@@ -104,6 +120,14 @@ class Version extends CActiveRecord {
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
+    }
+
+    public static function partExist($user_id, $part_id) {
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'user_id = :user_id AND part_id = :part_id';
+        $criteria->params = array(':user_id' => Yii::app()->user->id, ':part_id' => $_POST['part_id']);
+
+        return Version::model()->exists($criteria);
     }
 
 }

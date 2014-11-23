@@ -777,4 +777,13 @@ class Y {
         return hash('crc32b', strrev(md5(time() . rand(100000, 9999999))));
     }
 
+    public static function purify($data) {
+        $p = new CHtmlPurifier;
+        $p->options = array(
+            'HTML.SafeObject' => true,
+            'Output.FlashCompat' => true,
+        );
+        return $p->purify($data);
+    }
+
 }

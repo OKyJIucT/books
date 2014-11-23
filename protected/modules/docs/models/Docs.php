@@ -17,6 +17,22 @@
  */
 class Docs extends CActiveRecord {
 
+    public function behaviors() {
+        return array(
+            'PurifyText' => array(
+                'class' => 'DPurifyTextBehavior',
+                'sourceAttribute' => 'text',
+                'destinationAttribute' => 'text',
+                // 'enableMarkdown'=>true,
+                'purifierOptions' => array(
+                    'AutoFormat.RemoveEmpty' => true,
+                    'HTML.Allowed' => 'p,ul,li,b,i,a[href]',
+                    'Core.EscapeInvalidTags' => true,
+                ),
+            ),
+        );
+    }
+
     /**
      * @return string the associated database table name
      */
