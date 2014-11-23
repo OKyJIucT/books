@@ -31,10 +31,10 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>
 
-                    <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
+                    <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="hover"' : ''; ?>>
                         <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
                     </li> 
-                    <li class="xn-openable <?php echo Yii::app()->controller->module->id == 'docs' ? 'active' : ''; ?>">
+                    <li class="xn-openable <?php echo Yii::app()->controller->module->id == 'docs' ? 'hover' : ''; ?>">
                         <a href="<?= Y::url('/docs'); ?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>
                         <ul>
                             <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>
@@ -73,7 +73,7 @@
                         <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
                     </li> 
                     <!-- END SIGN OUT -->
-                    <li class="xn-openable pull-right <?php echo Yii::app()->controller->module->id == 'users' ? 'active' : ''; ?>">
+                    <li class="xn-openable pull-right <?php echo Yii::app()->controller->module->id == 'users' ? 'hover' : ''; ?>">
                         <a href="<?= Y::url('/users'); ?>"><span class="fa fa-user"></span> <span class="xn-text"><?= Yii::app()->user->name; ?></span></a>
                         <ul>
                             <li <?php echo Yii::app()->controller->module->id == 'users' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>

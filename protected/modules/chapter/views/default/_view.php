@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle = $data->docs->title . ' - ' . $data->chapter->name;
 $this->breadcrumbs = array(
     $data->docs->title . ' - ' . $data->chapter->name,
 );

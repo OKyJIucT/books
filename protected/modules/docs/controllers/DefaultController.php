@@ -43,6 +43,7 @@ class DefaultController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
+        $this->pageTitle = 'Список документов';
         $dataProvider = new CActiveDataProvider(Docs::model()->with('user')->cache(60 * 15, new Tags('docsList'), 2));
 
         $this->render('index', array(
@@ -57,6 +58,8 @@ class DefaultController extends Controller {
     public function actionView($id) {
 
         $model = $this->loadModel($id);
+        
+        $this->pageTitle = $model->title;
 
         $this->render('view', array(
             'model' => $model
