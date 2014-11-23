@@ -60,7 +60,7 @@ class DefaultController extends Controller {
                 'params' => array(':chapter_id' => $id)
             ),
             'pagination' => array(
-                'pageSize' => 2,
+                'pageSize' => 10,
             )
         );
 
@@ -138,12 +138,12 @@ class DefaultController extends Controller {
                 $part->chapter_id = $model->id;
                 $part->user_id = Yii::app()->user->id;
                 $part->date = time();
+                $part->hash = Y::getHash();
                 $part->text = $item;
 
                 $part->save();
             }
 
-            Y::dump($parts);
             $model->attributes = $_POST['Chapter'];
             if ($model->save()) {
                 C::clear('chapter_' . $id);

@@ -2,10 +2,9 @@
     <h1><?= $dataProvider->getData()[0]->docs->title . ' - ' . $dataProvider->getData()[0]->chapter->name; ?></h1>
 </div>
 
-
+<div id="test"></div>
 
 <?php
-
 $this->widget('zii.widgets.CListView', array(
     'dataProvider' => $dataProvider,
     'itemView' => '_view',
@@ -29,4 +28,3 @@ $this->widget('zii.widgets.CListView', array(
     ),
 ));
 ?>
-

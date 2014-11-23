@@ -32,12 +32,12 @@ class Version extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('text, user_id, date, version, part_id, hash', 'required'),
-            array('user_id, date, version, part_id', 'numerical', 'integerOnly' => true),
+            array('text, user_id, date, part_id, hash', 'required'),
+            array('user_id, date, part_id', 'numerical', 'integerOnly' => true),
             array('hash', 'length', 'max' => 8),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, text, user_id, date, version, part_id, hash', 'safe', 'on' => 'search'),
+            array('id, text, user_id, date, part_id, hash', 'safe', 'on' => 'search'),
         );
     }
 
@@ -62,7 +62,6 @@ class Version extends CActiveRecord {
             'text' => 'Text',
             'user_id' => 'User',
             'date' => 'Date',
-            'version' => 'Version',
             'part_id' => 'Part',
             'hash' => 'Hash',
         );
@@ -89,7 +88,6 @@ class Version extends CActiveRecord {
         $criteria->compare('text', $this->text, true);
         $criteria->compare('user_id', $this->user_id);
         $criteria->compare('date', $this->date);
-        $criteria->compare('version', $this->version);
         $criteria->compare('part_id', $this->part_id);
         $criteria->compare('hash', $this->hash, true);
 

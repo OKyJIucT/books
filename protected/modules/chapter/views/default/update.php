@@ -30,7 +30,6 @@ $this->breadcrumbs = array(
     ?>
 
     <?php
-//Y::dump(Y::getDir($model->date, 'documents') . $model->path);
     $this->widget('ImperaviRedactorWidget', array(
         // You can either use it for model attribute
         'model' => '',

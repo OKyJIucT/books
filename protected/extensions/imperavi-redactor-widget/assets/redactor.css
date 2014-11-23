@@ -814,7 +814,7 @@ body .redactor-box-fullscreen {
 .redactor-editor blockquote,
 .redactor-editor pre {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   border: none;
   background: none;
   box-shadow: none;
