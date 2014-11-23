@@ -263,7 +263,7 @@
 }
 
 .translate {position: relative;}
-.btn-translate {position: absolute; bottom: 10px; right: 10px; z-index: 10;}
+.btn-translate {position: absolute; bottom: 20px; right: 4px; z-index: 10;}
 
 .btn-translate-left {position: absolute; bottom: 0px; left: 0px; z-index: 10;}
 .btn-translate-right {position: absolute; bottom: 0px; right: 0px; z-index: 10;}
