@@ -113,7 +113,7 @@ $this->breadcrumbs = array(
                     // Меняем тип элемента на submit, чтобы у пользователей
                     // с отключенным JavaScript всё было хорошо.
                     'type' => 'submit',
-                    'class' => 'btn btn-sm btn-warning btn-translate btn-' . $version->hash,
+                    'class' => 'btn btn-sm btn-warning btn-translate btn-' . $data->id,
                     'name' => 'save-' . $data->id,
                         )
                 );
