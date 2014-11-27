@@ -786,4 +786,19 @@ class Y {
         return $p->purify($data);
     }
 
+    public static function cut($string, $length = 400) {
+        if (mb_strlen($string) < $length)
+            return $string;
+        
+        $string = strip_tags($string);
+
+        $string = mb_substr($string, 0, $length);
+
+        $string = rtrim($string, "!,.-");
+
+        $string = mb_substr($string, 0, strrpos($string, ' '));
+
+        return $string . "...";
+    }
+
 }

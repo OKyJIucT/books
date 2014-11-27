@@ -94,17 +94,21 @@ class DefaultController extends Controller {
             $model->user_id = Yii::app()->user->id;
             $model->date = time();
 
-            $thumbs = CUploadedFile::getInstancesByName('text');
-            if (isset($thumbs) && count($thumbs) > 0) {
-                // go through each uploaded image
-                foreach ($thumbs as $thumb => $file) {
-                    $ext = array_pop(explode('.', $file->name));
-                    $name = md5($file->name . time() . rand(100000, 9999999) . date("r", (time() - rand(100000, 9999999))));
-                    if ($file->saveAs(Y::getDir(false, 'documents') . $name . '.' . $ext)) {
-                        $model->path = $name . '.' . $ext;
+            if (isset($_FILES) && !empty($_FILES)) {
+                $thumbs = CUploadedFile::getInstancesByName('text');
+                if (isset($thumbs) && count($thumbs) > 0) {
+                    // go through each uploaded image
+                    foreach ($thumbs as $thumb => $file) {
+                        $ext = array_pop(explode('.', $file->name));
+                        $name = md5($file->name . time() . rand(100000, 9999999) . date("r", (time() - rand(100000, 9999999))));
+                        if ($file->saveAs(Y::getDir(false, 'documents') . $name . '.' . $ext)) {
+                            $model->path = $name . '.' . $ext;
+                        }
                     }
                 }
             }
+
+
 
             if ($model->save()) {
                 C::clear('doc_' . $id);
@@ -130,9 +134,15 @@ class DefaultController extends Controller {
         $this->performAjaxValidation($model);
 
         if (isset($_POST['Chapter'])) {
-            $parts = explode("<hr>", $_POST['Chapter']['text']);
+
+            $str = strip_tags(htmlspecialchars_decode($_POST['Chapter']['text']), '<p><hr>');
+            $str = str_replace("<p></p>", "", $str);
+            $parts = explode("<hr>", $str);
 
             foreach ($parts as $item) {
+                if (empty($item))
+                    continue;
+                
                 $part = new Parts();
                 $part->docs_id = $model->docs->id;
                 $part->chapter_id = $model->id;

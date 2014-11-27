@@ -1,8 +1,8 @@
-<div class="col-md-6 post">
-    <h2><a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>"><?= $data->title; ?></a></h2>
+<div class="col-md-4 post">
+    <h3><a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>"><?= $data->title; ?></a></h3>
     <h4><?= $data->title_en; ?></h4>
     <div class="col-md-4">
-        <img src="<?= $data->thumb ? '/thumbs' . Y::getDir($data->date) . $data->thumb : '/thubms/noimage.jpg'; ?>" style="width: 100%; max-width: 300px;" />
+        <img src="<?= $data->thumb ? '/thumbs' . Y::getDir($data->date) . $data->thumb : '/thubms/noimage.jpg'; ?>" style="float: left; width: 100%; max-width: 300px;" />
     </div>
     <div class="col-md-8 form-horizontal">
         <div class="form-group">
@@ -29,7 +29,7 @@
         <div class="form-group">
 
             <div class="col-xs-12">
-                <?= $data->text; ?>
+                <?= Y::cut($data->text); ?>
             </div>
         </div>
 

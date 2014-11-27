@@ -9,7 +9,22 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<h1>Разбивка документа на главы</h1>
+<h1 class="text-center">Разбивка документа на главы</h1>
+
+<div class="col-md-6 col-lg-offset-3"> 
+    <!-- START WARNING PANEL -->
+    <div class="panel panel-warning">
+        <div class="panel-heading ui-draggable-handle">
+            <h3 class="panel-title">Инструкция</h3>
+        </div>
+        <div class="panel-body">
+            <li>Чтобы разбить главу на абзацы, поместите курсор в конец предполагаемой главы и нажмите на панели инструментов кнопку "Горизонтальная линейка".</li>
+            <p><img class="text-center" src="/bootstrap/img/line.png" style="border: 1px solid #777" /></p>
+            <li>После окончания разбития текста на абзацы ражмите кнопку "Сохранить".</li>
+        </div>                          
+    </div>                        
+    <!-- END DEFAULT PANEL -->
+</div>
 
 <div class="col-md-10 col-md-offset-1">
 
@@ -33,7 +48,7 @@ $this->breadcrumbs = array(
     $this->widget('ImperaviRedactorWidget', array(
         // You can either use it for model attribute
         'model' => '',
-        'value' => file_get_contents(Yii::app()->request->getBaseUrl(true).'/documents' . Y::getDir($model->date) . $model->path),
+        'value' => $model->path ? file_get_contents(Yii::app()->request->getBaseUrl(true) . '/documents' . Y::getDir($model->date) . $model->path) : '',
         'attribute' => 'my_field',
         // or just for input field
         'name' => 'Chapter[text]',

@@ -110,11 +110,9 @@
                 <div class="page-content-wrap">
 
                     <!-- START WIDGETS -->                    
-                    <div class="row">
-                        <?php echo $content; ?>
-                        <div class="clear"></div>
-                        <div class="col-md-12"><?php Y::stats(); ?></div>
-                    </div>
+                    <?php echo $content; ?>
+                    <div class="clear"></div>
+                    <div class="col-md-12"><?php Y::stats(); ?></div>
                     <!-- END WIDGETS -->                    
 
 

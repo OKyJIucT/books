@@ -17,6 +17,24 @@
  */
 class Chapter extends CActiveRecord {
 
+    public function behaviors() {
+        return array(
+            'PurifyText' => array(
+                'class' => 'DPurifyTextBehavior',
+                'sourceAttribute' => 'text',
+                'destinationAttribute' => 'text',
+                // 'enableMarkdown'=>true,
+                'purifierOptions' => array(
+                    'AutoFormat.RemoveEmpty' => true,
+                    'HTML.Allowed' => 'p,ul,li,b,i,a[href]',
+                    'Core.EscapeInvalidTags' => true,
+                ),
+            ),
+        );
+    }
+    
+    public $text;
+
     /**
      * @return string the associated database table name
      */
@@ -62,7 +80,7 @@ class Chapter extends CActiveRecord {
             'docs_id' => 'Docs',
             'name' => 'Название главы',
             'name_en' => 'Оригинальное название',
-            'path' => 'Путь к файлу',
+            'text' => 'TXT файл с главой',
             'user_id' => 'ID пользователя',
             'date' => 'Дата добавления',
         );
