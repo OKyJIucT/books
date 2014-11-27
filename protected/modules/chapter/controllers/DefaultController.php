@@ -107,7 +107,6 @@ class DefaultController extends Controller {
             }
 
             if ($model->save()) {
-                C::clear('doc_' . $id);
                 $this->redirect(array('/chapter/default/update', 'id' => $model->id));
             }
         }
@@ -152,8 +151,6 @@ class DefaultController extends Controller {
 
             $model->attributes = $_POST['Chapter'];
             if ($model->save()) {
-                $cacheId = C::prefix('chapters', $id);
-                C::delete($cacheId);
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -170,7 +167,6 @@ class DefaultController extends Controller {
      */
     public function actionDelete($id) {
         $this->loadModel($id)->delete();
-        C::clear('chapter_' . $id);
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -198,21 +194,6 @@ class DefaultController extends Controller {
      * @throws CHttpException
      */
     public function loadModel($id) {
-
-//        $cacheId = C::prefix('chapters', $id);
-//
-//        $model = C::get($cacheId);
-//        if ($model === false) {
-//            $model = Chapter::model()->with('docs')->findByPk($id);
-//
-//            if (!$model)
-//                Y::error(404);
-//
-//            C::set($cacheId, $model, '', new Tags('chapterItem', 'chapter_' . $id));
-//        }
-//
-//        return $model;
-
         $model = Chapter::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');

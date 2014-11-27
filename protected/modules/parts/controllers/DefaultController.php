@@ -64,7 +64,14 @@ class DefaultController extends Controller {
                 $version->hash = Y::getHash();
                 $version->save();
             }
+            
+            $criteria = new CDbCriteria();
+            $criteria->condition = 'id = :id';
+            $criteria->params = array(':id' => $part_id);
 
+            $parts = Parts::model()->find($criteria);
+            
+            C::clear('chapter_' . $parts->chapter_id);
 
             echo CHtml::encode('Сохранено');
             // Завершаем приложение

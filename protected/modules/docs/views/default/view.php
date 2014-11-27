@@ -39,23 +39,21 @@ $this->breadcrumbs = array(
         </div>
     </div>
 
-    <?= $model->text; ?>
+<?= $model->text; ?>
 
     <div class="clearfix"></div>
 
     <div class="btn-group mtop mbottom">
         <a href="<?= Y::url('/chapter/default/create', array('docs' => $model->id)); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Добавить главу</a>
-        <?php if (Y::hasAccess('administrator')) : ?>
+<?php if (Y::hasAccess('administrator')) : ?>
             <a href="<?= Y::url('/chapter/default/admin'); ?>" class="btn btn-warning"><i class="fa fa-cogs"></i> Управление</a>
-        <?php endif; ?>   
+<?php endif; ?>   
     </div>
 
-    <?php foreach ($model->chapters as $chapter) : ?>
+        <?php foreach ($model->chapters as $chapter) : ?>
         <h4>
-            <a href="<?= Y::url('/chapter/default/view', array('id' => $chapter->id)); ?>"><?= $chapter->name . ' (' . $chapter->name_en . ')'; ?></a>
+            <a href="<?= Y::url('/chapter/default/view', array('id' => $chapter->id)); ?>"><?= $chapter->name . ' (' . $chapter->name_en . ')'; ?></a> Переведено: <?= Y::getProcess($chapter->id); ?> из <?= count($chapter->parts); ?>
         </h4>
-
-
     <?php endforeach; ?>
 
 </div>

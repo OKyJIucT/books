@@ -789,7 +789,7 @@ class Y {
     public static function cut($string, $length = 400) {
         if (mb_strlen($string) < $length)
             return $string;
-        
+
         $string = strip_tags($string);
 
         $string = mb_substr($string, 0, $length);
@@ -799,6 +799,44 @@ class Y {
         $string = mb_substr($string, 0, strrpos($string, ' '));
 
         return $string . "...";
+    }
+
+    /**
+     * Считаем, сколько абзацев переведено
+     * @param type $chapter
+     * @return type
+     */
+    public static function getProcess($chapter) {
+        $cacheId = C::prefix('getProcess', $chapter);
+
+        $count = C::get($cacheId);
+        if ($count === false) {
+
+            $criteria = new CDbCriteria();
+            $criteria->condition = 'chapter_id = :chapter_id';
+            $criteria->params = array(':chapter_id' => $chapter);
+
+            $parts = Parts::model()->findAll($criteria);
+
+            $result = array();
+
+            foreach ($parts as $part) {
+                $criteria = new CDbCriteria();
+                $criteria->condition = 'part_id = :part_id';
+                $criteria->params = array(':part_id' => $part->id);
+
+                $version = Version::model()->findAll($criteria);
+
+                if ($version)
+                    $result[$part->id] = $version;
+            }
+
+            $count = count($result);
+
+            C::set($cacheId, $count, '', new Tags('countParts', 'chapter_' . $chapter));
+        }
+
+        return $count;
     }
 
 }

@@ -96,7 +96,6 @@ class DefaultController extends Controller {
             }
 
             if ($model->save()) {
-                C::clear('docsList');
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -119,7 +118,6 @@ class DefaultController extends Controller {
         if (isset($_POST['Docs'])) {
             $model->attributes = $_POST['Docs'];
             if ($model->save())
-                C::clear('docsList');
                 $this->redirect(array('view', 'id' => $model->id));
         }
 
@@ -166,19 +164,7 @@ class DefaultController extends Controller {
      * @throws CHttpException
      */
     public function loadModel($id) {
-
-        $cacheId = C::prefix('docs', $id);
-
-        $model = C::get($cacheId);
-        if ($model === false) {
-            $model = Docs::model()->with('user', 'chapters')->findByPk($id);
-
-            if (!$model)
-                Y::error(404);
-
-            C::set($cacheId, $model, '', new Tags('docItem', 'doc_' . $id));
-        }
-
+        $model = Docs::model()->with('user', 'chapters')->findByPk($id);
         return $model;
     }
 
