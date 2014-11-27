@@ -29,7 +29,8 @@ $this->breadcrumbs = array(
         ?>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-5 number-mother">
+        <span class="number">#<?= $index + 1 + Yii::app()->request->getParam('Parts_page') * 10; ?></span>
         <?php
         if ($data->versions) {
             $my = 0;

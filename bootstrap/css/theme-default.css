@@ -267,3 +267,6 @@
 
 .btn-translate-left {position: absolute; bottom: 0px; left: 0px; z-index: 1;}
 .btn-translate-right {position: absolute; bottom: 0px; right: 0px; z-index: 1;}
+
+.number-mother {position: relative}
+.number {position: absolute; color: #C7C7C7; font-size: 16px;font-weight: bold;z-index: 1;left: 20px;}
