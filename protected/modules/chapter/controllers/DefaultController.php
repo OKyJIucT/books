@@ -199,23 +199,24 @@ class DefaultController extends Controller {
      */
     public function loadModel($id) {
 
-        $cacheId = C::prefix('chapters', $id);
-
-        $model = C::get($cacheId);
-        if ($model === false) {
-            $model = Chapter::model()->with('docs')->findByPk($id);
-
-            if (!$model)
-                Y::error(404);
-
-            C::set($cacheId, $model, '', new Tags('chapterItem', 'chapter_' . $id));
-        }
-
-        return $model;
+//        $cacheId = C::prefix('chapters', $id);
+//
+//        $model = C::get($cacheId);
+//        if ($model === false) {
+//            $model = Chapter::model()->with('docs')->findByPk($id);
+//
+//            if (!$model)
+//                Y::error(404);
+//
+//            C::set($cacheId, $model, '', new Tags('chapterItem', 'chapter_' . $id));
+//        }
+//
+//        return $model;
 
         $model = Chapter::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
+        
         return $model;
     }
 
