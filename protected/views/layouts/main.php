@@ -1,9 +1,12 @@
+<?php
+$v = 100;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
-        <?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl . '/bootstrap/css/theme-default.css'); ?>
+        <?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl . '/bootstrap/css/theme-default.css?'.$v); ?>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <?php
         Yii::app()->clientScript->registerScriptFile(
