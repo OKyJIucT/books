@@ -7,7 +7,8 @@ $this->breadcrumbs = array(
 ?>
 
 <div class="view">
-    <div class="col-md-5">
+    <div class="col-md-5 number-mother">
+        <span class="number">#<?= $index + 1 + Yii::app()->request->getParam('Parts_page') * 10; ?></span>
         <?php
         $this->widget('ImperaviRedactorWidget', array(
             // You can either use it for model attribute
@@ -29,8 +30,7 @@ $this->breadcrumbs = array(
         ?>
     </div>
 
-    <div class="col-md-5 number-mother">
-        <span class="number">#<?= $index + 1 + Yii::app()->request->getParam('Parts_page') * 10; ?></span>
+    <div class="col-md-5">
         <?php
         if ($data->versions) {
             $my = 0;
