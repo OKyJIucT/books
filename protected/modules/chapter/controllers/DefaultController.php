@@ -152,7 +152,8 @@ class DefaultController extends Controller {
 
             $model->attributes = $_POST['Chapter'];
             if ($model->save()) {
-                C::clear('chapter_' . $id);
+                $cacheId = C::prefix('chapters', $id);
+                C::delete($cacheId);
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
