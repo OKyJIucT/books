@@ -14,10 +14,9 @@ $this->breadcrumbs = array(
 </div>
 
 <div class="col-md-2 post">
-    <img src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>" style="width: 100%; max-width: 300px;" />
+    <img class="img-responsive mbottom" src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>" />
 </div>
 <div class="col-md-10 form-horizontal">
-
     <div class="form-group">
         <label class="col-md-2 control-label">Автор:</label>
         <div class="col-md-10">
@@ -38,19 +37,19 @@ $this->breadcrumbs = array(
             <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->email; ?></a></p>
         </div>
     </div>
-
-<?= $model->text; ?>
+    
+    <?= $model->text; ?>
 
     <div class="clearfix"></div>
 
     <div class="btn-group mtop mbottom">
         <a href="<?= Y::url('/chapter/default/create', array('docs' => $model->id)); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Добавить главу</a>
-<?php if (Y::hasAccess('administrator')) : ?>
+        <?php if (Y::hasAccess('administrator')) : ?>
             <a href="<?= Y::url('/chapter/default/admin'); ?>" class="btn btn-warning"><i class="fa fa-cogs"></i> Управление</a>
-<?php endif; ?>   
+        <?php endif; ?>   
     </div>
 
-        <?php foreach ($model->chapters as $chapter) : ?>
+    <?php foreach ($model->chapters as $chapter) : ?>
         <h4>
             <a href="<?= Y::url('/chapter/default/view', array('id' => $chapter->id)); ?>"><?= $chapter->name . ' (' . $chapter->name_en . ')'; ?></a> Переведено: <?= Y::getProcess($chapter->id); ?> из <?= count($chapter->parts); ?>
         </h4>
