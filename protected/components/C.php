@@ -78,6 +78,10 @@ class C {
                 return 'chapters::view::' . md5($id) . '::' . $id;
                 break;
 
+            case 'getProcess':
+                return 'getProcess::view::' . md5($id) . '::' . $id;
+                break;
+
             default:
                 break;
         }

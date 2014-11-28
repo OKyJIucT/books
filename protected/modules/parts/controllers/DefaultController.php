@@ -47,17 +47,19 @@ class DefaultController extends Controller {
         if (Y::isAjaxRequest()) {
 
             $part_id = intval($_POST['part_id']);
+         
+            $text = strip_tags(array_shift($_POST['translate']), '<p>');
 
             if (Version::partExist(Yii::app()->user->id, $part_id)) {
                 $criteria = new CDbCriteria();
                 $criteria->condition = 'user_id = :user_id AND part_id = :part_id';
                 $criteria->params = array(':user_id' => Yii::app()->user->id, ':part_id' => $part_id);
-                $attributes = array('text' => array_shift($_POST['translate']));
+                $attributes = array('text' => $text);
                 
                 Version::model()->updateAll($attributes, $criteria);
             } else {
                 $version = new Version();
-                $version->text = array_shift($_POST['translate']);
+                $version->text = $text;
                 $version->user_id = Yii::app()->user->id;
                 $version->date = time();
                 $version->part_id = $part_id;

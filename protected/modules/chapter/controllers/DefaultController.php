@@ -94,21 +94,28 @@ class DefaultController extends Controller {
             $model->user_id = Yii::app()->user->id;
             $model->date = time();
 
-            $thumbs = CUploadedFile::getInstancesByName('text');
-            if (isset($thumbs) && count($thumbs) > 0) {
-                // go through each uploaded image
-                foreach ($thumbs as $thumb => $file) {
-                    $ext = array_pop(explode('.', $file->name));
-                    $name = md5($file->name . time() . rand(100000, 9999999) . date("r", (time() - rand(100000, 9999999))));
-                    if ($file->saveAs(Y::getDir(false, 'documents') . $name . '.' . $ext)) {
-                        $model->path = $name . '.' . $ext;
-                    }
-                }
+            $model->save();
+                
+            $str = strip_tags(htmlspecialchars_decode($_POST['Chapter']['text']), '<p><hr>');
+            $str = str_replace("<p></p>", "", $str);
+            $parts = explode("<hr>", $str);
+
+            foreach ($parts as $item) {
+                if (empty($item))
+                    continue;
+
+                $part = new Parts();
+                $part->docs_id = $doc->id;
+                $part->chapter_id = $model->id;
+                $part->user_id = Yii::app()->user->id;
+                $part->date = time();
+                $part->hash = Y::getHash();
+                $part->text = $item;
+
+                $part->save();
             }
 
-            if ($model->save()) {
-                $this->redirect(array('/chapter/default/update', 'id' => $model->id));
-            }
+            $this->redirect(array('/chapter/default/view', 'id' => $model->id));
         }
 
         $this->render('create', array(
@@ -197,7 +204,7 @@ class DefaultController extends Controller {
         $model = Chapter::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
-        
+
         return $model;
     }
 

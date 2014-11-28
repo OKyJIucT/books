@@ -45,44 +45,31 @@
         </div>
     </div>
 
-    <?php /*
-      $this->widget('ImperaviRedactorWidget', array(
-      // You can either use it for model attribute
-      'model' => '',
-      'attribute' => 'my_field',
-      // or just for input field
-      'name' => 'Chapter[text]',
-      // Some options, see http://imperavi.com/redactor/docs/
-      'options' => array(
-      'lang' => 'ru',
-      'toolbarFixed' => true,
-      'minHeight' => 300,
-      'maxHeight' => 800
-      ),
-      'htmlOptions' => array(
-      'row' => '12',
-      ),
-      )); */
-    ?>
-
     <div class="form-group">
-        <?php echo $form->labelEx($model, 'text', array('class' => "col-md-3 control-label")); ?>
-        <div class="col-md-9">
+        <div class="col-md-12">
             <?php
-            $this->widget('CMultiFileUpload', array(
-                'model' => $model,
-                'name' => 'text',
-                'accept' => 'txt',
-                'max' => 1,
-                'remove' => Yii::t('ui', 'Удалить'),
-                'denied' => 'Запрещенный тип файла',
+            $this->widget('ImperaviRedactorWidget', array(
+                // You can either use it for model attribute
+                'model' => '',
+                'value' => '',
+                'attribute' => 'my_field',
+                // or just for input field
+                'name' => 'Chapter[text]',
+                // Some options, see http://imperavi.com/redactor/docs/
+                'options' => array(
+                    'lang' => 'ru',
+                    'toolbarFixed' => true,
+                    'minHeight' => 400,
+                    'maxHeight' => 400,
+                    'shortcuts' => true
+                ),
                 'htmlOptions' => array(
-                    'class' => "btn btn-success"
+                    'row' => '12',
                 ),
             ));
             ?>
-            <?php echo $form->error($model, 'text'); ?>
         </div>
+
     </div>
 
     <div class="form-group">

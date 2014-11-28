@@ -827,7 +827,7 @@ class Y {
 
                 $version = Version::model()->findAll($criteria);
 
-                if ($version)
+                if ($version && $version != '')
                     $result[$part->id] = $version;
             }
 
