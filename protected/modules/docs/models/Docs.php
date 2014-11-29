@@ -26,7 +26,7 @@ class Docs extends CActiveRecord {
                 // 'enableMarkdown'=>true,
                 'purifierOptions' => array(
                     'AutoFormat.RemoveEmpty' => true,
-                    'HTML.Allowed' => 'p,ul,li,b,i,a[href]',
+                    'HTML.Allowed' => 'p',
                     'Core.EscapeInvalidTags' => true,
                 ),
             ),
@@ -48,11 +48,11 @@ class Docs extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('title, title_en, author, text, user_id, date', 'required'),
-            array('user_id, date', 'numerical', 'integerOnly' => true),
+            array('user_id, date, type', 'numerical', 'integerOnly' => true),
             array('title, title_en, author', 'length', 'max' => 255),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, title, title_en, author, thumb, text, user_id, date', 'safe', 'on' => 'search'),
+            array('id, title, title_en, author, thumb, text, user_id, date, type', 'safe', 'on' => 'search'),
         );
     }
 
@@ -82,6 +82,7 @@ class Docs extends CActiveRecord {
             'text' => 'Краткое описание',
             'user_id' => 'Автор',
             'date' => 'Дата создания',
+            'type' => 'Тип документа',
         );
     }
 
@@ -110,6 +111,7 @@ class Docs extends CActiveRecord {
         $criteria->compare('text', $this->text, true);
         $criteria->compare('user_id', $this->user_id);
         $criteria->compare('date', $this->date);
+        $criteria->compare('type', $this->type);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

@@ -27,7 +27,7 @@ class Parts extends CActiveRecord {
                 // 'enableMarkdown'=>true,
                 'purifierOptions' => array(
                     'AutoFormat.RemoveEmpty' => true,
-                    'HTML.Allowed' => 'p,ul,li,b,i,a[href]',
+                    'HTML.Allowed' => 'p',
                     'Core.EscapeInvalidTags' => true,
                 ),
             ),

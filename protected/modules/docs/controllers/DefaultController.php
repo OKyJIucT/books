@@ -58,7 +58,7 @@ class DefaultController extends Controller {
     public function actionView($id) {
 
         $model = $this->loadModel($id);
-        
+
         $this->pageTitle = $model->title;
 
         $this->render('view', array(
@@ -165,6 +165,8 @@ class DefaultController extends Controller {
      */
     public function loadModel($id) {
         $model = Docs::model()->with('user', 'chapters')->findByPk($id);
+        if ($model === null)
+            Y::error(404);
         return $model;
     }
 

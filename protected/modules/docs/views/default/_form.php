@@ -45,6 +45,15 @@
             <?php echo $form->error($model, 'author'); ?>
         </div>
     </div>
+    
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'type', array('class' => "col-md-3 control-label")); ?>
+        <div class="col-md-9">
+            <?php echo $form->dropDownList($model, 'type', array('0' => "Публичный", '1' => "Приватный"), array('class' => 'form-control select selectpicker')); ?>
+            <?php echo $form->error($model, 'type'); ?>
+            
+        </div>
+    </div>
 
     <div class="form-group">
         <label class="col-md-3 control-label">Обложка</label>

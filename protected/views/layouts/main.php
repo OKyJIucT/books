@@ -161,10 +161,12 @@ $v = 100;
         <script type="text/javascript" src="/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
 
         <script type="text/javascript" src="/bootstrap/js/plugins/morris/raphael-min.js"></script>
+        
+        <script type="text/javascript" src="/bootstrap/js/plugins/bootstrap/bootstrap-select.js"></script>
         <!-- END THIS PAGE PLUGINS-->        
 
         <!-- START TEMPLATE -->
-        <script type="text/javascript" src="/bootstrap/js/plugins.js"></script>        
+        <script type="text/javascript" src="/bootstrap/js/plugins.js"></script>       
         <script type="text/javascript" src="/bootstrap/js/actions.js"></script>
         <!-- END TEMPLATE -->
         <!-- END SCRIPTS -->         
