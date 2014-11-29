@@ -105,6 +105,12 @@ class DefaultController extends Controller {
             }
 
             if ($model->save()) {
+                $access = new Access();
+                $access->user_id = Yii::app()->user->id;
+                $access->docs_id = $model->id;
+                $access->role = 1;
+                $access->save();
+                
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
