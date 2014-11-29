@@ -6,7 +6,7 @@ $v = 100;
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
-        <?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl . '/bootstrap/css/theme-default.css?'.$v); ?>
+        <?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl . '/bootstrap/css/theme-default.css?' . $v); ?>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <?php
         Yii::app()->clientScript->registerScriptFile(
@@ -45,7 +45,7 @@ $v = 100;
                             </li>
                             <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="<?= Y::url('/docs/default/index'); ?>"><span class="fa fa-list"></span> Все переводы</a> 
-                                <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
+                                <div class="informer informer-warning"><?= Y::countDocs(); ?></div>
                             </li>  
                             <?php if (Y::hasAccess('administrator')) : ?>
                                 <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'admin' ? 'class="active"' : ''; ?>>
@@ -84,15 +84,15 @@ $v = 100;
                             </li>
                             <li <?php echo Yii::app()->controller->module->id == 'users' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="<?= Y::url('/'); ?>"><span class="fa fa-pencil"></span> Мои переводы</a> 
-                                <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
+                                <div class="informer informer-warning"><?php echo Y::countDocs(); ?></div>
                             </li>
                             <li <?php echo Yii::app()->controller->module->id == 'users' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="<?= Y::url('/'); ?>"><span class="fa fa-star"></span> Закладки</a> 
-                                <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
+                                <div class="informer informer-warning"><?php echo Y::countDocs(); ?></div>
                             </li>
                             <li <?php echo Yii::app()->controller->module->id == 'users' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
                                 <a href="<?= Y::url('/users/default/view', array('id' => Yii::app()->user->id)); ?>"><span class="fa fa-cogs"></span> Настройки</a> 
-                                <div class="informer informer-warning"><?php echo Docs::countDocs(); ?></div>
+                                <div class="informer informer-warning"><?php echo Y::countDocs(); ?></div>
                             </li>
                         </ul>
                     </li> 
@@ -161,7 +161,7 @@ $v = 100;
         <script type="text/javascript" src="/bootstrap/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
 
         <script type="text/javascript" src="/bootstrap/js/plugins/morris/raphael-min.js"></script>
-        
+
         <script type="text/javascript" src="/bootstrap/js/plugins/bootstrap/bootstrap-select.js"></script>
         <!-- END THIS PAGE PLUGINS-->        
 

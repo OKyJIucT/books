@@ -26,7 +26,7 @@ class DefaultController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index', 'view', 'create'),
+                'actions' => array('index', 'view', 'create', 'setting', 'changeType'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -58,12 +58,21 @@ class DefaultController extends Controller {
     public function actionView($id) {
 
         $model = $this->loadModel($id);
-
         $this->pageTitle = $model->title;
 
-        $this->render('view', array(
-            'model' => $model
-        ));
+        $access = Access::check(Yii::app()->user->id, $id);
+
+        if ($access['role'] == '5' || $access['exist'] == false) {
+            $this->render('view_error', array(
+                'model' => $model,
+                'access' => $access
+            ));
+        } else {
+            $this->render('view', array(
+                'model' => $model,
+                'access' => $access
+            ));
+        }
     }
 
     /**
@@ -126,6 +135,20 @@ class DefaultController extends Controller {
         ));
     }
 
+    public function actionSetting($id) {
+        $model = $this->loadModel($id);
+        $this->pageTitle = $model->title;
+
+        $access = Access::check(Yii::app()->user->id, $id);
+
+        if ($access['role'] == '1' || $model->type == 0) {
+            $this->render('setting', array(
+                'model' => $model,
+            ));
+        } else
+            Y::error(403);
+    }
+
     /**
      * Deletes a particular model.
      * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -164,7 +187,7 @@ class DefaultController extends Controller {
      * @throws CHttpException
      */
     public function loadModel($id) {
-        $model = Docs::model()->with('user', 'chapters')->findByPk($id);
+        $model = Docs::model()->with('user', 'chapters', 'accesses')->findByPk($id);
         if ($model === null)
             Y::error(404);
         return $model;
@@ -178,6 +201,28 @@ class DefaultController extends Controller {
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'docs-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
+        }
+    }
+
+    public function actionChangeType() {
+        if (Y::isAjaxRequest()) {
+            $docs_id = intval($_POST['docs_id']);
+            $docs = Docs::model()->findByPk($docs_id);
+
+            $user_id = Yii::app()->user->id;
+
+            if ($user_id == $docs->user_id || Y::hasAccess('administrator')) {
+                $criteria = new CDbCriteria();
+                $criteria->condition = 'id = :id';
+                $criteria->params = array(':id' => $docs->id);
+                $attributes = array(
+                    'type' => $docs->type == 1 ? 0 : 1
+                );
+                Docs::model()->updateAll($attributes, $criteria);
+
+                echo 'success';
+            } else
+                echo 'error';
         }
     }
 

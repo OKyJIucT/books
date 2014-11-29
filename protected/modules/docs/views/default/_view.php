@@ -1,5 +1,8 @@
 <div class="col-md-4 post">
-    <h3><a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>"><?= $data->title; ?></a></h3>
+    <h3>
+        <a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>"><?= $data->title; ?></a>
+        <?php if($data->type) echo '<span class="fa fa-lock text-danger" data-toggle="tooltip" data-placement="right" data-original-title="Приватный документ"></span>'; ?>
+    </h3>
     <h4><?= $data->title_en; ?></h4>
     <div class="row">
         <div class="col-md-4">
@@ -23,7 +26,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">Добавил:</label>
                 <div class="col-md-8">
-                    <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $data->user->id)); ?>"><?= $data->user->email; ?></a></p>
+                    <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $data->user->id)); ?>"><?= $data->user->username; ?></a></p>
                 </div>
             </div>
         </div>

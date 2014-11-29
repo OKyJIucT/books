@@ -54,6 +54,11 @@ class DefaultController extends Controller {
      */
     public function actionView($id) {
 
+        $chapter = Chapter::model()->findByPk($id);
+        $access = Access::check(Yii::app()->user->id, $chapter->docs_id);
+        if ($access['role'] == '5')
+            Y::error(403);
+
         $array = array(
             'criteria' => array(
                 'condition' => 'chapter_id = :chapter_id',
@@ -95,7 +100,7 @@ class DefaultController extends Controller {
             $model->date = time();
 
             $model->save();
-                
+
             $str = strip_tags(htmlspecialchars_decode($_POST['Chapter']['text']), '<p><hr>');
             $str = str_replace("<p></p>", "", $str);
             $parts = explode("<hr>", $str);

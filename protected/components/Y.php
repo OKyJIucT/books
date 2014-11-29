@@ -695,8 +695,19 @@ class Y {
                         ->selectCollection($name);
     }
 
-    public static function sendMail($to, $subject, $message) {
-        SendMail::send($to, $subject, $message);
+    public static function sendMail($to, $subject, $message, $view = 'info') {
+        $mail = new YiiMailer();
+        $mail->setFrom(Yii::app()->params['fromMail'], 'Bookswood.ru');
+        $mail->setTo($to);
+        $mail->setSubject($subject);
+        $mail->setData(array('message' => $message));
+        $mail->setView($view);
+        
+        if ($mail->send()) {
+            return 'success';
+        } else {
+            return 'error';
+        }
     }
 
     public static function isAdmin() {
@@ -837,6 +848,25 @@ class Y {
         }
 
         return $count;
+    }
+
+    /**
+     * Счетчик количества документов
+     * @return type
+     */
+    public static function countDocs() {
+        $cacheId = C::prefix('countDocs');
+
+        $count = C::get($cacheId);
+        if ($count === false) {
+            // импортируем модель документа
+            Yii::import('application.modules.docs.models.Docs');
+
+            $count = Docs::model()->count();
+            C::set($cacheId, $count);
+        }
+
+        return $count ? $count : 0;
     }
 
 }

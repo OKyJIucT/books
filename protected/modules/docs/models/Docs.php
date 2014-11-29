@@ -63,7 +63,7 @@ class Docs extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'accesses' => array(self::HAS_MANY, 'Access', 'docs_id'),
+            'accesses' => array(self::HAS_MANY, 'Access', 'docs_id', 'order'=>'role ASC'),
             'chapters' => array(self::HAS_MANY, 'Chapter', 'docs_id'),
             'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
             'parts' => array(self::HAS_MANY, 'Parts', 'docs_id'),
@@ -146,29 +146,13 @@ class Docs extends CActiveRecord {
     }
 
     /**
-     * Количество документов для перевода
-     * @return type
-     */
-    public static function countDocs() {
-        $cacheId = C::prefix('countDocs');
-
-        $count = C::get($cacheId);
-        if ($count === false) {
-            $count = Docs::model()->count();
-            C::set($cacheId, $count);
-        }
-
-        return $count ? $count : 0;
-    }
-
-    /**
      * Очищаем кеш после каждого добавления
      * @return type
      */
     public function afterSave() {
-        if ($this->isNewRecord) {
+        if ($this->isNewRecord) { // обнуляем счетчик
             C::delete(C::prefix('countDocs'));
-        } else {
+        } else { // кешируем новую версию документа
             C::delete(C::prefix('docs', $this->id));
         }
         return parent::afterSave();

@@ -1,6 +1,7 @@
 <?php
 $this->pageTitle = $data->docs->title . ' - ' . $data->chapter->name;
 $this->breadcrumbs = array(
+    'Документы' => Y::url('/docs/default/index'),
     $data->docs->title => Y::url('/docs/default/view', array('id' => $data->docs->id)),
     $data->chapter->name,
 );

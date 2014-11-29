@@ -55,7 +55,7 @@ class SiteController extends Controller {
             Yii::app()->cache->set('test', mt_rand(1, 99999), 3, new Tags('tag1', 'tag2'));
             $data = Yii::app()->cache->get('test');
         }
-        
+
 
 //        $mail = new YiiMailer();
 //        $mail->setFrom(Yii::app()->params['fromMail'], 'John Doe');
@@ -125,6 +125,8 @@ class SiteController extends Controller {
 
                 $auth = new LoginForm;
                 $auth->attributes = $_POST['Users'];
+
+                Y::sendMail($_POST['Users']['email'], 'Регистрация на сайте Bookswood.ru', '<p>Поздравляем с регистрацией, ' . $_POST['Users']['username'] . '!</p> <p>При возникновении вопросов обращайтесь, пожалуйста, в службу поддержки.<p><p>Приятной работы!</p>');
 
                 if ($auth->validate() && $auth->login())
                     $this->redirect('/');
