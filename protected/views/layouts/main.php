@@ -115,7 +115,7 @@ $v = 100;
                     <!-- START WIDGETS -->                    
                     <?php echo $content; ?>
                     <div class="clear"></div>
-                    <div class="col-md-12"><?php Y::stats(); ?></div>
+                    <div class="col-lg-12"><?php Y::stats(); ?></div>
                     <!-- END WIDGETS -->                    
 
 

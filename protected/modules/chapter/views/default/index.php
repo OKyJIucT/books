@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-lg-12">
     <h1><?= $dataProvider->getData()[0]->docs->title . ' - ' . $dataProvider->getData()[0]->chapter->name; ?></h1>
 </div>
 
@@ -9,7 +9,7 @@ $this->widget('zii.widgets.CListView', array(
     'dataProvider' => $dataProvider,
     'itemView' => '_view',
     'ajaxUpdate' => false,
-    'template' => "<div class='col-md-12'>{pager}<div class='clearfix'></div>{items}<div class='clearfix'></div>{pager}</div>",
+    'template' => "<div class='col-lg-12'>{pager}<div class='clearfix'></div>{items}<div class='clearfix'></div>{pager}</div>",
     'pager' => array(
         'maxButtonCount' => '10',
         'prevPageLabel' => '',
