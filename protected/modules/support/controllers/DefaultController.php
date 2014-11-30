@@ -90,7 +90,7 @@ class DefaultController extends Controller {
             );
         } else {
             $attributes = array(
-                'read' => 1
+                'user_read' => 1
             );
         }
 
