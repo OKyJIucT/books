@@ -4,34 +4,34 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class="col-lg-12">
+<div class="col-md-12">
 
-    <div class="col-lg-6">
+    <div class="col-md-6">
         <h2>Данные профиля</h2>
         <form class="form-horizontal" role="form">                                    
             <div class="form-group">
-                <label class="col-lg-3 control-label">Ник</label>
-                <div class="col-lg-9">
+                <label class="col-md-3 control-label">Ник</label>
+                <div class="col-md-9">
                     <p class="form-control-static"><?= $user->username; ?></p>
                 </div>
             </div>          
             <?php if ($user->id == Yii::app()->user->id || Y::hasAccess('administrator')) : ?>
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">Email</label>
-                    <div class="col-lg-9">
+                    <label class="col-md-3 control-label">Email</label>
+                    <div class="col-md-9">
                         <p class="form-control-static"><?= $user->email; ?></p>
                     </div>
                 </div> 
             <?php endif; ?>      
             <div class="form-group">
-                <label class="col-lg-3 control-label">Дата регистрации</label>
-                <div class="col-lg-9">
+                <label class="col-md-3 control-label">Дата регистрации</label>
+                <div class="col-md-9">
                     <p class="form-control-static"><?= date('d.m.Y', $user->reg_date); ?></p>
                 </div>
             </div> 
         </form>
     </div>
-    <div class="col-lg-6">
+    <div class="col-md-6">
         <?php if ($user->id == Yii::app()->user->id || Y::hasAccess('administrator')) : ?>
             <h2>Коды приглашений</h2>
             <?php

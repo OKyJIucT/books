@@ -10,32 +10,32 @@ $this->breadcrumbs = array(
 
 
 
-<div class="col-lg-12">
+<div class="col-md-12">
     <h2><?= $model->title; ?> <?php if ($model->type) echo '<span class="fa fa-lock text-danger" data-toggle="tooltip" data-placement="right" data-original-title="Приватный документ"></span>'; ?></h2>
     <h4><?= $model->title_en; ?></h4>
 </div>
 
-<div class="col-lg-2 post">
-    <img class="img-responsive mbottom" src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>" />
+<div class="col-md-2 post">
+    <img class="img-responsive mbottom img-text" src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>" />
 </div>
-<div class="col-lg-6 form-horizontal">
+<div class="col-md-6 form-horizontal">
     <div class="form-group">
-        <label class="col-lg-3 control-label">Автор:</label>
-        <div class="col-lg-9">
+        <label class="col-md-3 control-label">Автор:</label>
+        <div class="col-md-9">
             <p class="form-control-static"><?= $model->author; ?></p>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-lg-3 control-label">Добавлено:</label>
-        <div class="col-lg-9">
+        <label class="col-md-3 control-label">Добавлено:</label>
+        <div class="col-md-9">
             <p class="form-control-static"><?= date("d.m.Y", $model->date); ?></p>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-lg-3 control-label">Добавил:</label>
-        <div class="col-lg-9">
+        <label class="col-md-3 control-label">Добавил:</label>
+        <div class="col-md-9">
             <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->username; ?></a></p>
         </div>
     </div>
@@ -58,7 +58,7 @@ $this->breadcrumbs = array(
     <?php endforeach; ?>
 
 </div>
-<div class="col-lg-4">
+<div class="col-md-4">
     <?php
     if ($model->type == 0) {
         echo 'Данный документ является публичным - доступ к переводу и добавлению глав есть у каждого пользователя.';

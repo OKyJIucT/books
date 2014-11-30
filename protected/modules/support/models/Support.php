@@ -1,28 +1,32 @@
 <?php
 
 /**
- * This is the model class for table "chapter".
+ * This is the model class for table "support".
  *
- * The followings are the available columns in table 'chapter':
+ * The followings are the available columns in table 'support':
  * @property integer $id
- * @property integer $docs_id
  * @property string $name
- * @property string $name_en
  * @property integer $user_id
- * @property integer $date
+ * @property string $status
+ * @property integer $create
+ * @property integer $last_update
+ * @property string $user_read
+ * @property string $support_read
  *
  * The followings are the available model relations:
- * @property Docs $docs
  * @property Users $user
+ * @property SupportMsg[] $supportMsgs
  */
-class Chapter extends CActiveRecord {
+class Support extends CActiveRecord {
+
+    public $text;
 
     public function behaviors() {
         return array(
             'PurifyText' => array(
                 'class' => 'DPurifyTextBehavior',
-                'sourceAttribute' => 'text',
-                'destinationAttribute' => 'text',
+                'sourceAttribute' => 'name',
+                'destinationAttribute' => 'name',
                 // 'enableMarkdown'=>true,
                 'purifierOptions' => array(
                     'AutoFormat.RemoveEmpty' => true,
@@ -32,14 +36,12 @@ class Chapter extends CActiveRecord {
             ),
         );
     }
-    
-    public $text;
 
     /**
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'chapter';
+        return 'support';
     }
 
     /**
@@ -49,12 +51,13 @@ class Chapter extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('docs_id, name, name_en, user_id, date', 'required'),
-            array('docs_id, user_id, date', 'numerical', 'integerOnly' => true),
-            array('name, name_en', 'length', 'max' => 32),
+            array('name, user_id, status, create, last_update, user_read, support_read', 'required'),
+            array('user_id, create, last_update', 'numerical', 'integerOnly' => true),
+            array('name', 'length', 'max' => 128),
+            array('status, user_read, support_read', 'length', 'max' => 1),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, docs_id, name, name_en, path, user_id, date', 'safe', 'on' => 'search'),
+            array('id, name, user_id, status, create, last_update, user_read, support_read', 'safe', 'on' => 'search'),
         );
     }
 
@@ -65,9 +68,8 @@ class Chapter extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'docs' => array(self::BELONGS_TO, 'Docs', 'docs_id'),
             'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-            'parts' => array(self::HAS_MANY, 'Parts', 'chapter_id'),
+            'supportMsgs' => array(self::HAS_MANY, 'SupportMsg', 'support_id', 'order' => 'date DESC'),
         );
     }
 
@@ -76,13 +78,14 @@ class Chapter extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'ID документа',
-            'docs_id' => 'Docs',
-            'name' => 'Название главы',
-            'name_en' => 'Оригинальное название',
-            'text' => 'TXT файл с главой',
-            'user_id' => 'ID пользователя',
-            'date' => 'Дата добавления',
+            'id' => 'ID',
+            'name' => 'Тема запроса в поддержку',
+            'user_id' => 'User',
+            'status' => 'Status',
+            'create' => 'Create',
+            'last_update' => 'Last Update',
+            'user_read' => 'Read',
+            'support_read' => 'Support Read',
         );
     }
 
@@ -104,12 +107,13 @@ class Chapter extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('docs_id', $this->docs_id);
         $criteria->compare('name', $this->name, true);
-        $criteria->compare('name_en', $this->name_en, true);
-        $criteria->compare('path', $this->path, true);
         $criteria->compare('user_id', $this->user_id);
-        $criteria->compare('date', $this->date);
+        $criteria->compare('status', $this->status, true);
+        $criteria->compare('create', $this->create);
+        $criteria->compare('last_update', $this->last_update);
+        $criteria->compare('user_read', $this->user_read, true);
+        $criteria->compare('support_read', $this->support_read, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -120,10 +124,20 @@ class Chapter extends CActiveRecord {
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!
      * @param string $className active record class name.
-     * @return Chapter the static model class
+     * @return Support the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
+    }
+
+    /**
+     * Очищаем кеш после каждого добавления
+     * @return type
+     */
+    public function afterSave() {
+        C::delete(C::prefix('countTicketsSupport'));
+        C::clear('ticketUser_' . $this->user_id);
+        return parent::afterSave();
     }
 
 }

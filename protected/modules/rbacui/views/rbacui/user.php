@@ -3,9 +3,9 @@
 /* @array $users[] User */
 ?>
 <div class="row">
-    <div class="col-lg-12" style="display:inline-block">
+    <div class="col-md-12" style="display:inline-block">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <table style="margin-bottom:0;"><tr><td>
                             <?php echo CHtml::textField('search', '', array('style' => 'width:215px;')); ?>
                         </td></tr><tr><td>
@@ -15,8 +15,8 @@
                             </form>
                         </td></tr></table>
             </div>
-            <div class="col-lg-7" id="user-info"><hr></div>
-            <div class="col-lg-2">
+            <div class="col-md-7" id="user-info"><hr></div>
+            <div class="col-md-2">
                 <?php
                 echo CHtml::button(Yii::t('RbacuiModule.rbacui', 'Привязать роль'), array('onclick' => 'openDialogAssign(2,"' . $this->createAbsoluteUrl('ajax/itemTypeList') . '");', 'disabled' => true));
                 echo CHtml::button(Yii::t('RbacuiModule.rbacui', 'Отвязать роль'), array('onclick' => 'openDialogRevoke(2,"' . $this->createAbsoluteUrl('ajax/itemTypeList') . '");', 'disabled' => true));

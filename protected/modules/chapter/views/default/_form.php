@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="col-lg-10 col-lg-offset-1">
+<div class="col-md-10 col-md-offset-1">
 
     <?php
     $form = $this->beginWidget('CActiveForm', array(
@@ -23,30 +23,30 @@
     ?>
 
     <div class="form-group form-horizontal">
-        <label class="col-lg-3 control-label">Название документа</label>
-        <div class="col-lg-9">
+        <label class="col-md-3 control-label">Название документа</label>
+        <div class="col-md-9">
             <p class="form-control-static"><?php echo $doc->title; ?></p>
         </div>
     </div>
 
     <div class="form-group">
-        <?php echo $form->labelEx($model, 'name', array('class' => "col-lg-3 control-label")); ?>
-        <div class="col-lg-9">
+        <?php echo $form->labelEx($model, 'name', array('class' => "col-md-3 control-label")); ?>
+        <div class="col-md-9">
             <?php echo $form->textField($model, 'name', array('class' => 'form-control', 'placeholder' => "Название главы")); ?>
             <?php echo $form->error($model, 'name'); ?>
         </div>
     </div>
 
     <div class="form-group">
-        <?php echo $form->labelEx($model, 'name_en', array('class' => "col-lg-3 control-label")); ?>
-        <div class="col-lg-9">
+        <?php echo $form->labelEx($model, 'name_en', array('class' => "col-md-3 control-label")); ?>
+        <div class="col-md-9">
             <?php echo $form->textField($model, 'name_en', array('class' => 'form-control', 'placeholder' => "Название главы")); ?>
             <?php echo $form->error($model, 'name_en'); ?>
         </div>
     </div>
 
     <div class="form-group">
-        <div class="col-lg-12">
+        <div class="col-md-12">
             <?php
             $this->widget('ImperaviRedactorWidget', array(
                 // You can either use it for model attribute
@@ -73,8 +73,8 @@
     </div>
 
     <div class="form-group">
-        <label class="col-lg-3 control-label"></label>
-        <div class="col-lg-9">
+        <label class="col-md-3 control-label"></label>
+        <div class="col-md-9">
             <?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить', array('class' => "btn btn-success")); ?>
         </div>
     </div>

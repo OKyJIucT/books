@@ -10,7 +10,7 @@ $this->breadcrumbs = array(
 
 <h1 class="text-center">Добавление главы</h1>
 
-<div class="col-lg-6 col-lg-offset-3">      
+<div class="col-md-6 col-md-offset-3">      
 
     <!-- START WARNING PANEL -->
     <div class="panel panel-warning">

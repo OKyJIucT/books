@@ -69,6 +69,9 @@ class Users extends CActiveRecord {
             'docs' => array(self::HAS_MANY, 'Docs', 'user_id'),
             'invites' => array(self::HAS_MANY, 'Invites', 'user_id'),
             'parts' => array(self::HAS_MANY, 'Parts', 'user_id'),
+            'supports' => array(self::HAS_MANY, 'Support', 'user_id'),
+            'supportMsgs' => array(self::HAS_MANY, 'SupportMsg', 'user_id'),
+            'versions' => array(self::HAS_MANY, 'Version', 'user_id'),
         );
     }
 

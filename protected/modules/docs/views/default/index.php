@@ -7,7 +7,7 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class="col-lg-12">
+<div class="col-md-12">
     <div class="btn-group">
         <a href="<?= Y::url('/docs/default/create'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Добавить</a>
         <?php if (Y::hasAccess('administrator')) : ?>

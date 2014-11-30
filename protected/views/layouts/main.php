@@ -96,6 +96,10 @@ $v = 100;
                             </li>
                         </ul>
                     </li> 
+                    <li class="pull-right inf <?php echo Yii::app()->controller->module->id == 'support' ? 'hover' : ''; ?>">
+                        <a href="/support"><span class="fa fa-question"></span> <span class="xn-text">Поддержка</span></a>                        
+                        <div class="informer informer-warning"><?= Y::countTickets(); ?></div>
+                    </li> 
                 </ul>
                 <!-- END X-NAVIGATION VERTICAL -->                     
 
@@ -115,7 +119,7 @@ $v = 100;
                     <!-- START WIDGETS -->                    
                     <?php echo $content; ?>
                     <div class="clear"></div>
-                    <div class="col-lg-12"><?php Y::stats(); ?></div>
+                    <div class="col-md-12"><?php Y::stats(); ?></div>
                     <!-- END WIDGETS -->                    
 
 

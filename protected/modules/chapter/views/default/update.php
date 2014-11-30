@@ -11,7 +11,7 @@ $this->breadcrumbs = array(
 
 <h1 class="text-center">Разбивка документа на главы</h1>
 
-<div class="col-lg-6 col-lg-offset-3"> 
+<div class="col-md-6 col-md-offset-3"> 
     <!-- START WARNING PANEL -->
     <div class="panel panel-warning">
         <div class="panel-heading ui-draggable-handle">
@@ -26,7 +26,7 @@ $this->breadcrumbs = array(
     <!-- END DEFAULT PANEL -->
 </div>
 
-<div class="col-lg-10 col-lg-offset-1">
+<div class="col-md-10 col-md-offset-1">
 
     <?php
     $form = $this->beginWidget('CActiveForm', array(
@@ -67,7 +67,7 @@ $this->breadcrumbs = array(
     ?>
 
     <div class="form-group">
-        <div class="col-lg-9">
+        <div class="col-md-9">
             <?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить', array('class' => "btn btn-success")); ?>
         </div>
     </div>

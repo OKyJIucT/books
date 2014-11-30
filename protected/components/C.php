@@ -82,6 +82,14 @@ class C {
                 return 'getProcess::view::' . md5($id) . '::' . $id;
                 break;
 
+            case 'countTicketsSupport':
+                return 'countTicketsSupport::view::' . md5($id) . '::' . $id;
+                break;
+
+            case 'countTicketsUser':
+                return 'countTicketsUser::view::' . md5($id) . '::' . $id;
+                break;
+
             default:
                 break;
         }

@@ -703,9 +703,9 @@ class Y {
         $mail->setData(array('message' => $message));
         $mail->setSmtp('smtp.gmail.com', 465, 'ssl', true, 'bookswood.ru@gmail.com', '5092503q');
         $mail->setView($view);
-        
+
         return $mail->send();
-        
+
         if ($mail->send()) {
             return 'success';
         } else {
@@ -862,14 +862,76 @@ class Y {
 
         $count = C::get($cacheId);
         if ($count === false) {
-            // импортируем модель документа
-            Yii::import('application.modules.docs.models.Docs');
 
             $count = Docs::model()->count();
             C::set($cacheId, $count);
         }
 
         return $count ? $count : 0;
+    }
+
+    // делаем кликабельными ссылки в истории
+    public static function urlClick($str) {
+        $_urlregex = '/(?:(?:ht|f)tp(?:s?)\:\/\/|~\/|\/)?(?:\w+:\w+@)?(?:(?:[-\w]+\.)+(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|travel|[a-z]{2}))(?::[\d]{1,5})?(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?:#(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)?/';
+
+        $str = ( is_array($str) ) ? $str[0] : $str;
+
+        return preg_replace_callback(
+                $_urlregex, // регулярки для поиска URL
+                create_function(
+                        // Использование одиночных кавычек в данном случае принципиально,
+                        // альтернатива - экранировать все символы '$'
+                        '$url', 'return "<a href=\"$url[0]\">".$url[0]."</a>";'
+                ), $str // исходный текст
+        );
+    }
+
+    /**
+     * Счетчик количества документов
+     * @return type
+     */
+    public static function countTickets() {
+
+        if (Y::hasAccess('administrator')) {
+            $criteria = new CDbCriteria();
+            $criteria->condition = 'support_read = 0';
+            $count = Support::model()->count($criteria);
+        } else {
+            $criteria = new CDbCriteria();
+            $criteria->condition = 'user_read = 0 AND user_id = :user_id';
+            $criteria->params = array(':user_id' => Yii::app()->user->id);
+            $count = Support::model()->count($criteria);
+        }
+
+        if ($count == 0)
+            return '';
+        else
+            return '<div class="informer informer-warning">' . $count . '</div>';
+    }
+
+    /**
+     * Статусы тикетов в колонке справа
+     * @param type $ticket
+     * @return string
+     */
+    public static function ticketStatus($ticket) {
+
+        if ($ticket->status == '2')
+            $return = '';
+
+        if (Y::hasAccess('administrator')) {
+            if ($ticket->support_read == '0')
+                $return = 'mail-unread mail-warning';
+            else
+                $return = 'mail-success';
+        } else {
+            if ($ticket->user_read == '0')
+                $return = 'mail-unread mail-warning';
+            else
+                $return = 'mail-success';
+        }
+
+        return $return;
     }
 
 }
