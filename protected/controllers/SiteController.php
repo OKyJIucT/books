@@ -45,7 +45,7 @@ class SiteController extends Controller {
     public function actionIndex() {
         $this->pageTitle = 'Главная';
 
-        //Y::dump(Y::sendMail('okyjiuct@yandex.ru', 'С Днем Рождения!', 'Желаю счестья в личной жизни! :)'), false);
+        //Y::dump(Y::sendMail('okyjiuct@gmail.com', 'С Днем Рождения!', 'Желаю счестья в личной жизни! :)'), false);
 
         $this->render('index');
     }
@@ -103,7 +103,7 @@ class SiteController extends Controller {
                 $auth = new LoginForm;
                 $auth->attributes = $_POST['Users'];
 
-                Y::sendMail($_POST['Users']['email'], 'Регистрация на сайте Bookswood.ru', '<p>Поздравляем с регистрацией, ' . $_POST['Users']['username'] . '!</p> <p>При возникновении вопросов обращайтесь, пожалуйста, в службу поддержки.<p><p>Приятной работы!</p>');
+                Y::sendMail($_POST['Users']['email'], 'Регистрация на сайте Bookswood.ru', '<p>Поздравляем с регистрацией, ' . $_POST['Users']['username'] . '!</p> <p>При возникновении вопросов обращайтесь, пожалуйста, в службу поддержки.</p>');
 
                 if ($auth->validate() && $auth->login())
                     $this->redirect('/');

@@ -701,8 +701,10 @@ class Y {
         $mail->setTo($to);
         $mail->setSubject($subject);
         $mail->setData(array('message' => $message));
-        $mail->setSmtp('smtp.yandex.ru', 25, 'ssl', true, 'robot@walhall.ru', '5092503');
+        $mail->setSmtp('smtp.gmail.com', 465, 'ssl', true, 'bookswood.ru@gmail.com', '5092503q');
         $mail->setView($view);
+        
+        return $mail->send();
         
         if ($mail->send()) {
             return 'success';
