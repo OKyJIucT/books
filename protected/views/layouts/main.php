@@ -37,23 +37,11 @@ $v = 100;
                     <li <?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'class="hover"' : ''; ?>>
                         <a href="/"><span class="fa fa-desktop"></span> <span class="xn-text">Главная</span></a>                        
                     </li> 
-                    <li class="xn-openable <?php echo Yii::app()->controller->module->id == 'docs' ? 'hover' : ''; ?>">
-                        <a href="<?= Y::url('/docs'); ?>"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>
-                        <ul>
-                            <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'create' ? 'class="active"' : ''; ?>>
-                                <a href="<?= Y::url('/docs/default/create'); ?>"><span class="fa fa-plus"></span> Добавить</a>                        
-                            </li>
-                            <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'index' ? 'class="active"' : ''; ?>>
-                                <a href="<?= Y::url('/docs/default/index'); ?>"><span class="fa fa-list"></span> Все переводы</a> 
-                                <div class="informer informer-warning"><?= Y::countDocs(); ?></div>
-                            </li>  
-                            <?php if (Y::hasAccess('administrator')) : ?>
-                                <li <?php echo Yii::app()->controller->module->id == 'docs' && $this->action->id == 'admin' ? 'class="active"' : ''; ?>>
-                                    <a href="<?= Y::url('/docs/default/admin'); ?>"><span class="fa fa-cogs"></span> Управление</a> 
-                                </li> 
-                            <?php endif; ?>
-                        </ul>
+                    <li class="inf <?php echo Yii::app()->controller->module->id == 'docs' ? 'hover' : ''; ?>">
+                        <a href="/docs"><span class="fa fa-group"></span> <span class="xn-text">Переводы</span></a>                        
+                        <div class="informer informer-warning"><?= Y::countDocs(); ?></div>
                     </li> 
+                    
                     <?php if (Y::hasAccess('administrator')) : ?>
                         <li class="xn-openable">
                             <a href="#"><span class="fa fa-star"></span> <span class="xn-text">Админ-меню</span></a>
