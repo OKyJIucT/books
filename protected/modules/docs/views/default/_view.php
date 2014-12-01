@@ -34,13 +34,7 @@
         </div>
 
         <div class="post-row">
-            <?= Y::cut($data->text); ?>
-        </div>
-
-        <div class="post-row">
-            <a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>" class="btn btn-default btn-rounded pull-right">Подробней</a>
-
+            <?= Y::cut($data->text); ?> <a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>">Перейти к переводу</a>
         </div>
     </div>
-
 </div>
