@@ -7,7 +7,7 @@
         <div class="post-date"><?= $data->title_en; ?></div>
         <div class="post-text row">
             <div class="col-md-4">
-                <img class="img-responsive mbottom img-text" src="<?= $data->thumb ? '/thumbs' . Y::getDir($data->date) . $data->thumb : '/thubms/noimage.jpg'; ?>" />
+                <img class="img-responsive mbottom img-text" src="<?= $data->thumb ? '/thumbs' . Y::getDir($data->date) . $data->thumb : '/thumbs/noimage.jpg'; ?>" />
             </div>
             <div class="col-md-8 form-horizontal">
                 <div class="form-group">
@@ -30,11 +30,13 @@
                         <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $data->user->id)); ?>"><?= $data->user->username; ?></a></p>
                     </div>
                 </div>
+
+                <div class="post-row">
+                    <?= Y::cut($data->text); ?> <a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>">Перейти к переводу</a>
+                </div>
             </div>
         </div>
 
-        <div class="post-row">
-            <?= Y::cut($data->text); ?> <a href="<?= Y::url('/docs/default/view', array('id' => $data->id)); ?>">Перейти к переводу</a>
-        </div>
+
     </div>
 </div>
