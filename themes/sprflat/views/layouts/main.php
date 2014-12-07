@@ -188,7 +188,7 @@
         <?php
         if (Yii::app()->controller->module->id == 'users' && $this->action->id == 'view') {
             Yii::app()->clientScript->registerScriptFile(
-                    Yii::app()->request->baseUrl . '/bootstrap/js/ZeroClipboard.min.js'
+                    Yii::app()->request->baseUrl . '/static/js/ZeroClipboard.min.js'
             );
         }
         ?>
