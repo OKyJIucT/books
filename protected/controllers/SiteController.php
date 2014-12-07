@@ -73,8 +73,36 @@ class SiteController extends Controller {
             if ($model->validate() && $model->login())
                 $this->redirect(Yii::app()->user->returnUrl);
         }
+        
+        $reg = new Users;
+        $reg->scenario = 'reg';
 
-        $this->render('login', array('model' => $model));
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'users-form') {
+            echo CActiveForm::validate($reg);
+            Yii::app()->end();
+        }
+
+        if (isset($_POST['Users'])) {
+
+            $reg->attributes = $_POST['Users'];
+            $reg->reg_date = time();
+            $reg->password = Users::cryptPass($_POST['Users']['password']);
+
+            if ($reg->save() && $reg->validate()) {
+
+                $auth = new LoginForm;
+                $auth->attributes = $_POST['Users'];
+
+                Y::sendMail($_POST['Users']['email'], 'Регистрация на сайте Bookswood.ru', '<p>Поздравляем с регистрацией, ' . $_POST['Users']['username'] . '!</p> <p>При возникновении вопросов обращайтесь, пожалуйста, в службу поддержки.</p>');
+
+                if ($auth->validate() && $auth->login())
+                    $this->redirect('/');
+            }
+
+            $reg->password = $_POST['Users']['password'];
+        }
+
+        $this->render('login', array('model' => $model, 'reg' => $reg));
     }
 
     /**

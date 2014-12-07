@@ -906,7 +906,7 @@ class Y {
         if ($count == 0)
             return '';
         else
-            return '<div class="informer informer-warning">' . $count . '</div>';
+            return '<span class="notification">' . $count . '</span>';
     }
 
     /**
@@ -916,19 +916,21 @@ class Y {
      */
     public static function ticketStatus($ticket) {
 
-        if ($ticket->status == '2')
-            $return = '';
+        if ($ticket->status == '2') {
+            $return = '<span class="label label-dark pull-right">Закрыт</span>';
+            return $return;
+        }
 
         if (Y::hasAccess('administrator')) {
             if ($ticket->support_read == '0')
-                $return = 'mail-unread mail-warning';
+                $return = '<span class="label label-lime pull-right">Есть ответ</span>';
             else
-                $return = 'mail-success';
+                $return = '<span class="label label-teal pull-right">В обработке</span>';
         } else {
             if ($ticket->user_read == '0')
-                $return = 'mail-unread mail-warning';
+                $return = '<span class="label label-lime pull-right">Есть ответ</span>';
             else
-                $return = 'mail-success';
+                $return = '<span class="label label-teal pull-right">В обработке</span>';
         }
 
         return $return;

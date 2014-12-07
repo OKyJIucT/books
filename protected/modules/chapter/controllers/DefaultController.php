@@ -81,6 +81,8 @@ class DefaultController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+        
+        Yii::import('docs.models.Docs');
 
         $this->pageTitle = 'Добавление главы';
 
