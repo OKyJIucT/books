@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Bookswood">
+    <serverData>
+      <paths name="Bookswood">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/www/walhall.ru" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/www/walhall.ru/framework" />
+            <excludedPath path="/www/walhall.ru/assets" />
+            <excludedPath path="/www/walhall.ru/webstat" />
+            <excludedPath path="/www/walhall.ru/documents" />
+            <excludedPath path="/www/walhall.ru/demo" />
+            <excludedPath path="/www/walhall.ru/sypex" />
+            <excludedPath local="true" path="$PROJECT_DIR$/framework" />
+            <excludedPath local="true" path="$PROJECT_DIR$/assets" />
+            <excludedPath local="true" path="$PROJECT_DIR$/webstat" />
+            <excludedPath local="true" path="$PROJECT_DIR$/documents" />
+            <excludedPath local="true" path="$PROJECT_DIR$/demo" />
+            <excludedPath local="true" path="$PROJECT_DIR$/sypex" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+  </component>
+</project>
