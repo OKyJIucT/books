@@ -20,7 +20,7 @@
         <![endif]-->
         <!-- Css files -->
         <?php
-        Yii::app()->clientScript->registerCssFile('/static/css/main.min.css?' . $v);
+        Yii::app()->clientScript->registerCssFile('/static/css/main.min.css');
 
         Yii::app()->clientScript->registerScriptFile(
                 Yii::app()->assetManager->publish(

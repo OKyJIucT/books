@@ -53,6 +53,8 @@ return CMap::mergeArray(
         // application components
         'components' => array(
             'clientScript' => array(
+                'class' => "ext.minScript.components.ExtMinScript",
+                'minScriptDebug' => true,
                 'scriptMap' => array(
                     'jquery.js' => false,
                 )
@@ -106,6 +108,11 @@ return CMap::mergeArray(
                   ),
                   ), */
             ),
+        ),
+        'controllerMap' => array(
+            'min' => array(
+                'class' => "ext.minScript.controllers.ExtMinScriptController",
+            )
         ),
         // using Yii::app()->params['paramName']
         'params' => array(
