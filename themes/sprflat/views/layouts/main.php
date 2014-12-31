@@ -36,9 +36,9 @@
         <script src="http://yastatic.net/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://yastatic.net/jquery-ui/1.11.2/jquery-ui.min.js"></script>
         <!--[if lt IE 9]>
-        <script type="text/javascript" src="/assets/js/libs/excanvas.min.js"></script>
+        <script type="text/javascript" src="/static/js/libs/excanvas.min.js"></script>
         <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script type="text/javascript" src="/assets/js/libs/respond.min.js"></script>
+        <script type="text/javascript" src="/static/js/libs/respond.min.js"></script>
         <![endif]-->
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/img/ico/apple-touch-icon-144-precomposed.png">
