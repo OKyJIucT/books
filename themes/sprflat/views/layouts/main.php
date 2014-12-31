@@ -67,7 +67,7 @@
                             <li class="<?php echo Yii::app()->controller->getId() == 'site' && $this->action->id == 'index' ? 'hover' : ''; ?>">
                                 <a href="/"><i class="fa-home"></i> Главная</a>
                             </li>
-                            <li class="<?php echo Yii::app()->controller->module->id == 'docs' ? 'hover' : ''; ?>">
+                            <li class="<?php echo Yii::app()->controller->module->id == 'docs' || Yii::app()->controller->module->id == 'chapter' ? 'hover' : ''; ?>">
                                 <a href="/docs"><i class="fa-group"></i> Переводы <span class="notification"><?= Y::countDocs(); ?></span></a>
                             </li>
                             <?php if (Y::hasAccess('administrator')) : ?>
