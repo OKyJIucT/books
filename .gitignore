@@ -1,4 +1,5 @@
-/demo/
 /protected/config/
+/protected/runtime/
 /.idea/
 /framework/
+/sypex/
