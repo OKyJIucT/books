@@ -38,9 +38,9 @@ return CMap::mergeArray(
                 ),
             'gii' => array(
                 'class' => 'system.gii.GiiModule',
-                'password' => '5092503',
+                'password' => '',
                 // If removed, Gii defaults to localhost only. Edit carefully to taste.
-                    'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
+                    'ipFilters' => array(),
                 ),
             'access',
             'chapter',
@@ -100,13 +100,7 @@ return CMap::mergeArray(
                         'class' => 'CFileLogRoute',
                         'levels' => 'error, warning',
                     ),
-                ), /*
-                  'routes' => array(
-                  array(
-                  'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
-                  'ipFilters' => array('91.200.183.133', '91.202.73.29', '91.202.73.30'),
-                  ),
-                  ), */
+                ),
             ),
         ),
 //        'controllerMap' => array(

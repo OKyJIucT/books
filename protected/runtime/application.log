@@ -6375,3 +6375,217 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/robots.txt
 ---
+2014/12/31 13:21:43 [error] [exception.CException] exception 'CException' with message 'The minScript controller with ID "min" needs to be defined in CWebApplication::$controllerMap.' in /var/www/walhall/data/www/walhall.ru/protected/extensions/minScript/components/ExtMinScript.php:124
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/base/CModule.php(387): ExtMinScript->init()
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CModule.php(103): CModule->getComponent('clientScript')
+#2 /var/www/walhall/data/www/walhall.ru/themes/sprflat/views/layouts/main.php(23): CModule->__get('clientScript')
+#3 /var/www/walhall/data/www/walhall.ru/framework/web/CBaseController.php(126): require('/var/www/walhal...')
+#4 /var/www/walhall/data/www/walhall.ru/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/walhal...', Array, true)
+#5 /var/www/walhall/data/www/walhall.ru/framework/web/CController.php(784): CBaseController->renderFile('/var/www/walhal...', Array, true)
+#6 /var/www/walhall/data/www/walhall.ru/protected/controllers/SiteController.php(50): CController->render('index')
+#7 /var/www/walhall/data/www/walhall.ru/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/walhall/data/www/walhall.ru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/walhall/data/www/walhall.ru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /var/www/walhall/data/www/walhall.ru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/walhall/data/www/walhall.ru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /var/www/walhall/data/www/walhall.ru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/www/walhall/data/www/walhall.ru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/www/walhall/data/www/walhall.ru/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/walhall/data/www/walhall.ru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(282): CController->run('index')
+#17 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#18 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/
+HTTP_REFERER=http://walhall.ru/
+---
+2014/12/31 13:52:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2014/12/31 14:09:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/js/libs/excanvas.min.js".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/js/libs/...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/js/libs/excanvas.min.js
+HTTP_REFERER=http://walhall.ru/login
+---
+2014/12/31 14:09:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/js/libs/respond.min.js".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/js/libs/...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/js/libs/respond.min.js
+HTTP_REFERER=http://walhall.ru/login
+---
+2014/12/31 14:09:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "static/fonts/glyphicons-halflings-regular.eot".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('static/fonts/gl...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/fonts/glyphicons-halflings-regular.eot?
+HTTP_REFERER=http://walhall.ru/login
+---
+2014/12/31 15:26:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2014/12/31 18:20:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "Robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('Robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Robots.txt
+---
+2014/12/31 18:20:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "SiteMap.xml".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('SiteMap.xml')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SiteMap.xml
+---
+2014/12/31 19:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2014/12/31 19:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "blog/default/index".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('blog/default/in...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog
+---
+2014/12/31 20:09:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "news/default/8-sekciya-uje-v-prodaje".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('news/default/8-...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/news/8-sekciya-uje-v-prodaje
+---
+2014/12/31 21:17:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "dynamics/default/video".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('dynamics/defaul...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/dynamics/video/
+---
+2014/12/31 21:21:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2014/12/31 21:21:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "viewtopic/default/780613".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('viewtopic/defau...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/viewtopic/780613/
+---
+2014/12/31 22:15:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "contact/default/index".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('contact/default...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/contact
+---
+2014/12/31 23:15:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "commercial/default/apartment_com".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('commercial/defa...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/commercial/apartment_com/
+---
+2014/12/31 23:23:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2015/01/01 00:14:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "sitemap/default/index".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('sitemap/default...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sitemap
+---
+2015/01/01 02:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "form/default/index".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('form/default/in...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/form/?C=S;O=A
+---
+2015/01/01 02:45:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/default/config.php".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/default/c...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/config.php
+---
+2015/01/01 08:09:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2015/01/01 08:09:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "commercial/apartment_com/10/5".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('commercial/apar...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/commercial/apartment_com/10/5
+---
+2015/01/01 08:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "r/www/cache/static/home/img/logos/nuomi_ade5465d.png".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('r/www/cache/sta...')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/r/www/cache/static/home/img/logos/nuomi_ade5465d.png
+---
+2015/01/01 11:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "robots.txt".' in /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/walhall/data/www/walhall.ru/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /var/www/walhall/data/www/walhall.ru/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/walhall/data/www/walhall.ru/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+HTTP_REFERER=http://walhall.ru/robots.txt
+---

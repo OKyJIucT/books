@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Bookswood">
+  <component name="PublishConfigData" autoUpload="Always" serverName="bookswood">
     <serverData>
-      <paths name="Bookswood">
+      <paths name="bookswood">
         <serverdata>
           <mappings>
-            <mapping deploy="/www/walhall.ru" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/walhall.ru" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
-            <excludedPath path="/www/walhall.ru/framework" />
-            <excludedPath path="/www/walhall.ru/assets" />
-            <excludedPath path="/www/walhall.ru/webstat" />
-            <excludedPath path="/www/walhall.ru/documents" />
-            <excludedPath path="/www/walhall.ru/demo" />
-            <excludedPath path="/www/walhall.ru/sypex" />
-            <excludedPath local="true" path="$PROJECT_DIR$/framework" />
+            <excludedPath path="/walhall.ru/assets" />
+            <excludedPath path="/walhall.ru/sypex" />
+            <excludedPath path="/walhall.ru/thumbs" />
+            <excludedPath path="/walhall.ru/webstat" />
             <excludedPath local="true" path="$PROJECT_DIR$/assets" />
-            <excludedPath local="true" path="$PROJECT_DIR$/webstat" />
-            <excludedPath local="true" path="$PROJECT_DIR$/documents" />
-            <excludedPath local="true" path="$PROJECT_DIR$/demo" />
             <excludedPath local="true" path="$PROJECT_DIR$/sypex" />
+            <excludedPath local="true" path="$PROJECT_DIR$/thumbs" />
+            <excludedPath local="true" path="$PROJECT_DIR$/webstat" />
           </excludedPaths>
         </serverdata>
       </paths>

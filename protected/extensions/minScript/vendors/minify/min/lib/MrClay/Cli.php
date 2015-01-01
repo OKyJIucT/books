@@ -2,8 +2,8 @@
 
 namespace MrClay;
 
-use MrClay\Cli\Arg;
 use InvalidArgumentException;
+use MrClay\Cli\Arg;
 
 /**
  * Forms a front controller for a console app, handling and validating arguments (options)
