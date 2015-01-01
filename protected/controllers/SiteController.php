@@ -45,7 +45,7 @@ class SiteController extends Controller {
     public function actionIndex() {
         $this->pageTitle = 'Главная';
 
-        //Y::dump(Y::sendMail('okyjiuct@gmail.com', 'С Днем Рождения!', 'Желаю счестья в личной жизни! :)'), false);
+//        Y::dump(Y::sendMail('okyjiuct@gmail.com', 'С Днем Рождения!', 'Желаю счестья в личной жизни! :)'));
 
         $this->render('index');
     }

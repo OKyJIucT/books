@@ -697,11 +697,11 @@ class Y {
 
     public static function sendMail($to, $subject, $message, $view = 'info') {
         $mail = new YiiMailer();
-        $mail->setFrom(Yii::app()->params['fromMail'], 'Bookswood.ru');
+        $mail->setFrom(Yii::app()->params['mail'], 'Bookswood.ru');
         $mail->setTo($to);
         $mail->setSubject($subject);
         $mail->setData(array('message' => $message));
-        $mail->setSmtp('smtp.gmail.com', 465, 'ssl', true, 'bookswood.ru@gmail.com', '5092503q');
+        $mail->setSmtp('smtp.gmail.com', 465, 'ssl', true, Yii::app()->params['mail'], Yii::app()->params['pass']);
         $mail->setView($view);
 
         return $mail->send();

@@ -2,6 +2,7 @@
 
 $main_local = dirname(__FILE__) . '/main-local.php';
 $db_local = dirname(__FILE__) . '/db-local.php';
+$mail_local = dirname(__FILE__) . '/mail-local.php';
 
 return CMap::mergeArray(
     array(
@@ -26,7 +27,7 @@ return CMap::mergeArray(
             'application.modules.support.models.*',
             'application.modules.users.models.*',
             'application.modules.version.models.*',
-            ),
+        ),
         'modules' => array(
             'rbac' => array(
                 'class' => 'application.modules.rbacui.RbacuiModule',
@@ -35,13 +36,13 @@ return CMap::mergeArray(
                 'userNameColumn' => 'username',
                 'rbacUiAdmin' => true,
                 'rbacUiAssign' => true,
-                ),
+            ),
             'gii' => array(
                 'class' => 'system.gii.GiiModule',
                 'password' => '',
                 // If removed, Gii defaults to localhost only. Edit carefully to taste.
-                    'ipFilters' => array(),
-                ),
+                'ipFilters' => array(),
+            ),
             'access',
             'chapter',
             'docs',
@@ -49,7 +50,7 @@ return CMap::mergeArray(
             'support',
             'users',
             'version',
-            ),
+        ),
         // application components
         'components' => array(
             'clientScript' => array(
@@ -109,9 +110,9 @@ return CMap::mergeArray(
 //            )
 //        ),
         // using Yii::app()->params['paramName']
-        'params' => array(
-            'fromMail' => 'info@bookswood.ru'
-        ),
+        'params' => array(),
     ),
-    file_exists($main_local) ? require $main_local : array(), file_exists($db_local) ? require $db_local : array()
+    file_exists($main_local) ? require $main_local : array(),
+    file_exists($db_local) ? require $db_local : array(),
+    file_exists($mail_local) ? require $mail_local : array()
 );
