@@ -27,11 +27,6 @@
                         Yii::app()->request->baseUrl . 'static/plugins/core/pace/pace.min.js'
                 ), CClientScript::POS_END
         );
-        Yii::app()->clientScript->registerScriptFile(
-                Yii::app()->assetManager->publish(
-                        Yii::app()->request->baseUrl . 'static/js/pages/notifications.js'
-                ), CClientScript::POS_END
-        );
         ?>
         <script src="http://yastatic.net/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://yastatic.net/jquery-ui/1.11.2/jquery-ui.min.js"></script>
