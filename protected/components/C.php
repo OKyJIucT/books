@@ -3,7 +3,8 @@
 /**
  * Класс-ярлык для работы с кешем
  */
-class C {
+class C
+{
 
     /**
      * @var array Кэш компонентов приложения
@@ -16,7 +17,8 @@ class C {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return ICache
      */
-    public static function cache($cacheId = 'cache') {
+    public static function cache($cacheId = 'cache')
+    {
         return self::_getComponent($cacheId);
     }
 
@@ -26,7 +28,8 @@ class C {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return boolean
      */
-    public static function delete($id, $cacheId = 'cache') {
+    public static function delete($id, $cacheId = 'cache')
+    {
         return self::_getComponent($cacheId)->delete($id);
     }
 
@@ -36,7 +39,8 @@ class C {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return mixed
      */
-    public static function get($id, $cacheId = 'cache') {
+    public static function get($id, $cacheId = 'cache')
+    {
         return self::_getComponent($cacheId)->get($id);
     }
 
@@ -49,18 +53,21 @@ class C {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return boolean
      */
-    public static function set($id, $value, $expire = 900, $dependency = null, $cacheId = 'cache') {
+    public static function set($id, $value, $expire = 900, $dependency = null, $cacheId = 'cache')
+    {
         return self::_getComponent($cacheId)->set($id, $value, $expire, $dependency);
     }
 
     /**
      * Очистка кеша
      */
-    public static function flush($cacheId = 'cache') {
+    public static function flush($cacheId = 'cache')
+    {
         self::_getComponent($cacheId)->flush();
     }
 
-    public static function prefix($data, $id = false) {
+    public static function prefix($data, $id = false)
+    {
         switch ($data) {
             case 'profile':
                 return 'profile::info::' . md5($id) . '::' . $id;
@@ -102,7 +109,8 @@ class C {
      * @return CComponent
      * @since 1.2.0
      */
-    private static function _getComponent($componentName) {
+    private static function _getComponent($componentName)
+    {
         if (!isset(self::$_componentsCache[$componentName])) {
             self::$_componentsCache[$componentName] = Yii::app()->getComponent($componentName);
         }
@@ -114,7 +122,8 @@ class C {
      * Удаление кеша по тегу
      * @param type $tag
      */
-    public static function clear($tag, $cacheId = 'cache') {
+    public static function clear($tag, $cacheId = 'cache')
+    {
         self::_getComponent($cacheId)->clear($tag);
     }
 
