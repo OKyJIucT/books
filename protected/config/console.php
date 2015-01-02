@@ -26,5 +26,5 @@ return CMap::mergeArray(
             ),
         ),
     ),
-    file_exists($db_local) ? require $db_local : array(),
+    file_exists($db_local) ? require $db_local : array()
 );
