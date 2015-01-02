@@ -6,16 +6,25 @@
     <div class="col-md-12" style="display:inline-block">
         <div class="row">
             <div class="col-md-3">
-                <table style="margin-bottom:0;"><tr><td>
+                <table style="margin-bottom:0;">
+                    <tr>
+                        <td>
                             <?php echo CHtml::textField('search', '', array('style' => 'width:215px;')); ?>
-                        </td></tr><tr><td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <form id="user-select-form">
                                 <?php echo CHtml::dropDownList('user[]', '', CHtml::listData($users, $this->module->userIdColumn, $this->module->userNameColumn), array('onchange' => 'selectUser("' . $this->createAbsoluteUrl('ajax/infoUserAssignments') . '");', 'multiple' => true, 'size' => '20', 'style' => 'width:220px;'));
                                 ?>
                             </form>
-                        </td></tr></table>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div class="col-md-7" id="user-info"><hr></div>
+            <div class="col-md-7" id="user-info">
+                <hr>
+            </div>
             <div class="col-md-2">
                 <?php
                 echo CHtml::button(Yii::t('RbacuiModule.rbacui', 'Привязать роль'), array('onclick' => 'openDialogAssign(2,"' . $this->createAbsoluteUrl('ajax/itemTypeList') . '");', 'disabled' => true));

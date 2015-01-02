@@ -5,7 +5,8 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisLogRoute extends CLogRoute {
+class ARedisLogRoute extends CLogRoute
+{
 
     /**
      * The name of the redis key to use when storing logs
@@ -29,7 +30,8 @@ class ARedisLogRoute extends CLogRoute {
      * Sets the redis connection to use for caching
      * @param ARedisConnection|string $connection the redis connection, if a string is provided, it is presumed to be a the name of an applciation component
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         if (is_string($connection)) {
             $connection = Yii::app()->{$connection};
         }
@@ -40,13 +42,15 @@ class ARedisLogRoute extends CLogRoute {
      * Gets the redis connection to use for caching
      * @return ARedisConnection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             if (!isset(Yii::app()->redis)) {
                 throw new CException(get_class($this) . " expects a 'redis' application component");
             }
             $this->_connection = Yii::app()->redis;
         }
+
         return $this->_connection;
     }
 
@@ -54,7 +58,8 @@ class ARedisLogRoute extends CLogRoute {
      * Stores or broadcasts log messages via redis.
      * @param array $logs list of log messages
      */
-    protected function processLogs($logs) {
+    protected function processLogs($logs)
+    {
         $redis = $this->getConnection()->getClient();
         if (function_exists("json_encode")) {
             $useCJSON = false;

@@ -1,13 +1,15 @@
 <?php
 
-class SiteController extends Controller {
+class SiteController extends Controller
+{
 
     public $layout = 'main';
 
     /**
      * @return array action filters
      */
-    public function filters() {
+    public function filters()
+    {
         return array(
             'accessControl', // perform access control for CRUD operations
         );
@@ -18,7 +20,8 @@ class SiteController extends Controller {
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-    public function accessRules() {
+    public function accessRules()
+    {
         return array(
             array('allow',
                 'actions' => array('login', 'reg', 'error'),
@@ -42,7 +45,8 @@ class SiteController extends Controller {
      * This is the default 'index' action that is invoked
      * when an action is not explicitly requested by users.
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $this->pageTitle = 'Главная';
 
 //        Y::dump(Y::sendMail('okyjiuct@gmail.com', 'С Днем Рождения!', 'Желаю счестья в личной жизни! :)'));
@@ -53,7 +57,8 @@ class SiteController extends Controller {
     /**
      * Displays the login page
      */
-    public function actionLogin() {
+    public function actionLogin()
+    {
         $this->layout = 'no_auth';
         $this->pageTitle = 'Авторизация';
 
@@ -73,7 +78,7 @@ class SiteController extends Controller {
             if ($model->validate() && $model->login())
                 $this->redirect(Yii::app()->user->returnUrl);
         }
-        
+
         $reg = new Users;
         $reg->scenario = 'reg';
 
@@ -108,7 +113,8 @@ class SiteController extends Controller {
     /**
      * Регистрация юзеров
      */
-    public function actionReg() {
+    public function actionReg()
+    {
         $this->layout = 'no_auth';
         $this->pageTitle = 'Регистрация';
 
@@ -141,8 +147,8 @@ class SiteController extends Controller {
         }
 
         $this->render('reg', array(
-            'model' => $model,
-                )
+                'model' => $model,
+            )
         );
     }
 
@@ -150,19 +156,21 @@ class SiteController extends Controller {
      * Профиль пользователя
      * @param type $id
      */
-    public function actionProfile($id) {
+    public function actionProfile($id)
+    {
 
         $profile = Users::getProfile($id);
 
         $this->pageTitle = 'Профиль ' . $profile->username;
 
         $this->render('profile', array(
-            'profile' => $profile,
-                )
+                'profile' => $profile,
+            )
         );
     }
 
-    public function actionEditInvite() {
+    public function actionEditInvite()
+    {
         if (Y::isAjaxRequest()) {
             Invites::changeInvite($_POST['code']);
         }
@@ -171,7 +179,8 @@ class SiteController extends Controller {
     /**
      * Logs out the current user and redirect to homepage.
      */
-    public function actionLogout() {
+    public function actionLogout()
+    {
 
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
@@ -180,7 +189,8 @@ class SiteController extends Controller {
     /**
      * This is the action to handle external exceptions.
      */
-    public function actionError() {
+    public function actionError()
+    {
 
         if (Y::isGuest())
             $this->layout = 'no_auth';
@@ -198,7 +208,8 @@ class SiteController extends Controller {
     /**
      * Очистка всего кеша
      */
-    public function actionClearCache() {
+    public function actionClearCache()
+    {
         C::flush();
         $this->redirect(Yii::app()->user->returnUrl);
     }
@@ -206,7 +217,8 @@ class SiteController extends Controller {
     /**
      * Генерация инвайтов
      */
-    public function actionGetInvites() {
+    public function actionGetInvites()
+    {
         Invites::generateInvite(1, 5);
         C::delete(C::prefix('profile', 1));
         $this->redirect(Yii::app()->user->returnUrl);

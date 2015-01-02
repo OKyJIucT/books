@@ -15,9 +15,11 @@
  * The followings are the available model relations:
  * @property Users $user
  */
-class Docs extends CActiveRecord {
+class Docs extends CActiveRecord
+{
 
-    public function behaviors() {
+    public function behaviors()
+    {
         return array(
             'PurifyText' => array(
                 'class' => 'DPurifyTextBehavior',
@@ -36,14 +38,16 @@ class Docs extends CActiveRecord {
     /**
      * @return string the associated database table name
      */
-    public function tableName() {
+    public function tableName()
+    {
         return 'docs';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules() {
+    public function rules()
+    {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
@@ -59,11 +63,12 @@ class Docs extends CActiveRecord {
     /**
      * @return array relational rules.
      */
-    public function relations() {
+    public function relations()
+    {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'accesses' => array(self::HAS_MANY, 'Access', 'docs_id', 'order'=>'role ASC'),
+            'accesses' => array(self::HAS_MANY, 'Access', 'docs_id', 'order' => 'role ASC'),
             'chapters' => array(self::HAS_MANY, 'Chapter', 'docs_id'),
             'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
             'parts' => array(self::HAS_MANY, 'Parts', 'docs_id'),
@@ -73,7 +78,8 @@ class Docs extends CActiveRecord {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'id' => 'ID',
             'title' => 'Название документа',
@@ -99,7 +105,8 @@ class Docs extends CActiveRecord {
      * @return CActiveDataProvider the data provider that can return the models
      * based on the search/filter conditions.
      */
-    public function search() {
+    public function search()
+    {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
@@ -125,36 +132,23 @@ class Docs extends CActiveRecord {
      * @param string $className active record class name.
      * @return Docs the static model class
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__)
+    {
         return parent::model($className);
-    }
-
-    public static function getDoc($id) {
-        $cacheId = C::prefix('docs', $id);
-
-        $model = C::get($cacheId);
-        if ($model === false) {
-            $model = Docs::model()->with('user')->findByPk($id);
-
-            if (!$model)
-                Y::error(404);
-
-            C::set($cacheId, $model);
-        }
-
-        return $model;
     }
 
     /**
      * Очищаем кеш после каждого добавления
      * @return type
      */
-    public function afterSave() {
+    public function afterSave()
+    {
         if ($this->isNewRecord) { // обнуляем счетчик
             C::delete(C::prefix('countDocs'));
         } else { // кешируем новую версию документа
             C::delete(C::prefix('docs', $this->id));
         }
+
         return parent::afterSave();
     }
 

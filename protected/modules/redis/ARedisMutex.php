@@ -16,7 +16,7 @@
  * $mutex = new ARedisMutex("someOperation");
  * $mutex->afterLock = function(CEvent $event) {
  *  echo "Locked!\n";
- * 	// do some processing here
+ *    // do some processing here
  *  $event->sender->unlock(); // finally, unlock the mutex
  * };
  * $mutex->afterUnlock = function(CEvent $event) {
@@ -27,7 +27,8 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisMutex extends ARedisEntity {
+class ARedisMutex extends ARedisEntity
+{
 
     /**
      * The number of seconds before this mutex will automatically expire
@@ -52,7 +53,8 @@ class ARedisMutex extends ARedisEntity {
      * Attempts to lock the mutex, returns true if successful or false if the mutex is locked by another process.
      * @return boolean whether the lock was successful or not
      */
-    public function lock() {
+    public function lock()
+    {
         if (!$this->beforeLock()) {
             return false;
         }
@@ -72,6 +74,7 @@ class ARedisMutex extends ARedisEntity {
             }
         }
         $this->afterLock();
+
         return true;
     }
 
@@ -79,7 +82,8 @@ class ARedisMutex extends ARedisEntity {
      * Attempts to unlock the mutex, returns true if successful, or false if the mutex is in use by another process
      * @return boolean whether the unlock was successful or not
      */
-    public function unlock() {
+    public function unlock()
+    {
         if (!$this->beforeUnlock()) {
             return false;
         }
@@ -93,6 +97,7 @@ class ARedisMutex extends ARedisEntity {
 
         $redis->delete($this->name);
         $this->afterUnlock();
+
         return true;
     }
 
@@ -100,11 +105,13 @@ class ARedisMutex extends ARedisEntity {
      * Blocks program execution until the lock becomes available
      * @return ARedisMutex $this after the lock is opened
      */
-    public function block() {
+    public function block()
+    {
         while ($this->lock() === false) {
 
             usleep($this->pollDelay);
         }
+
         return $this;
     }
 
@@ -113,10 +120,12 @@ class ARedisMutex extends ARedisEntity {
      * The default implementation raises the onBeforeLock event
      * @return boolean true if the lock should continue
      */
-    public function beforeLock() {
+    public function beforeLock()
+    {
         $event = new CModelEvent();
         $event->sender = $this;
         $this->onBeforeLock($event);
+
         return $event->isValid;
     }
 
@@ -124,7 +133,8 @@ class ARedisMutex extends ARedisEntity {
      * Invoked after the mutex is locked.
      * The default implementation raises the onAfterLock event
      */
-    public function afterLock() {
+    public function afterLock()
+    {
         $event = new CEvent;
         $event->sender = $this;
         $this->onAfterLock($event);
@@ -135,10 +145,12 @@ class ARedisMutex extends ARedisEntity {
      * The default implementation raises the onBeforeUnlock event
      * @return boolean true if the unlock should continue
      */
-    public function beforeUnlock() {
+    public function beforeUnlock()
+    {
         $event = new CModelEvent;
         $event->sender = $this;
         $this->onBeforeUnlock($event);
+
         return $event->isValid;
     }
 
@@ -146,7 +158,8 @@ class ARedisMutex extends ARedisEntity {
      * Invoked after the mutex is unlocked.
      * The default implementation raises the onAfterUnlock event
      */
-    public function afterUnlock() {
+    public function afterUnlock()
+    {
         $event = new CEvent;
         $event->sender = $this;
         $this->onAfterUnlock($event);
@@ -156,7 +169,8 @@ class ARedisMutex extends ARedisEntity {
      * Raises the onBeforeLock event
      * @param CEvent $event the event to raise
      */
-    public function onBeforeLock($event) {
+    public function onBeforeLock($event)
+    {
         $this->raiseEvent("onBeforeLock", $event);
     }
 
@@ -164,7 +178,8 @@ class ARedisMutex extends ARedisEntity {
      * Raises the onAfterLock event
      * @param CEvent $event the event to raise
      */
-    public function onAfterLock($event) {
+    public function onAfterLock($event)
+    {
         $this->raiseEvent("onAfterLock", $event);
     }
 
@@ -172,7 +187,8 @@ class ARedisMutex extends ARedisEntity {
      * Raises the onBeforeUnlock event
      * @param CEvent $event the event to raise
      */
-    public function onBeforeUnlock($event) {
+    public function onBeforeUnlock($event)
+    {
         $this->raiseEvent("onBeforeUnlock", $event);
     }
 
@@ -180,7 +196,8 @@ class ARedisMutex extends ARedisEntity {
      * Raises the onAfterUnlock event
      * @param CEvent $event the event to raise
      */
-    public function onAfterUnlock($event) {
+    public function onAfterUnlock($event)
+    {
         $this->raiseEvent("onAfterUnlock", $event);
     }
 
@@ -189,10 +206,12 @@ class ARedisMutex extends ARedisEntity {
      * @param boolean $forceRecalculate whether to force recalculation or not
      * @return float the time the mutex expires
      */
-    public function getExpiresAt($forceRecalculate = false) {
+    public function getExpiresAt($forceRecalculate = false)
+    {
         if ($forceRecalculate || $this->_expiresAt === null) {
             $this->_expiresAt = $this->expiresAfter + microtime(true);
         }
+
         return $this->_expiresAt;
     }
 

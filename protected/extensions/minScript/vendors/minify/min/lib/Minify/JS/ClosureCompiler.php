@@ -13,7 +13,8 @@
  *
  * @todo can use a stream wrapper to unit test this?
  */
-class Minify_JS_ClosureCompiler {
+class Minify_JS_ClosureCompiler
+{
     const URL = 'http://closure-compiler.appspot.com/compile';
 
     /**
@@ -26,6 +27,7 @@ class Minify_JS_ClosureCompiler {
     public static function minify($js, array $options = array())
     {
         $obj = new self($options);
+
         return $obj->min($js);
     }
 
@@ -57,7 +59,7 @@ class Minify_JS_ClosureCompiler {
         if (preg_match('/^Error\(\d\d?\):/', $response)) {
             if (is_callable($this->_fallbackFunc)) {
                 $response = "/* Received errors from Closure Compiler API:\n$response"
-                          . "\n(Using fallback minifier)\n*/\n";
+                    . "\n(Using fallback minifier)\n*/\n";
                 $response .= call_user_func($this->_fallbackFunc, $js);
             } else {
                 throw new Minify_JS_ClosureCompiler_Exception($response);
@@ -67,6 +69,7 @@ class Minify_JS_ClosureCompiler {
             $errors = $this->_getResponse($this->_buildPostBody($js, true));
             throw new Minify_JS_ClosureCompiler_Exception($errors);
         }
+
         return $response;
     }
 
@@ -97,14 +100,15 @@ class Minify_JS_ClosureCompiler {
             curl_close($ch);
         } else {
             throw new Minify_JS_ClosureCompiler_Exception(
-               "Could not make HTTP request: allow_url_open is false and cURL not available"
+                "Could not make HTTP request: allow_url_open is false and cURL not available"
             );
         }
         if (false === $contents) {
             throw new Minify_JS_ClosureCompiler_Exception(
-               "No HTTP response from server"
+                "No HTTP response from server"
             );
         }
+
         return trim($contents);
     }
 
@@ -129,4 +133,6 @@ class Minify_JS_ClosureCompiler {
     }
 }
 
-class Minify_JS_ClosureCompiler_Exception extends Exception {}
+class Minify_JS_ClosureCompiler_Exception extends Exception
+{
+}

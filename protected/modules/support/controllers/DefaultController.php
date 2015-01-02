@@ -2,7 +2,8 @@
 
 Yii::import('ext.imperavi-redactor-widget.ImperaviRedactorWidget');
 
-class DefaultController extends Controller {
+class DefaultController extends Controller
+{
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -13,7 +14,8 @@ class DefaultController extends Controller {
     /**
      * @return array action filters
      */
-    public function filters() {
+    public function filters()
+    {
         return array(
             'accessControl', // perform access control for CRUD operations
             'postOnly + delete', // we only allow deletion via POST request
@@ -25,7 +27,8 @@ class DefaultController extends Controller {
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-    public function accessRules() {
+    public function accessRules()
+    {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'view'),
@@ -49,7 +52,8 @@ class DefaultController extends Controller {
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
      */
-    public function actionView($id) {
+    public function actionView($id)
+    {
 
         $id = intval($id);
 
@@ -134,7 +138,8 @@ class DefaultController extends Controller {
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
 
         $model = new Support;
 
@@ -156,7 +161,8 @@ class DefaultController extends Controller {
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
-    public function actionUpdate($id) {
+    public function actionUpdate($id)
+    {
         $model = $this->loadModel($id);
 
         $this->performAjaxValidation($model);
@@ -177,7 +183,8 @@ class DefaultController extends Controller {
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
+    public function actionDelete($id)
+    {
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -188,7 +195,8 @@ class DefaultController extends Controller {
     /**
      * Lists all models.
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
 
         if (Y::hasAccess('administrator')) {
             $array = array(
@@ -250,7 +258,8 @@ class DefaultController extends Controller {
     /**
      * Manages all models.
      */
-    public function actionAdmin() {
+    public function actionAdmin()
+    {
         $model = new Support('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Support']))
@@ -268,10 +277,12 @@ class DefaultController extends Controller {
      * @return Support the loaded model
      * @throws CHttpException
      */
-    public function loadModel($id) {
+    public function loadModel($id)
+    {
         $model = Support::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
+
         return $model;
     }
 
@@ -279,7 +290,8 @@ class DefaultController extends Controller {
      * Performs the AJAX validation.
      * @param Support $model the model to be validated
      */
-    protected function performAjaxValidation($model) {
+    protected function performAjaxValidation($model)
+    {
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'support-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();

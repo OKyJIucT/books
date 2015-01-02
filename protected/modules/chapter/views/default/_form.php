@@ -24,6 +24,7 @@
 
     <div class="form-group form-horizontal">
         <label class="col-md-3 control-label">Название документа</label>
+
         <div class="col-md-9">
             <p class="form-control-static"><?php echo $doc->title; ?></p>
         </div>
@@ -74,6 +75,7 @@
 
     <div class="form-group">
         <label class="col-md-3 control-label"></label>
+
         <div class="col-md-9">
             <?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить', array('class' => "btn btn-success")); ?>
         </div>

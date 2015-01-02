@@ -24,6 +24,6 @@
                 'hiddenPageCssClass' => ''//default "hidden"
             ),
         ));
-        ?>        
+        ?>
     </div>
 </div>

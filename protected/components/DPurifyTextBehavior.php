@@ -1,4 +1,5 @@
 <?php
+
 /**
  * DPurifyTextBehavior will automatically purify
  * content from source attribute to destination attribute.
@@ -27,7 +28,6 @@
  * @link http://www.elisdn.ru
  * @version 1.3
  */
-
 class DPurifyTextBehavior extends CActiveRecordBehavior
 {
     /**
@@ -84,14 +84,12 @@ class DPurifyTextBehavior extends CActiveRecordBehavior
     {
         $model = $this->getOwner();
 
-        if ($this->processOnBeforeSave)
-        {
+        if ($this->processOnBeforeSave) {
             if (
                 $this->sourceAttribute &&
                 $this->destinationAttribute &&
                 $this->calculateHash($model->{$this->sourceAttribute}) !== $this->_contentHash
-            )
-            {
+            ) {
                 $model->{$this->destinationAttribute} = $this->processContent($model->{$this->sourceAttribute});
             }
         }
@@ -106,15 +104,13 @@ class DPurifyTextBehavior extends CActiveRecordBehavior
 
         $this->_contentHash = $this->calculateHash($model->{$this->sourceAttribute});
 
-        if ($this->processOnAfterFind)
-        {
+        if ($this->processOnAfterFind) {
             if (
                 $this->sourceAttribute &&
                 $this->destinationAttribute &&
                 $model->{$this->sourceAttribute} &&
                 !$model->{$this->destinationAttribute}
-            )
-            {
+            ) {
                 $model->{$this->destinationAttribute} = $this->processContent($model->{$this->sourceAttribute});
                 if ($this->updateOnAfterFind)
                     $this->updateModel();
@@ -140,6 +136,7 @@ class DPurifyTextBehavior extends CActiveRecordBehavior
     public function markdownText($text)
     {
         $md = new CMarkdownParser;
+
         return $md->transform($text);
     }
 
@@ -152,16 +149,14 @@ class DPurifyTextBehavior extends CActiveRecordBehavior
         $p = new CHtmlPurifier;
         $p->options = $this->purifierOptions;
 
-        if ($this->encodePreContent)
-        {
+        if ($this->encodePreContent) {
             $text = preg_replace_callback('|<pre([^>]*)>(.*)</pre>|ismU', array($this, 'storePreContent'), $text);
             $text = preg_replace_callback('|<code([^>]*)>(.*)</code>|ismU', array($this, 'storeCodeContent'), $text);
         }
 
         $text = $p->purify(trim($text));
 
-        if ($this->encodePreContent)
-        {
+        if ($this->encodePreContent) {
             $text = preg_replace_callback('|<pre([^>]*)>(.*)</pre>|ismU', array($this, 'resumePreContent'), $text);
             $text = preg_replace_callback('|<code([^>]*)>(.*)</code>|ismU', array($this, 'resumeCodeContent'), $text);
         }
@@ -205,6 +200,7 @@ class DPurifyTextBehavior extends CActiveRecordBehavior
             $id = md5(rand(0, 100000));
         } while (isset($this->_preContents[$id]));
         $this->_preContents[$id] = $content;
+
         return $id;
     }
 
@@ -213,7 +209,8 @@ class DPurifyTextBehavior extends CActiveRecordBehavior
         return isset($this->_preContents[$id]) ? CHtml::encode($this->_preContents[$id]) : '';
     }
 
-    private function calculateHash($content) {
+    private function calculateHash($content)
+    {
         return md5($content);
     }
 }

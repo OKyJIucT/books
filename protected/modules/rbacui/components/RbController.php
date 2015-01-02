@@ -4,7 +4,8 @@
  * Controller is the customized base controller class.
  * All controller classes for this application should extend from this base class.
  */
-class RbController extends CController {
+class RbController extends CController
+{
 
     /**
      * @var string the default layout for the controller view. Defaults to '//layouts/column1',
@@ -17,7 +18,8 @@ class RbController extends CController {
      * Determine whether user has administrator authorization rights for rbacUI
      * @return boolean
      */
-    public function isAdmin() {
+    public function isAdmin()
+    {
         $userId = Yii::app()->user->id;
         if ($userId === null) {
             return false;  // not authenticated
@@ -31,6 +33,7 @@ class RbController extends CController {
         if (Yii::app()->authManager && Yii::app()->user->checkAccess($this->module->rbacUiAdmin)) {
             return true;
         }
+
         return false;
     }
 
@@ -38,7 +41,8 @@ class RbController extends CController {
      * Determine whether user has assign authorization rights for rbacUI
      * @return boolean
      */
-    public function isAssign() {
+    public function isAssign()
+    {
         $userId = Yii::app()->user->id;
         if ($userId === null) {
             return false;  // not authenticated
@@ -55,6 +59,7 @@ class RbController extends CController {
         if (Yii::app()->authManager && Yii::app()->user->checkAccess($this->module->rbacUiAssign)) {
             return true;
         }
+
         return false;
     }
 
@@ -62,7 +67,8 @@ class RbController extends CController {
      * Determine whether user has assign role authorization rights for rbacUI
      * @return boolean
      */
-    public function isAssignRole() {
+    public function isAssignRole()
+    {
         $userId = Yii::app()->user->id;
         if ($userId === null) {
             return false;  // not authenticated
@@ -79,6 +85,7 @@ class RbController extends CController {
         if (Yii::app()->authManager && Yii::app()->user->checkAccess($this->module->rbacUiAssignRole)) {
             return true;
         }
+
         return false;
     }
 

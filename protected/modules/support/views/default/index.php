@@ -18,9 +18,11 @@ $this->breadcrumbs = array(
                     <div class="panel-body">
                         <li>Быстрое решение проблемы напрямую зависит от правильности составления тикета.</li>
                         <li>Старайтесь кратко и ёмко описать проблему или предложение для разработки.</li>
-                        <li>При возникновении какой-либо проблемы по возможности добавляйте скриншоты, а также указывайте ссылку, по которой у вас наблюдаются проблемы.</li>
-                    </div>                          
-                </div>                        
+                        <li>При возникновении какой-либо проблемы по возможности добавляйте скриншоты, а также
+                            указывайте ссылку, по которой у вас наблюдаются проблемы.
+                        </li>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -46,11 +48,11 @@ $this->breadcrumbs = array(
             <div class="col-md-2control-label ">
                 <?php
                 echo CHtml::htmlButton('Создать тикет', array(
-                    'name' => 'saveTicket',
-                    'value' => "save",
-                    'class' => 'btn btn-success',
-                    'type' => 'submit'
-                        )
+                        'name' => 'saveTicket',
+                        'value' => "save",
+                        'class' => 'btn btn-success',
+                        'type' => 'submit'
+                    )
                 );
                 ?>
             </div>

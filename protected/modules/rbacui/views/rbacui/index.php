@@ -28,9 +28,9 @@ $this->breadcrumbs = array(
 ?>
 
 <noscript>
-<div class="flash-notice">
-    <?php echo Yii::t('RbacuiModule.rbacui', 'Your web browser does not support JavaScript, or you have temporarily disabled scripting. This site needs JavaScript to function correct.'); ?>
-</div>
+    <div class="flash-notice">
+        <?php echo Yii::t('RbacuiModule.rbacui', 'Your web browser does not support JavaScript, or you have temporarily disabled scripting. This site needs JavaScript to function correct.'); ?>
+    </div>
 </noscript>
 
 <?php

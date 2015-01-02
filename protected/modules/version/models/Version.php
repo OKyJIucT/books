@@ -16,9 +16,11 @@
  * @property Users $user
  * @property Parts $part
  */
-class Version extends CActiveRecord {
+class Version extends CActiveRecord
+{
 
-    public function behaviors() {
+    public function behaviors()
+    {
         return array(
             'PurifyText' => array(
                 'class' => 'DPurifyTextBehavior',
@@ -37,14 +39,16 @@ class Version extends CActiveRecord {
     /**
      * @return string the associated database table name
      */
-    public function tableName() {
+    public function tableName()
+    {
         return 'version';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules() {
+    public function rules()
+    {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
@@ -60,7 +64,8 @@ class Version extends CActiveRecord {
     /**
      * @return array relational rules.
      */
-    public function relations() {
+    public function relations()
+    {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
@@ -72,7 +77,8 @@ class Version extends CActiveRecord {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'id' => 'ID',
             'text' => 'Text',
@@ -95,7 +101,8 @@ class Version extends CActiveRecord {
      * @return CActiveDataProvider the data provider that can return the models
      * based on the search/filter conditions.
      */
-    public function search() {
+    public function search()
+    {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
@@ -118,11 +125,13 @@ class Version extends CActiveRecord {
      * @param string $className active record class name.
      * @return Version the static model class
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__)
+    {
         return parent::model($className);
     }
 
-    public static function partExist($user_id, $part_id) {
+    public static function partExist($user_id, $part_id)
+    {
         $criteria = new CDbCriteria();
         $criteria->condition = 'user_id = :user_id AND part_id = :part_id';
         $criteria->params = array(':user_id' => Yii::app()->user->id, ':part_id' => $_POST['part_id']);

@@ -7,7 +7,8 @@ require_once("common.php");
  * @author Charles Pick
  * @package packages.redis.tests
  */
-class ARedisListTest extends CTestCase {
+class ARedisListTest extends CTestCase
+{
 
     /**
      * Holds the redis connection
@@ -18,7 +19,8 @@ class ARedisListTest extends CTestCase {
     /**
      * Tests the basic functionality
      */
-    public function testBasics() {
+    public function testBasics()
+    {
         $redis = $this->getConnection();
         $list = new ARedisList("TestSet:" . uniqid(), $redis);
 
@@ -45,7 +47,8 @@ class ARedisListTest extends CTestCase {
      * Sets the redis connection to use with this test
      * @param ARedisConnection $connection the connection
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         $this->_connection = $connection;
     }
 
@@ -53,17 +56,19 @@ class ARedisListTest extends CTestCase {
      * Gets the redis connection to use with this test
      * @return ARedisConnection the redis connection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             $this->_connection = Yii::createComponent(
-                            array(
-                                "class" => "packages.redis.ARedisConnection",
-                                "hostname" => REDIS_HOSTNAME,
-                                "port" => REDIS_PORT,
-                                "database" => REDIS_DATABASE,
-                                "password" => REDIS_PASSWORD
-            ));
+                array(
+                    "class" => "packages.redis.ARedisConnection",
+                    "hostname" => REDIS_HOSTNAME,
+                    "port" => REDIS_PORT,
+                    "database" => REDIS_DATABASE,
+                    "password" => REDIS_PASSWORD
+                ));
         }
+
         return $this->_connection;
     }
 

@@ -16,11 +16,13 @@ $this->breadcrumbs = array(
 </div>
 
 <div class="col-md-2 post">
-    <img class="img-responsive mbottom img-text" src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>" />
+    <img class="img-responsive mbottom img-text"
+         src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>"/>
 </div>
 <div class="col-md-6 form-horizontal">
     <div class="form-group">
         <label class="col-md-3 control-label">Автор:</label>
+
         <div class="col-md-9">
             <p class="form-control-static"><?= $model->author; ?></p>
         </div>
@@ -28,6 +30,7 @@ $this->breadcrumbs = array(
 
     <div class="form-group">
         <label class="col-md-3 control-label">Добавлено:</label>
+
         <div class="col-md-9">
             <p class="form-control-static"><?= date("d.m.Y", $model->date); ?></p>
         </div>
@@ -35,8 +38,11 @@ $this->breadcrumbs = array(
 
     <div class="form-group">
         <label class="col-md-3 control-label">Добавил:</label>
+
         <div class="col-md-9">
-            <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->username; ?></a></p>
+            <p class="form-control-static"><a
+                    href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->username; ?></a>
+            </p>
         </div>
     </div>
 
@@ -45,15 +51,18 @@ $this->breadcrumbs = array(
     <div class="clearfix"></div>
 
     <div class="btn-group mtop mbottom">
-        <a href="<?= Y::url('/chapter/default/create', array('docs' => $model->id)); ?>" class="btn btn-success"><i class="fa-plus"></i> Добавить главу</a>
+        <a href="<?= Y::url('/chapter/default/create', array('docs' => $model->id)); ?>" class="btn btn-success"><i
+                class="fa-plus"></i> Добавить главу</a>
         <?php if ($access['role'] == 1 || Y::hasAccess('administrator')) : ?>
-            <a href="<?= Y::url('/docs/default/setting', array('id' => $model->id)); ?>" class="btn btn-warning"><i class="fa-cogs"></i> Настройки</a>
-        <?php endif; ?>   
+            <a href="<?= Y::url('/docs/default/setting', array('id' => $model->id)); ?>" class="btn btn-warning"><i
+                    class="fa-cogs"></i> Настройки</a>
+        <?php endif; ?>
     </div>
 
     <?php foreach ($model->chapters as $chapter) : ?>
         <h4>
-            <a href="<?= Y::url('/chapter/default/view', array('id' => $chapter->id)); ?>"><?= $chapter->name . ' (' . $chapter->name_en . ')'; ?></a> Переведено: <?= Y::getProcess($chapter->id); ?> из <?= count($chapter->parts); ?>
+            <a href="<?= Y::url('/chapter/default/view', array('id' => $chapter->id)); ?>"><?= $chapter->name . ' (' . $chapter->name_en . ')'; ?></a>
+            Переведено: <?= Y::getProcess($chapter->id); ?> из <?= count($chapter->parts); ?>
         </h4>
     <?php endforeach; ?>
 

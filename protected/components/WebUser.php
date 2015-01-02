@@ -6,37 +6,44 @@
  * and open the template in the editor.
  */
 
-class WebUser extends CWebUser {
+class WebUser extends CWebUser
+{
 
     private $_model = null;
     private $_access = array();
 
-    function getRole() {
+    function getRole()
+    {
         if ($user = $this->getModel()) {
             // в таблице User есть поле role
             return $user->role;
         }
     }
 
-    private function getModel() {
+    private function getModel()
+    {
         if (!$this->isGuest && $this->_model === null) {
             $this->_model = Users::model()->findByPk($this->id, array('select' => 'role'));
         }
+
         return $this->_model;
     }
 
-    public function checkAccess($operation, $params = array(), $allowCaching = true) {
+    public function checkAccess($operation, $params = array(), $allowCaching = true)
+    {
         $cachId = Yii::app()->user->id . $operation;
 
         if (!isset($this->_access[$operation]) && Yii::app()->cache->get($cachId) === false) {
             $access = Yii::app()->getAuthManager()->checkAccess($operation, $this->getId(), $params);
-            C::set($cachId, (int) $access, 60 * 60 * 10);
+            C::set($cachId, (int)$access, 60 * 60 * 10);
+
             return $this->_access[$operation] = $access;
         }
 
         if (!isset($this->_access[$operation])) {
-            $access = (boolean) C::get($cachId);
+            $access = (boolean)C::get($cachId);
             $this->_access[$operation] = $access;
+
             return $access;
         }
 

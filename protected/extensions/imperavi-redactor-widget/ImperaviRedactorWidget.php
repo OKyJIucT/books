@@ -16,7 +16,8 @@
  * @link http://imperavi.com/redactor
  * @license https://github.com/yiiext/imperavi-redactor-widget/blob/master/license.md
  */
-class ImperaviRedactorWidget extends CInputWidget {
+class ImperaviRedactorWidget extends CInputWidget
+{
 
     /**
      * Assets package ID.
@@ -48,7 +49,8 @@ class ImperaviRedactorWidget extends CInputWidget {
     /**
      * Init widget.
      */
-    public function init() {
+    public function init()
+    {
         parent::init();
 
         if ($this->selector === null) {
@@ -69,7 +71,8 @@ class ImperaviRedactorWidget extends CInputWidget {
     /**
      * Register CSS and Script.
      */
-    protected function registerClientScript() {
+    protected function registerClientScript()
+    {
         // Prepare script package.
         $this->package = array_merge(array(
             'baseUrl' => $this->getAssetsUrl(),
@@ -82,7 +85,7 @@ class ImperaviRedactorWidget extends CInputWidget {
             'depends' => array(
                 'jquery',
             ),
-                ), $this->package);
+        ), $this->package);
 
         // Append language file to script package.
         if (isset($this->options['lang']) && $this->options['lang'] !== 'en') {
@@ -111,16 +114,16 @@ class ImperaviRedactorWidget extends CInputWidget {
         $options = CJavaScript::encode($this->options);
 
         $clientScript
-                ->addPackage(self::PACKAGE_ID, $this->package)
-                ->registerPackage(self::PACKAGE_ID)
-                ->registerScript(
-                        $this->id, 'jQuery(' . $selector . ').redactor(' . $options . ');', CClientScript::POS_READY
-        );
+            ->addPackage(self::PACKAGE_ID, $this->package)
+            ->registerPackage(self::PACKAGE_ID)
+            ->registerScript(
+                $this->id, 'jQuery(' . $selector . ').redactor(' . $options . ');', CClientScript::POS_READY
+            );
 
         foreach ($this->getPlugins() as $id => $plugin) {
             $clientScript
-                    ->addPackage(self::PACKAGE_ID . '-' . $id, $plugin)
-                    ->registerPackage(self::PACKAGE_ID . '-' . $id);
+                ->addPackage(self::PACKAGE_ID . '-' . $id, $plugin)
+                ->registerPackage(self::PACKAGE_ID . '-' . $id);
         }
     }
 
@@ -128,7 +131,8 @@ class ImperaviRedactorWidget extends CInputWidget {
      * Get the assets path.
      * @return string
      */
-    public function getAssetsPath() {
+    public function getAssetsPath()
+    {
         return dirname(__FILE__) . '/assets';
     }
 
@@ -136,14 +140,16 @@ class ImperaviRedactorWidget extends CInputWidget {
      * Publish assets and return url.
      * @return string
      */
-    public function getAssetsUrl() {
+    public function getAssetsUrl()
+    {
         return Yii::app()->getAssetManager()->publish($this->getAssetsPath());
     }
 
     /**
      * @param array $plugins
      */
-    public function setPlugins(array $plugins) {
+    public function setPlugins(array $plugins)
+    {
         foreach ($plugins as $id => $plugin) {
             if (!isset($plugin['baseUrl']) && !isset($plugin['basePath'])) {
                 $plugin['baseUrl'] = $this->getAssetsUrl() . '/plugins/' . $id;
@@ -156,7 +162,8 @@ class ImperaviRedactorWidget extends CInputWidget {
     /**
      * @return array
      */
-    public function getPlugins() {
+    public function getPlugins()
+    {
         return $this->_plugins;
     }
 

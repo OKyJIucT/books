@@ -16,11 +16,13 @@ $this->breadcrumbs = array(
 </div>
 
 <div class="col-md-2 post">
-    <img class="img-responsive mbottom" src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>" />
+    <img class="img-responsive mbottom"
+         src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>"/>
 </div>
 <div class="col-md-10 form-horizontal">
     <div class="form-group">
         <label class="col-md-3 control-label">Автор:</label>
+
         <div class="col-md-9">
             <p class="form-control-static"><?= $model->author; ?></p>
         </div>
@@ -28,6 +30,7 @@ $this->breadcrumbs = array(
 
     <div class="form-group">
         <label class="col-md-3 control-label">Добавлено:</label>
+
         <div class="col-md-9">
             <p class="form-control-static"><?= date("d.m.Y", $model->date); ?></p>
         </div>
@@ -35,8 +38,11 @@ $this->breadcrumbs = array(
 
     <div class="form-group">
         <label class="col-md-3 control-label">Добавил:</label>
+
         <div class="col-md-9">
-            <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->username; ?></a></p>
+            <p class="form-control-static"><a
+                    href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->username; ?></a>
+            </p>
         </div>
     </div>
 
@@ -58,10 +64,10 @@ $this->breadcrumbs = array(
                 'success' => 'js:function(data){
                     $(".getAccess").val("Заявка отправлена").removeClass("btn-warning").addClass("btn-info");
                 }'
-                    ), array(
-                'class' => 'btn btn-warning getAccess mleft',
-                'name' => 'save',
-                    )
+            ), array(
+                    'class' => 'btn btn-warning getAccess mleft',
+                    'name' => 'save',
+                )
             );
         }
 

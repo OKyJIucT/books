@@ -7,7 +7,8 @@ require_once("common.php");
  * @author Charles Pick
  * @package packages.redis.tests
  */
-class ARedisSortedSetTest extends CTestCase {
+class ARedisSortedSetTest extends CTestCase
+{
 
     /**
      * Holds the redis connection
@@ -18,7 +19,8 @@ class ARedisSortedSetTest extends CTestCase {
     /**
      * Tests the basic functionality
      */
-    public function testBasics() {
+    public function testBasics()
+    {
         $redis = $this->getConnection();
         $set = new ARedisSortedSet("TestSet:" . uniqid(), $redis);
         $this->assertTrue($set->add("oranges", 2.40));
@@ -34,7 +36,8 @@ class ARedisSortedSetTest extends CTestCase {
         $this->assertEquals(0, $set->getCount());
     }
 
-    public function testInterfaces() {
+    public function testInterfaces()
+    {
         $redis = $this->getConnection();
         $set = new ARedisSortedSet("TestSet:" . uniqid(), $redis);
 
@@ -53,7 +56,8 @@ class ARedisSortedSetTest extends CTestCase {
         $set->clear();
     }
 
-    public function testInterStore() {
+    public function testInterStore()
+    {
         $redis = $this->getConnection();
         $set1 = new ARedisSortedSet("TestSet1:" . uniqid(), $redis);
         $set2 = new ARedisSortedSet("TestSet2:" . uniqid(), $redis);
@@ -71,7 +75,8 @@ class ARedisSortedSetTest extends CTestCase {
         $set2->clear();
     }
 
-    public function testUnionStore() {
+    public function testUnionStore()
+    {
         $redis = $this->getConnection();
         $set1 = new ARedisSortedSet("TestSet1:" . uniqid(), $redis);
         $set2 = new ARedisSortedSet("TestSet2:" . uniqid(), $redis);
@@ -97,7 +102,8 @@ class ARedisSortedSetTest extends CTestCase {
      * Sets the redis connection to use with this test
      * @param ARedisConnection $connection the connection
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         $this->_connection = $connection;
     }
 
@@ -105,17 +111,19 @@ class ARedisSortedSetTest extends CTestCase {
      * Gets the redis connection to use with this test
      * @return ARedisConnection the redis connection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             $this->_connection = Yii::createComponent(
-                            array(
-                                "class" => "packages.redis.ARedisConnection",
-                                "hostname" => REDIS_HOSTNAME,
-                                "port" => REDIS_PORT,
-                                "database" => REDIS_DATABASE,
-                                "password" => REDIS_PASSWORD
-            ));
+                array(
+                    "class" => "packages.redis.ARedisConnection",
+                    "hostname" => REDIS_HOSTNAME,
+                    "port" => REDIS_PORT,
+                    "database" => REDIS_DATABASE,
+                    "password" => REDIS_PASSWORD
+                ));
         }
+
         return $this->_connection;
     }
 

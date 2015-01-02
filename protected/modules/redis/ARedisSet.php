@@ -20,19 +20,22 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisSet extends ARedisIterableEntity {
+class ARedisSet extends ARedisIterableEntity
+{
 
     /**
      * Adds an item to the set
      * @param mixed $item the item to add
      * @return boolean true if the item was added, otherwise false
      */
-    public function add($item) {
+    public function add($item)
+    {
         if (!$this->getConnection()->getClient()->sadd($this->name, $item)) {
             return false;
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -41,12 +44,14 @@ class ARedisSet extends ARedisIterableEntity {
      * @param mixed $item the item to remove
      * @return boolean true if the item was removed, otherwise false
      */
-    public function remove($item) {
+    public function remove($item)
+    {
         if (!$this->getConnection()->getClient()->srem($this->name, $item)) {
             return false;
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -54,10 +59,12 @@ class ARedisSet extends ARedisIterableEntity {
      * Removes and returns a random item from the set
      * @return mixed the item that was removed from the set
      */
-    public function pop() {
+    public function pop()
+    {
         $member = $this->getConnection()->getClient()->spop($this->name);
         $this->_data = null;
         $this->_count = null;
+
         return $member;
     }
 
@@ -65,16 +72,18 @@ class ARedisSet extends ARedisIterableEntity {
      * Gets a random member of the set
      * @return mixed a random member of the set
      */
-    public function random() {
+    public function random()
+    {
         return $this->getConnection()->getClient()->srandmember($this->name);
     }
 
     /**
      * Gets the difference between this set and the given set(s) and returns it
-     * @param mixed $set, $set2 The sets to compare to, either ARedisSet instances or their names
+     * @param mixed $set , $set2 The sets to compare to, either ARedisSet instances or their names
      * @return array the difference between this set and the given sets
      */
-    public function diff($set) {
+    public function diff($set)
+    {
         if (is_array($set)) {
             $parameters = $set;
         } else {
@@ -86,19 +95,21 @@ class ARedisSet extends ARedisIterableEntity {
             }
         }
         array_unshift($parameters, $this->name);
+
         return call_user_func_array(array(
             $this->getConnection()->getClient(),
             "sdiff"
-                ), $parameters);
+        ), $parameters);
     }
 
     /**
      * Gets the difference between this set and the given set(s), stores it in a new set and returns it
      * @param ARedisSet|string $destination the destination to store the result in
-     * @param mixed $set, $set2 The sets to compare to, either ARedisSet instances or their names
+     * @param mixed $set , $set2 The sets to compare to, either ARedisSet instances or their names
      * @return ARedisSet a set that contains the difference between this set and the given sets
      */
-    public function diffStore($destination, $set) {
+    public function diffStore($destination, $set)
+    {
         if ($destination instanceof ARedisSet) {
             $destination->_count = null;
             $destination->_data = null;
@@ -122,16 +133,18 @@ class ARedisSet extends ARedisIterableEntity {
         call_user_func_array(array(
             $this->getConnection()->getClient(),
             "sdiffstore"
-                ), $parameters);
+        ), $parameters);
+
         return $destination;
     }
 
     /**
      * Gets the intersection between this set and the given set(s) and returns it
-     * @param mixed $set, $set2 The sets to compare to, either ARedisSet instances or their names
+     * @param mixed $set , $set2 The sets to compare to, either ARedisSet instances or their names
      * @return array the intersection between this set and the given sets
      */
-    public function inter($set) {
+    public function inter($set)
+    {
         if (is_array($set)) {
             $parameters = $set;
         } else {
@@ -143,19 +156,21 @@ class ARedisSet extends ARedisIterableEntity {
             }
         }
         array_unshift($parameters, $this->name);
+
         return call_user_func_array(array(
             $this->getConnection()->getClient(),
             "sinter"
-                ), $parameters);
+        ), $parameters);
     }
 
     /**
      * Gets the intersection between this set and the given set(s), stores it in a new set and returns it
      * @param ARedisSet|string $destination the destination to store the result in
-     * @param mixed $set, $set2 The sets to compare to, either ARedisSet instances or their names
+     * @param mixed $set , $set2 The sets to compare to, either ARedisSet instances or their names
      * @return ARedisSet a set that contains the intersection between this set and the given sets
      */
-    public function interStore($destination, $set) {
+    public function interStore($destination, $set)
+    {
         if ($destination instanceof ARedisSet) {
             $destination->_count = null;
             $destination->_data = null;
@@ -179,16 +194,18 @@ class ARedisSet extends ARedisIterableEntity {
         call_user_func_array(array(
             $this->getConnection()->getClient(),
             "sinterstore"
-                ), $parameters);
+        ), $parameters);
+
         return $destination;
     }
 
     /**
      * Gets the union of this set and the given set(s) and returns it
-     * @param mixed $set, $set2 The sets to compare to, either ARedisSet instances or their names
+     * @param mixed $set , $set2 The sets to compare to, either ARedisSet instances or their names
      * @return array the union of this set and the given sets
      */
-    public function union($set) {
+    public function union($set)
+    {
         if (is_array($set)) {
             $parameters = $set;
         } else {
@@ -200,19 +217,21 @@ class ARedisSet extends ARedisIterableEntity {
             }
         }
         array_unshift($parameters, $this->name);
+
         return call_user_func_array(array(
             $this->getConnection()->getClient(),
             "sunion"
-                ), $parameters);
+        ), $parameters);
     }
 
     /**
      * Gets the union of this set and the given set(s), stores it in a new set and returns it
      * @param ARedisSet|string $destination the destination to store the result in
-     * @param mixed $set, $set2 The sets to compare to, either ARedisSet instances or their names
+     * @param mixed $set , $set2 The sets to compare to, either ARedisSet instances or their names
      * @return ARedisSet a set that contains the union of this set and the given sets
      */
-    public function unionStore($destination, $set) {
+    public function unionStore($destination, $set)
+    {
         if ($destination instanceof ARedisSet) {
             $destination->_count = null;
             $destination->_data = null;
@@ -236,7 +255,8 @@ class ARedisSet extends ARedisIterableEntity {
         call_user_func_array(array(
             $this->getConnection()->getClient(),
             "sunionstore"
-                ), $parameters);
+        ), $parameters);
+
         return $destination;
     }
 
@@ -246,7 +266,8 @@ class ARedisSet extends ARedisIterableEntity {
      * @param mixed $item the item to move
      * @return boolean true if the item was moved successfully
      */
-    public function move($destination, $item) {
+    public function move($destination, $item)
+    {
         if ($destination instanceof ARedisSet) {
             $destination->_count = null;
             $destination->_data = null;
@@ -254,6 +275,7 @@ class ARedisSet extends ARedisIterableEntity {
         }
         $this->_count = null;
         $this->_data = null;
+
         return $this->getConnection()->getClient()->smove($this->name, $destination, $item);
     }
 
@@ -261,10 +283,12 @@ class ARedisSet extends ARedisIterableEntity {
      * Gets the number of items in the set
      * @return integer the number of items in the set
      */
-    public function getCount() {
+    public function getCount()
+    {
         if ($this->_count === null) {
             $this->_count = $this->getConnection()->getClient()->scard($this->name);
         }
+
         return $this->_count;
     }
 
@@ -273,10 +297,12 @@ class ARedisSet extends ARedisIterableEntity {
      * @param boolean $forceRefresh whether to force a refresh or not
      * @return array the members in the set
      */
-    public function getData($forceRefresh = false) {
+    public function getData($forceRefresh = false)
+    {
         if ($forceRefresh || $this->_data === null) {
             $this->_data = $this->getConnection()->getClient()->smembers($this->name);
         }
+
         return $this->_data;
     }
 
@@ -286,7 +312,8 @@ class ARedisSet extends ARedisIterableEntity {
      * @param mixed $data the data to be copied from, must be an array or object implementing Traversable
      * @throws CException If data is neither an array nor a Traversable.
      */
-    public function copyFrom($data) {
+    public function copyFrom($data)
+    {
         if (is_array($data) || ($data instanceof Traversable)) {
             if ($this->_count > 0)
                 $this->clear();
@@ -304,7 +331,8 @@ class ARedisSet extends ARedisIterableEntity {
      * @param mixed $item the item to check for
      * @return boolean true if the item exists in the entity, otherwise false
      */
-    public function contains($item) {
+    public function contains($item)
+    {
         return $this->getConnection()->getClient()->sismember($this->name, $item);
     }
 
@@ -314,7 +342,8 @@ class ARedisSet extends ARedisIterableEntity {
      * @param integer $offset the offset to check on
      * @return boolean
      */
-    public function offsetExists($offset) {
+    public function offsetExists($offset)
+    {
         return ($offset >= 0 && $offset < $this->getCount());
     }
 
@@ -324,7 +353,8 @@ class ARedisSet extends ARedisIterableEntity {
      * @param integer $offset the offset to retrieve item.
      * @return mixed the item at the offset
      */
-    public function offsetGet($offset) {
+    public function offsetGet($offset)
+    {
         return $this->_data[$offset];
     }
 
@@ -334,7 +364,8 @@ class ARedisSet extends ARedisIterableEntity {
      * @param integer $offset the offset to set item
      * @param mixed $item the item value
      */
-    public function offsetSet($offset, $item) {
+    public function offsetSet($offset, $item)
+    {
         $this->add($item);
     }
 
@@ -343,7 +374,8 @@ class ARedisSet extends ARedisIterableEntity {
      * This method is required by the interface ArrayAccess.
      * @param integer $offset the offset to unset item
      */
-    public function offsetUnset($offset) {
+    public function offsetUnset($offset)
+    {
         $this->remove($this->_data[$offset]);
     }
 

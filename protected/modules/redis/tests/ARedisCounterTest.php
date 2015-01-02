@@ -7,7 +7,8 @@ require_once("common.php");
  * @author Charles Pick
  * @package packages.redis.tests
  */
-class ARedisCounterTest extends CTestCase {
+class ARedisCounterTest extends CTestCase
+{
 
     /**
      * Holds the redis connection
@@ -18,7 +19,8 @@ class ARedisCounterTest extends CTestCase {
     /**
      * Tests the basic functionality
      */
-    public function testBasics() {
+    public function testBasics()
+    {
         $redis = $this->getConnection();
         $counter = new ARedisCounter("TestCounter:" . uniqid(), $redis);
         $this->assertEquals(0, $counter->getValue());
@@ -37,7 +39,8 @@ class ARedisCounterTest extends CTestCase {
      * Sets the redis connection to use with this test
      * @param ARedisConnection $connection the connection
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         $this->_connection = $connection;
     }
 
@@ -45,17 +48,19 @@ class ARedisCounterTest extends CTestCase {
      * Gets the redis connection to use with this test
      * @return ARedisConnection the redis connection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             $this->_connection = Yii::createComponent(
-                            array(
-                                "class" => "packages.redis.ARedisConnection",
-                                "hostname" => REDIS_HOSTNAME,
-                                "port" => REDIS_PORT,
-                                "database" => REDIS_DATABASE,
-                                "password" => REDIS_PASSWORD
-            ));
+                array(
+                    "class" => "packages.redis.ARedisConnection",
+                    "hostname" => REDIS_HOSTNAME,
+                    "port" => REDIS_PORT,
+                    "database" => REDIS_DATABASE,
+                    "password" => REDIS_PASSWORD
+                ));
         }
+
         return $this->_connection;
     }
 

@@ -44,6 +44,7 @@ class YiiDebugToolbar extends CWidget
     public function setPanels(array $panels = array())
     {
         $this->_panels = $panels;
+
         return $this;
     }
 
@@ -54,10 +55,10 @@ class YiiDebugToolbar extends CWidget
      */
     public function getPanels()
     {
-        if(null === $this->_panels)
-        {
+        if (null === $this->_panels) {
             $this->_panels = array();
         }
+
         return $this->_panels;
     }
 
@@ -74,6 +75,7 @@ class YiiDebugToolbar extends CWidget
                 ->getAssetManager()
                 ->publish(dirname(__FILE__) . '/assets', false, -1, YII_DEBUG and !$linkAssets);
         }
+
         return $this->_assetsUrl;
     }
 
@@ -103,7 +105,7 @@ class YiiDebugToolbar extends CWidget
         }
 
         $this->createPanels()
-             ->registerClientScripts();
+            ->registerClientScripts();
     }
 
     /**
@@ -124,13 +126,13 @@ class YiiDebugToolbar extends CWidget
     private function registerClientScripts()
     {
         $cs = Yii::app()->getClientScript()
-	        	->registerCoreScript('jquery');
-        
+            ->registerCoreScript('jquery');
+
         $cs->registerCssFile($this->assetsUrl . '/main_old.css');
         $cs->registerCssFile($this->assetsUrl . '/main.css');
 
         $cs->registerScriptFile($this->assetsUrl . '/main.js',
-                CClientScript::POS_END);
+            CClientScript::POS_END);
 
         return $this;
     }
@@ -147,12 +149,12 @@ class YiiDebugToolbar extends CWidget
                 if (is_string($config)) {
                     $config = array('class' => $config);
                 }
-                
-                if(is_array($config)) {
+
+                if (is_array($config)) {
                     if (is_array($config) && !isset($config['class'])) {
-					    $config['class'] = $id;
-				    }
-				
+                        $config['class'] = $id;
+                    }
+
                     if (isset($config['enabled']) && false === $config['enabled']) {
                         unset($this->_panels[$id]);
                         continue;
@@ -164,14 +166,15 @@ class YiiDebugToolbar extends CWidget
 
                 if (false === ($panel instanceof YiiDebugToolbarPanelInterface)) {
                     throw new CException(Yii::t('yii-debug-toolbar',
-                            'The %class% class must be compatible with YiiDebugToolbarPanelInterface', array(
-                                '%class%' => get_class($panel)
-                            )));
+                        'The %class% class must be compatible with YiiDebugToolbarPanelInterface', array(
+                            '%class%' => get_class($panel)
+                        )));
                 }
                 $panel->init();
                 $this->_panels[$id] = $panel;
             }
         }
+
         return $this;
     }
 }

@@ -11,14 +11,15 @@
  * $set->add("myOtherThing", 0.6);
  *
  * foreach($set as $key => $score) {
- * 	echo $key.":".$score."\n";
+ *    echo $key.":".$score."\n";
  * }
  * </pre>
  *
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisSortedSet extends ARedisIterableEntity {
+class ARedisSortedSet extends ARedisIterableEntity
+{
 
     /**
      * Adds an item to the set
@@ -26,12 +27,14 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param integer $value the score for this key
      * @return boolean true if the item was added, otherwise false
      */
-    public function add($key, $value) {
+    public function add($key, $value)
+    {
         if (!$this->getConnection()->getClient()->zadd($this->name, $value, $key)) {
             return false;
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -40,12 +43,14 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param string $key the item to remove
      * @return boolean true if the item was removed, otherwise false
      */
-    public function remove($key) {
+    public function remove($key)
+    {
         if (!$this->getConnection()->getClient()->zrem($this->name, $key)) {
             return false;
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -54,12 +59,14 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param integer $byAmount the amount to increment by, defaults to 1
      * @return integer the new value of the score if was incremented, otherwise false
      */
-    public function increment($key, $byAmount = 1) {
+    public function increment($key, $byAmount = 1)
+    {
         if (!($score = $this->getConnection()->getClient()->zincrby($this->name, $byAmount, $key))) {
             return false;
         }
         $this->_data = null;
         $this->_count = null;
+
         return $score;
     }
 
@@ -70,7 +77,8 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param array $weights the weights for the sets, if any
      * @return ARedisSortedSet a set that contains the intersection between this set and the given sets
      */
-    public function interStore($destination, $set, $weights = null) {
+    public function interStore($destination, $set, $weights = null)
+    {
         if ($destination instanceof ARedisSortedSet) {
             $destination->_count = null;
             $destination->_data = null;
@@ -100,8 +108,9 @@ class ARedisSortedSet extends ARedisIterableEntity {
         $total = call_user_func_array(array(
             $this->getConnection()->getClient(),
             "zinter"
-                ), $parameters);
+        ), $parameters);
         $destination->_count = $total;
+
         return $destination;
     }
 
@@ -112,7 +121,8 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param array $weights the weights for the sets, if any
      * @return ARedisSortedSet a set that contains the union of this set and the given sets
      */
-    public function unionStore($destination, $set, $weights = null) {
+    public function unionStore($destination, $set, $weights = null)
+    {
         if ($destination instanceof ARedisSortedSet) {
             $destination->_count = null;
             $destination->_data = null;
@@ -142,8 +152,9 @@ class ARedisSortedSet extends ARedisIterableEntity {
         $total = call_user_func_array(array(
             $this->getConnection()->getClient(),
             "zunion"
-                ), $parameters);
+        ), $parameters);
         $destination->_count = $total;
+
         return $destination;
     }
 
@@ -152,7 +163,8 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * This method is required by the interface IteratorAggregate.
      * @return Iterator an iterator for traversing the items in the set.
      */
-    public function getIterator() {
+    public function getIterator()
+    {
         return new CMapIterator($this->getData());
     }
 
@@ -160,10 +172,12 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * Gets the number of items in the set
      * @return integer the number of items in the set
      */
-    public function getCount() {
+    public function getCount()
+    {
         if ($this->_count === null) {
             $this->_count = $this->getConnection()->getClient()->zcard($this->name);
         }
+
         return $this->_count;
     }
 
@@ -172,10 +186,12 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param boolean $forceRefresh whether to force a refresh or not
      * @return array the members in the set
      */
-    public function getData($forceRefresh = false) {
+    public function getData($forceRefresh = false)
+    {
         if ($forceRefresh || $this->_data === null) {
             $this->_data = $this->getConnection()->getClient()->zrange($this->name, 0, -1, true);
         }
+
         return $this->_data;
     }
 
@@ -185,7 +201,8 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param integer $offset the offset to check on
      * @return boolean
      */
-    public function offsetExists($offset) {
+    public function offsetExists($offset)
+    {
         return ($offset >= 0 && $offset < $this->getCount());
     }
 
@@ -196,7 +213,8 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @return mixed the item at the offset
      * @throws CException if the offset is invalid
      */
-    public function offsetGet($offset) {
+    public function offsetGet($offset)
+    {
         return $this->_data[$offset];
     }
 
@@ -206,7 +224,8 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * @param integer $offset the offset to set item
      * @param mixed $item the item value
      */
-    public function offsetSet($offset, $item) {
+    public function offsetSet($offset, $item)
+    {
         $this->add($offset, $item);
     }
 
@@ -215,7 +234,8 @@ class ARedisSortedSet extends ARedisIterableEntity {
      * This method is required by the interface ArrayAccess.
      * @param integer $offset the offset to unset item
      */
-    public function offsetUnset($offset) {
+    public function offsetUnset($offset)
+    {
         $this->remove($offset);
     }
 

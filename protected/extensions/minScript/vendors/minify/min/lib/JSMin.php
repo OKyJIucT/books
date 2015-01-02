@@ -1,4 +1,5 @@
 <?php
+
 /**
  * JSMin.php - modified PHP implementation of Douglas Crockford's JSMin.
  *
@@ -53,22 +54,22 @@
  * @license http://opensource.org/licenses/mit-license.php MIT License
  * @link http://code.google.com/p/jsmin-php/
  */
-
-class JSMin {
-    const ORD_LF            = 10;
-    const ORD_SPACE         = 32;
-    const ACTION_KEEP_A     = 1;
-    const ACTION_DELETE_A   = 2;
+class JSMin
+{
+    const ORD_LF = 10;
+    const ORD_SPACE = 32;
+    const ACTION_KEEP_A = 1;
+    const ACTION_DELETE_A = 2;
     const ACTION_DELETE_A_B = 3;
 
-    protected $a           = "\n";
-    protected $b           = '';
-    protected $input       = '';
-    protected $inputIndex  = 0;
+    protected $a = "\n";
+    protected $b = '';
+    protected $input = '';
+    protected $inputIndex = 0;
     protected $inputLength = 0;
-    protected $lookAhead   = null;
-    protected $output      = '';
-    protected $lastByteOut  = '';
+    protected $lookAhead = null;
+    protected $output = '';
+    protected $lastByteOut = '';
     protected $keptComment = '';
 
     /**
@@ -81,6 +82,7 @@ class JSMin {
     public static function minify($js)
     {
         $jsmin = new JSMin($js);
+
         return $jsmin->min();
     }
 
@@ -118,10 +120,11 @@ class JSMin {
             $command = self::ACTION_KEEP_A; // default
             if ($this->a === ' ') {
                 if (($this->lastByteOut === '+' || $this->lastByteOut === '-')
-                        && ($this->b === $this->lastByteOut)) {
+                    && ($this->b === $this->lastByteOut)
+                ) {
                     // Don't delete this space. If we do, the addition/subtraction
                     // could be parsed as a post-increment
-                } elseif (! $this->isAlphaNum($this->b)) {
+                } elseif (!$this->isAlphaNum($this->b)) {
                     $command = self::ACTION_DELETE_A;
                 }
             } elseif ($this->a === "\n") {
@@ -131,14 +134,16 @@ class JSMin {
                     // in case of mbstring.func_overload & 2, must check for null b,
                     // otherwise mb_strpos will give WARNING
                 } elseif ($this->b === null
-                          || (false === strpos('{[(+-!~', $this->b)
-                              && ! $this->isAlphaNum($this->b))) {
+                    || (false === strpos('{[(+-!~', $this->b)
+                        && !$this->isAlphaNum($this->b))
+                ) {
                     $command = self::ACTION_DELETE_A;
                 }
-            } elseif (! $this->isAlphaNum($this->a)) {
+            } elseif (!$this->isAlphaNum($this->a)) {
                 if ($this->b === ' '
                     || ($this->b === "\n"
-                        && (false === strpos('}])+-"\'', $this->a)))) {
+                        && (false === strpos('}])+-"\'', $this->a)))
+                ) {
                     $command = self::ACTION_DELETE_A_B;
                 }
             }
@@ -149,6 +154,7 @@ class JSMin {
         if ($mbIntEnc !== null) {
             mb_internal_encoding($mbIntEnc);
         }
+
         return $this->output;
     }
 
@@ -165,7 +171,8 @@ class JSMin {
         // make sure we don't compress "a + ++b" to "a+++b", etc.
         if ($command === self::ACTION_DELETE_A_B
             && $this->b === ' '
-            && ($this->a === '+' || $this->a === '-')) {
+            && ($this->a === '+' || $this->a === '-')
+        ) {
             // Note: we're at an addition/substraction operator; the inputIndex
             // will certainly be a valid index
             if ($this->input[$this->inputIndex] === $this->a) {
@@ -186,12 +193,12 @@ class JSMin {
 
                 $this->lastByteOut = $this->a;
 
-                // fallthrough intentional
+            // fallthrough intentional
             case self::ACTION_DELETE_A: // 2
                 $this->a = $this->b;
                 if ($this->a === "'" || $this->a === '"') { // string literal
                     $str = $this->a; // in case needed for exception
-                    for(;;) {
+                    for (; ;) {
                         $this->output .= $this->a;
                         $this->lastByteOut = $this->a;
 
@@ -208,23 +215,23 @@ class JSMin {
                             $this->output .= $this->a;
                             $this->lastByteOut = $this->a;
 
-                            $this->a       = $this->get();
+                            $this->a = $this->get();
                             $str .= $this->a;
                         }
                     }
                 }
 
-                // fallthrough intentional
+            // fallthrough intentional
             case self::ACTION_DELETE_A_B: // 3
                 $this->b = $this->next();
                 if ($this->b === '/' && $this->isRegexpLiteral()) {
                     $this->output .= $this->a . $this->b;
                     $pattern = '/'; // keep entire pattern in case we need to report it in the exception
-                    for(;;) {
+                    for (; ;) {
                         $this->a = $this->get();
                         $pattern .= $this->a;
                         if ($this->a === '[') {
-                            for(;;) {
+                            for (; ;) {
                                 $this->output .= $this->a;
                                 $this->a = $this->get();
                                 $pattern .= $this->a;
@@ -239,7 +246,7 @@ class JSMin {
                                 if ($this->isEOF($this->a)) {
                                     throw new JSMin_UnterminatedRegExpException(
                                         "JSMin: Unterminated set in RegExp at byte "
-                                            . $this->inputIndex .": {$pattern}");
+                                        . $this->inputIndex . ": {$pattern}");
                                 }
                             }
                         }
@@ -284,11 +291,12 @@ class JSMin {
                 }
                 // make sure it's a keyword, not end of an identifier
                 $charBeforeKeyword = substr($this->output, $length - strlen($m[0]) - 1, 1);
-                if (! $this->isAlphaNum($charBeforeKeyword)) {
+                if (!$this->isAlphaNum($charBeforeKeyword)) {
                     return true;
                 }
             }
         }
+
         return false;
     }
 
@@ -317,6 +325,7 @@ class JSMin {
         if ($c === "\r") {
             return "\n";
         }
+
         return ' ';
     }
 
@@ -339,6 +348,7 @@ class JSMin {
     protected function peek()
     {
         $this->lookAhead = $this->get();
+
         return $this->lookAhead;
     }
 
@@ -368,6 +378,7 @@ class JSMin {
                 if (preg_match('/^\\/@(?:cc_on|if|elif|else|end)\\b/', $comment)) {
                     $this->keptComment .= "/{$comment}";
                 }
+
                 return;
             }
         }
@@ -382,7 +393,7 @@ class JSMin {
     {
         $this->get();
         $comment = '';
-        for(;;) {
+        for (; ;) {
             $get = $this->get();
             if ($get === '*') {
                 if ($this->peek() === '/') { // end of comment reached
@@ -398,6 +409,7 @@ class JSMin {
                         // IE conditional
                         $this->keptComment .= "/*{$comment}*/";
                     }
+
                     return;
                 }
             } elseif ($get === null) {
@@ -428,10 +440,19 @@ class JSMin {
                     break;
             }
         }
+
         return $get;
     }
 }
 
-class JSMin_UnterminatedStringException extends Exception {}
-class JSMin_UnterminatedCommentException extends Exception {}
-class JSMin_UnterminatedRegExpException extends Exception {}
+class JSMin_UnterminatedStringException extends Exception
+{
+}
+
+class JSMin_UnterminatedCommentException extends Exception
+{
+}
+
+class JSMin_UnterminatedRegExpException extends Exception
+{
+}

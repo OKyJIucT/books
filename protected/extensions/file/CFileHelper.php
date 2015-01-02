@@ -9,9 +9,11 @@ require_once 'CFile.php';
  *
  * Introduces property-like access to CFile methods.
  */
-class CApplicationComponent {
+class CApplicationComponent
+{
 
-    public function __get($name) {
+    public function __get($name)
+    {
         $getter = 'get' . $name;
         if (method_exists($this, $getter)) {
             return $this->$getter();
@@ -19,7 +21,8 @@ class CApplicationComponent {
         throw new Exception('Unable to get an unknown property ' . $name);
     }
 
-    public function __set($name, $value) {
+    public function __set($name, $value)
+    {
         $setter = 'set' . $name;
         if (method_exists($this, $setter)) {
             return $this->$setter($value);
@@ -41,7 +44,8 @@ class CApplicationComponent {
  *     $cf_file = CFileHelper::get('files/test.txt');
  *
  */
-class CFileHelper extends CFile {
+class CFileHelper extends CFile
+{
 
     /**
      * @var null|CFile
@@ -57,10 +61,12 @@ class CFileHelper extends CFile {
      * @param bool $greedy If `True` file properties (such as 'Size', 'Owner', 'Permission', etc.) would be autoloaded
      * @return CFile
      */
-    public static function get($filepath, $greedy=false) {
-        if (self::$_obj===null) {
+    public static function get($filepath, $greedy = false)
+    {
+        if (self::$_obj === null) {
             self::$_obj = new self();
         }
+
         return self::$_obj->set($filepath, $greedy);
     }
 
@@ -69,13 +75,15 @@ class CFileHelper extends CFile {
      *
      * @return array
      */
-    public function getLog() {
+    public function getLog()
+    {
         return self::$_log;
     }
 
     /* ================================================== */
 
-    public static function getInstance($filepath, $class_name=__CLASS__) {
+    public static function getInstance($filepath, $class_name = __CLASS__)
+    {
         return parent::getInstance($filepath, __CLASS__);
     }
 
@@ -87,15 +95,18 @@ class CFileHelper extends CFile {
      * @param string $message
      * @param string $level
      */
-    protected function addLog($message, $level='info') {
+    protected function addLog($message, $level = 'info')
+    {
         self::$_log[] = array($level, $message);
     }
 
-    protected function getPathOfAlias($alias) {
+    protected function getPathOfAlias($alias)
+    {
         return null;
     }
 
-    protected function formatNumber ($number, $format) {
+    protected function formatNumber($number, $format)
+    {
         return (string)$number;
     }
 

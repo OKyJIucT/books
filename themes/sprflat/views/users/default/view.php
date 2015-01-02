@@ -8,33 +8,37 @@ $this->breadcrumbs = array(
 
     <div class="col-md-6">
         <h2>Данные профиля</h2>
-        <form class="form-horizontal" role="form">                                    
+
+        <form class="form-horizontal" role="form">
             <div class="form-group">
                 <div class="row">
                     <label class="col-md-4 control-label">Ник</label>
+
                     <div class="col-md-8">
                         <p class="form-control-static"><?= $user->username; ?></p>
                     </div>
                 </div>
-            </div>          
+            </div>
             <?php if ($user->id == Yii::app()->user->id || Y::hasAccess('administrator')) : ?>
                 <div class="form-group">
                     <div class="row">
                         <label class="col-md-4 control-label">Email</label>
+
                         <div class="col-md-8">
                             <p class="form-control-static"><?= $user->email; ?></p>
                         </div>
                     </div>
-                </div> 
-            <?php endif; ?>      
+                </div>
+            <?php endif; ?>
             <div class="form-group">
                 <div class="row">
                     <label class="col-md-4 control-label">Дата регистрации</label>
+
                     <div class="col-md-8">
                         <p class="form-control-static"><?= date('d.m.Y', $user->reg_date); ?></p>
                     </div>
                 </div>
-            </div> 
+            </div>
         </form>
     </div>
     <div class="col-md-6">
@@ -46,20 +50,24 @@ $this->breadcrumbs = array(
                     ?>
                     <div class="form-group">
                         <?php if (time() > $invite->hold) : ?>
-                            <div class = "input-group">
-                                <input type="text" class="form-control" placeholder="Код приглашения" value="<?= $invite->code; ?>" />
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Код приглашения"
+                                       value="<?= $invite->code; ?>"/>
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" id="element_<?= $key; ?>" data-clipboard-text="<?= $invite->code; ?>" type="button">Скопировать</button>
+                                    <button class="btn btn-default" id="element_<?= $key; ?>"
+                                            data-clipboard-text="<?= $invite->code; ?>" type="button">Скопировать
+                                    </button>
                                 </span>
                             </div>
                         <?php else : ?>
-                            <div class = "input-group">
-                                <input type="text" class="form-control" placeholder="Код приглашения" value="<?= $invite->code; ?>" readonly="readonly" />
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Код приглашения"
+                                       value="<?= $invite->code; ?>" readonly="readonly"/>
                                 <span class="input-group-btn">
                                     <button class="btn btn-warning" type="button">Инвайт выдан</button>
                                 </span>
                             </div>
-                        <?php endif; ?> 
+                        <?php endif; ?>
                         <script>
                             var client<?= $key; ?> = new ZeroClipboard(document.getElementById("element_<?= $key; ?>"));
                             client<?= $key; ?>.on("aftercopy", function (event) {
@@ -77,11 +85,11 @@ $this->breadcrumbs = array(
                             });
                         </script>
                     </div>
-                    <?php
+                <?php
                 endforeach;
             endif;
             ?>
-        <?php endif; ?>  
+        <?php endif; ?>
     </div>
 </div>
 

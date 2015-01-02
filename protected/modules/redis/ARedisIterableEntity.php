@@ -5,7 +5,8 @@
  * @author Charles Pick
  * @package packages.redis
  */
-abstract class ARedisIterableEntity extends ARedisEntity implements IteratorAggregate, ArrayAccess, Countable {
+abstract class ARedisIterableEntity extends ARedisEntity implements IteratorAggregate, ArrayAccess, Countable
+{
 
     /**
      * The number of items in the entity
@@ -24,7 +25,8 @@ abstract class ARedisIterableEntity extends ARedisEntity implements IteratorAggr
      * This method is required by the interface IteratorAggregate.
      * @return Iterator an iterator for traversing the items in the set.
      */
-    public function getIterator() {
+    public function getIterator()
+    {
         return new CListIterator($this->getData());
     }
 
@@ -33,7 +35,8 @@ abstract class ARedisIterableEntity extends ARedisEntity implements IteratorAggr
      * This method is required by Countable interface.
      * @return integer number of items in the set.
      */
-    public function count() {
+    public function count()
+    {
         return $this->getCount();
     }
 
@@ -41,7 +44,8 @@ abstract class ARedisIterableEntity extends ARedisEntity implements IteratorAggr
      * Gets a list of items in the set
      * @return array the list of items in array
      */
-    public function toArray() {
+    public function toArray()
+    {
         return $this->getData();
     }
 
@@ -63,7 +67,8 @@ abstract class ARedisIterableEntity extends ARedisEntity implements IteratorAggr
      * @param mixed $item the item to check for
      * @return boolean true if the item exists in the entity, otherwise false
      */
-    public function contains($item) {
+    public function contains($item)
+    {
         return in_array($item, $this->getData());
     }
 
@@ -71,10 +76,12 @@ abstract class ARedisIterableEntity extends ARedisEntity implements IteratorAggr
      * Removes all the items from the entity
      * @return ARedisIterableEntity the current entity
      */
-    public function clear() {
+    public function clear()
+    {
         $this->_data = null;
         $this->_count = null;
         $this->getConnection()->getClient()->delete($this->name);
+
         return $this;
     }
 

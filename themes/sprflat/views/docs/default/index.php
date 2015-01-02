@@ -7,16 +7,18 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class="col-md-12">
-    <div class="btn-group">
-        <a href="<?= Y::url('/docs/default/create'); ?>" class="btn btn-success"><i class="fa-plus"></i> Добавить</a>
-        <?php if (Y::hasAccess('administrator')) : ?>
-            <a href="<?= Y::url('/docs/default/admin'); ?>" class="btn btn-warning"><i class="fa-cogs"></i> Управление</a>
-        <?php endif; ?>   
+    <div class="col-md-12">
+        <div class="btn-group">
+            <a href="<?= Y::url('/docs/default/create'); ?>" class="btn btn-success"><i class="fa-plus"></i>
+                Добавить</a>
+            <?php if (Y::hasAccess('administrator')) : ?>
+                <a href="<?= Y::url('/docs/default/admin'); ?>" class="btn btn-warning"><i class="fa-cogs"></i>
+                    Управление</a>
+            <?php endif; ?>
+        </div>
     </div>
-</div>
 
-<div class="clearfix"></div>
+    <div class="clearfix"></div>
 
 <?php
 $this->widget('zii.widgets.CListView', array(

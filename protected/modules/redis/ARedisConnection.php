@@ -6,7 +6,8 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisConnection extends CApplicationComponent {
+class ARedisConnection extends CApplicationComponent
+{
 
     /**
      * The redis client
@@ -60,7 +61,8 @@ class ARedisConnection extends CApplicationComponent {
      * Sets the redis client to use with this connection
      * @param Redis $client the redis client instance
      */
-    public function setClient(Redis $client) {
+    public function setClient(Redis $client)
+    {
         $this->_client = $client;
     }
 
@@ -68,7 +70,8 @@ class ARedisConnection extends CApplicationComponent {
      * Gets the redis client
      * @return Redis the redis client
      */
-    public function getClient($reconnect = false) {
+    public function getClient($reconnect = false)
+    {
         if ($this->_client === null || $reconnect) {
             $this->_client = new Redis;
             if ($this->unixSocket !== null)
@@ -84,6 +87,7 @@ class ARedisConnection extends CApplicationComponent {
             $this->_client->setOption(Redis::OPT_PREFIX, $this->prefix);
             $this->_client->select($this->database);
         }
+
         return $this->_client;
     }
 
@@ -99,13 +103,15 @@ class ARedisConnection extends CApplicationComponent {
      * @throws CException if the property is not defined
      * @see __set
      */
-    public function __get($name) {
+    public function __get($name)
+    {
         $getter = 'get' . $name;
         if (property_exists($this->getClient(), $name)) {
             return $this->getClient()->{$name};
         } elseif (method_exists($this->getClient(), $getter)) {
             return $this->$getter();
         }
+
         return parent::__get($name);
     }
 
@@ -122,13 +128,15 @@ class ARedisConnection extends CApplicationComponent {
      * @throws CException if the property is not defined or the property is read only.
      * @see __get
      */
-    public function __set($name, $value) {
+    public function __set($name, $value)
+    {
         $setter = 'set' . $name;
         if (property_exists($this->getClient(), $name)) {
             return $this->getClient()->{$name} = $value;
         } elseif (method_exists($this->getClient(), $setter)) {
             return $this->getClient()->{$setter}($value);
         }
+
         return parent::__set($name, $value);
     }
 
@@ -139,13 +147,15 @@ class ARedisConnection extends CApplicationComponent {
      * @param string $name the property name
      * @return boolean
      */
-    public function __isset($name) {
+    public function __isset($name)
+    {
         $getter = 'get' . $name;
         if (property_exists($this->getClient(), $name)) {
             return true;
         } elseif (method_exists($this->getClient(), $getter)) {
             return true;
         }
+
         return parent::__isset($name);
     }
 
@@ -157,7 +167,8 @@ class ARedisConnection extends CApplicationComponent {
      * @throws CException if the property is read only.
      * @return mixed
      */
-    public function __unset($name) {
+    public function __unset($name)
+    {
         $setter = 'set' . $name;
         if (property_exists($this->getClient(), $name)) {
             $this->getClient()->{$name} = null;
@@ -176,7 +187,8 @@ class ARedisConnection extends CApplicationComponent {
      * @param array $parameters the parameters to pass to the method
      * @return mixed the response from the redis client
      */
-    public function __call($name, $parameters) {
+    public function __call($name, $parameters)
+    {
         return call_user_func_array(array($this->getClient(), $name), $parameters);
     }
 

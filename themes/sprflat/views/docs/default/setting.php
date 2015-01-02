@@ -15,11 +15,13 @@ $this->breadcrumbs = array(
 </div>
 
 <div class="col-md-2 post">
-    <img class="img-responsive mbottom" src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>" />
+    <img class="img-responsive mbottom"
+         src="<?= $model->thumb ? '/thumbs' . Y::getDir($model->date) . $model->thumb : '/thubms/noimage.jpg'; ?>"/>
 </div>
 <div class="col-md-6 form-horizontal">
     <div class="form-group">
         <label class="col-md-3 control-label">Автор:</label>
+
         <div class="col-md-9">
             <p class="form-control-static"><?= $model->author; ?></p>
         </div>
@@ -27,6 +29,7 @@ $this->breadcrumbs = array(
 
     <div class="form-group">
         <label class="col-md-3 control-label">Добавлено:</label>
+
         <div class="col-md-9">
             <p class="form-control-static"><?= date("d.m.Y", $model->date); ?></p>
         </div>
@@ -34,13 +37,17 @@ $this->breadcrumbs = array(
 
     <div class="form-group">
         <label class="col-md-3 control-label">Добавил:</label>
+
         <div class="col-md-9">
-            <p class="form-control-static"><a href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->username; ?></a></p>
+            <p class="form-control-static"><a
+                    href="<?= Y::url('/users/default/view', array('id' => $model->user->id)); ?>"><?= $model->user->username; ?></a>
+            </p>
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-md-3 control-label">Тип документа:</label>
+
         <div class="col-md-9">
             <?php
             echo CHtml::form('', 'post', array('class' => 'translate'));
@@ -62,10 +69,10 @@ $this->breadcrumbs = array(
                     $(".change").toggleClass("btn-danger").toggleClass("btn-success");
                     $(".change").val() == "Публичный. Изменить на приватный" ? $(".change").val("Приватный. Изменить на публичный") : $(".change").val("Публичный. Изменить на приватный");
                 }'
-                    ), array(
-                'class' => 'btn change ' . $class,
-                'name' => 'save',
-                    )
+            ), array(
+                    'class' => 'btn change ' . $class,
+                    'name' => 'save',
+                )
             );
 
             echo CHtml::endForm();
@@ -83,6 +90,7 @@ $this->breadcrumbs = array(
 
         <div class="form-group">
             <label class="col-md-3 control-label"><?= $item->user->username; ?>:</label>
+
             <div class="col-md-9">
                 <?php
                 echo CHtml::form('', 'post', array('class' => 'translate'));
@@ -104,10 +112,10 @@ $this->breadcrumbs = array(
                     $(".user_' . $item->user->id . '").toggleClass("btn-danger").toggleClass("btn-success");
                     $(".user_' . $item->user->id . '").val() == "Доступ запрещен. Разрешить" ? $(".user_' . $item->user->id . '").val("Доступ разрешен. Запретить") : $(".user_' . $item->user->id . '").val("Доступ запрещен. Разрешить");
                 }'
-                        ), array(
-                    'class' => 'btn user_' . $item->user->id . ' ' . $class,
-                    'name' => 'save_' . $item->user->id,
-                        )
+                ), array(
+                        'class' => 'btn user_' . $item->user->id . ' ' . $class,
+                        'name' => 'save_' . $item->user->id,
+                    )
                 );
 
                 echo CHtml::endForm();
@@ -115,7 +123,7 @@ $this->breadcrumbs = array(
             </div>
         </div>
 
-        <?php
+    <?php
     }
     ?>
 

@@ -6,15 +6,16 @@
 
 /**
  * APC-based cache class for Minify
- * 
+ *
  * <code>
  * Minify::setCache(new Minify_Cache_APC());
  * </code>
- * 
+ *
  * @package Minify
  * @author Chris Edwards
  **/
-class Minify_Cache_APC {
+class Minify_Cache_APC
+{
 
     /**
      * Create a Minify_Cache_APC object, to be passed to
@@ -54,9 +55,10 @@ class Minify_Cache_APC {
      */
     public function getSize($id)
     {
-        if (! $this->_fetch($id)) {
+        if (!$this->_fetch($id)) {
             return false;
         }
+
         return (function_exists('mb_strlen') && ((int)ini_get('mbstring.func_overload') & 2))
             ? mb_strlen($this->_data, '8bit')
             : strlen($this->_data);
@@ -124,10 +126,12 @@ class Minify_Cache_APC {
         $ret = apc_fetch($id);
         if (false === $ret) {
             $this->_id = null;
+
             return false;
         }
         list($this->_lm, $this->_data) = explode('|', $ret, 2);
         $this->_id = $id;
+
         return true;
     }
 }

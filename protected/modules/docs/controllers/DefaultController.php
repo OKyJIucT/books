@@ -1,6 +1,7 @@
 <?php
 
-class DefaultController extends Controller {
+class DefaultController extends Controller
+{
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -11,7 +12,8 @@ class DefaultController extends Controller {
     /**
      * @return array action filters
      */
-    public function filters() {
+    public function filters()
+    {
         return array(
             'accessControl', // perform access control for CRUD operations
             'postOnly + delete', // we only allow deletion via POST request
@@ -23,7 +25,8 @@ class DefaultController extends Controller {
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-    public function accessRules() {
+    public function accessRules()
+    {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions' => array('index', 'view', 'create', 'setting', 'changeType'),
@@ -42,9 +45,10 @@ class DefaultController extends Controller {
     /**
      * Lists all models.
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $this->pageTitle = 'Список документов';
-        $dataProvider = new CActiveDataProvider(Docs::model()->with('user')->cache(60 * 15, new Tags('docsList'), 2));
+        $dataProvider = new CActiveDataProvider(Docs::model()->with('user'));
 
         $this->render('index', array(
             'dataProvider' => $dataProvider,
@@ -55,7 +59,8 @@ class DefaultController extends Controller {
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
      */
-    public function actionView($id) {
+    public function actionView($id)
+    {
 
         $model = $this->loadModel($id);
         $this->pageTitle = $model->title;
@@ -79,7 +84,8 @@ class DefaultController extends Controller {
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
 
         $this->pageTitle = 'Добавление документа';
 
@@ -97,7 +103,7 @@ class DefaultController extends Controller {
                 // go through each uploaded image
                 foreach ($thumbs as $thumb => $file) {
                     $ext = array_pop(explode('.', $file->name));
-                    $name = md5($file->name . time() . rand(100000, 9999999) . date("r", (time() - rand(100000, 9999999))));
+                    $name = Y::getHash();
                     if ($file->saveAs(Y::getDir(false, 'thumbs') . $name . '.' . $ext)) {
                         $model->thumb = $name . '.' . $ext;
                     }
@@ -110,7 +116,7 @@ class DefaultController extends Controller {
                 $access->docs_id = $model->id;
                 $access->role = 1;
                 $access->save();
-                
+
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -125,7 +131,8 @@ class DefaultController extends Controller {
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
-    public function actionUpdate($id) {
+    public function actionUpdate($id)
+    {
         $model = $this->loadModel($id);
 
         $this->performAjaxValidation($model);
@@ -141,7 +148,8 @@ class DefaultController extends Controller {
         ));
     }
 
-    public function actionSetting($id) {
+    public function actionSetting($id)
+    {
         $model = $this->loadModel($id);
         $this->pageTitle = $model->title;
 
@@ -160,7 +168,8 @@ class DefaultController extends Controller {
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
+    public function actionDelete($id)
+    {
         $this->loadModel($id)->delete();
 
         // очищаем кеш по документам
@@ -174,7 +183,8 @@ class DefaultController extends Controller {
     /**
      * Manages all models.
      */
-    public function actionAdmin() {
+    public function actionAdmin()
+    {
         $model = new Docs('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Docs']))
@@ -192,10 +202,12 @@ class DefaultController extends Controller {
      * @return Docs the loaded model
      * @throws CHttpException
      */
-    public function loadModel($id) {
+    public function loadModel($id)
+    {
         $model = Docs::model()->with('user', 'chapters', 'accesses')->findByPk($id);
         if ($model === null)
             Y::error(404);
+
         return $model;
     }
 
@@ -203,14 +215,16 @@ class DefaultController extends Controller {
      * Performs the AJAX validation.
      * @param Docs $model the model to be validated
      */
-    protected function performAjaxValidation($model) {
+    protected function performAjaxValidation($model)
+    {
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'docs-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
     }
 
-    public function actionChangeType() {
+    public function actionChangeType()
+    {
         if (Y::isAjaxRequest()) {
             $docs_id = intval($_POST['docs_id']);
             $docs = Docs::model()->findByPk($docs_id);

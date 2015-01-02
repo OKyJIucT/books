@@ -10,7 +10,8 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisHash extends ARedisIterableEntity {
+class ARedisHash extends ARedisIterableEntity
+{
 
     /**
      * Adds an item to the hash
@@ -18,7 +19,8 @@ class ARedisHash extends ARedisIterableEntity {
      * @param mixed $value the item to add
      * @return boolean true if the item was added, otherwise false
      */
-    public function add($key, $value) {
+    public function add($key, $value)
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
@@ -27,6 +29,7 @@ class ARedisHash extends ARedisIterableEntity {
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -35,7 +38,8 @@ class ARedisHash extends ARedisIterableEntity {
      * @param string $key the hash key to remove
      * @return boolean true if the item was removed, otherwise false
      */
-    public function remove($key) {
+    public function remove($key)
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
@@ -44,6 +48,7 @@ class ARedisHash extends ARedisIterableEntity {
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -52,7 +57,8 @@ class ARedisHash extends ARedisIterableEntity {
      * This method is required by the interface IteratorAggregate.
      * @return Iterator an iterator for traversing the items in the hash.
      */
-    public function getIterator() {
+    public function getIterator()
+    {
         return new CMapIterator($this->getData());
     }
 
@@ -60,13 +66,15 @@ class ARedisHash extends ARedisIterableEntity {
      * Gets the number of items in the hash
      * @return integer the number of items in the set
      */
-    public function getCount() {
+    public function getCount()
+    {
         if ($this->_count === null) {
             if ($this->name === null) {
                 throw new CException(get_class($this) . " requires a name!");
             }
             $this->_count = $this->getConnection()->getClient()->hlen($this->name);
         }
+
         return $this->_count;
     }
 
@@ -75,13 +83,15 @@ class ARedisHash extends ARedisIterableEntity {
      * @param boolean $forceRefresh whether to force a refresh or not
      * @return array the members in the set
      */
-    public function getData($forceRefresh = false) {
+    public function getData($forceRefresh = false)
+    {
         if ($forceRefresh || $this->_data === null) {
             if ($this->name === null) {
                 throw new CException(get_class($this) . " requires a name!");
             }
             $this->_data = $this->getConnection()->getClient()->hgetall($this->name);
         }
+
         return $this->_data;
     }
 
@@ -91,7 +101,8 @@ class ARedisHash extends ARedisIterableEntity {
      * @param integer $offset the offset to check on
      * @return boolean
      */
-    public function offsetExists($offset) {
+    public function offsetExists($offset)
+    {
         return ($offset >= 0 && $offset < $this->getCount());
     }
 
@@ -101,8 +112,10 @@ class ARedisHash extends ARedisIterableEntity {
      * @param integer $offset the offset to retrieve item.
      * @return mixed the item at the offset
      */
-    public function offsetGet($offset) {
+    public function offsetGet($offset)
+    {
         $data = $this->getData();
+
         return $data[$offset];
     }
 
@@ -112,7 +125,8 @@ class ARedisHash extends ARedisIterableEntity {
      * @param integer $offset the offset to set item
      * @param mixed $item the item value
      */
-    public function offsetSet($offset, $item) {
+    public function offsetSet($offset, $item)
+    {
         $this->add($offset, $item);
     }
 
@@ -121,7 +135,8 @@ class ARedisHash extends ARedisIterableEntity {
      * This method is required by the interface ArrayAccess.
      * @param integer $offset the offset to unset item
      */
-    public function offsetUnset($offset) {
+    public function offsetUnset($offset)
+    {
         $this->remove($offset);
     }
 

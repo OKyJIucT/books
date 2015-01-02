@@ -3,19 +3,23 @@
 require_once '../CFileHelper.php';
 
 
-class CFileHelperTests extends PHPUnit_Framework_TestCase {
+class CFileHelperTests extends PHPUnit_Framework_TestCase
+{
 
-    public function setUp() {
+    public function setUp()
+    {
         $this->filename = 'cfile_test_tmp_' . uniqid();
         $this->filepath = sys_get_temp_dir() . '/' . $this->filename;
         $this->cf = CFileHelper::get($this->filepath);
     }
 
-    public function tearDown() {
+    public function tearDown()
+    {
         $this->cf->delete();
     }
 
-    public function testTestsDir() {
+    public function testTestsDir()
+    {
         $cf = $this->cf;
         $cf->createDir();
 
@@ -31,7 +35,8 @@ class CFileHelperTests extends PHPUnit_Framework_TestCase {
         $this->assertTrue($cf->getWriteable());
     }
 
-    public function testDirContentsFiltering() {
+    public function testDirContentsFiltering()
+    {
         $cf = $this->cf;
         $cf->createDir();
 
@@ -49,10 +54,10 @@ class CFileHelperTests extends PHPUnit_Framework_TestCase {
 
         foreach ($fnames as $fname) {
             $result = file_put_contents($this->filepath . DIRECTORY_SEPARATOR . $fname, '');
-            $this->assertFalse($result===false);
+            $this->assertFalse($result === false);
         }
 
-        $this->assertEquals(count($cf->getContents(true)), count($fnames)+1);
+        $this->assertEquals(count($cf->getContents(true)), count($fnames) + 1);
         $this->assertEquals(count($cf->getContents(true, 'php')), 2);
         $this->assertEquals(count($cf->getContents(true, 'd.php')), 1);
         $this->assertEquals(count($cf->getContents(true, 'tst_b')), 2);
@@ -60,21 +65,23 @@ class CFileHelperTests extends PHPUnit_Framework_TestCase {
 
     }
 
-    public function testToString() {
+    public function testToString()
+    {
         $this->assertEquals((string)$this->cf, $this->filepath);
     }
 
-    public function testSetOwner() {
+    public function testSetOwner()
+    {
         $cf = $this->cf;
         $cf->create();
 
         $owner_name = $cf->getOwner();
-        $owner_id = $cf->getOwner(False);
+        $owner_id = $cf->getOwner(false);
 
         $this->setExpectedException('CFileException');
         $cf->setOwner('nosuchuser123987');
 
-        $this->assertNotEquals($cf->setOwner($owner_name), False);
+        $this->assertNotEquals($cf->setOwner($owner_name), false);
 
         $this->setExpectedException('CFileException');
         $cf->setOwner('4567890123');
@@ -82,10 +89,11 @@ class CFileHelperTests extends PHPUnit_Framework_TestCase {
         $this->setExpectedException('CFileException');
         $cf->setOwner(4567890123);
 
-        $this->assertNotEquals($cf->setOwner($owner_id), False);
+        $this->assertNotEquals($cf->setOwner($owner_id), false);
     }
 
-    public function testSetOwnerRecursive() {
+    public function testSetOwnerRecursive()
+    {
         $cf = $this->cf;
         $cf->createDir();
 
@@ -94,22 +102,23 @@ class CFileHelperTests extends PHPUnit_Framework_TestCase {
 
         $owner_name = $cf->getOwner();
 
-        $this->assertNotEquals($cf->setOwner($owner_name, True), False);
+        $this->assertNotEquals($cf->setOwner($owner_name, true), false);
 
         $cf_sub->delete();
     }
 
-    public function testSetGroup() {
+    public function testSetGroup()
+    {
         $cf = $this->cf;
         $cf->create();
 
         $group_name = $cf->getGroup();
-        $group_id = $cf->getGroup(False);
+        $group_id = $cf->getGroup(false);
 
         $this->setExpectedException('CFileException');
         $cf->setGroup('nosuchgroup123987');
 
-        $this->assertNotEquals($cf->setGroup($group_name), False);
+        $this->assertNotEquals($cf->setGroup($group_name), false);
 
         $this->setExpectedException('CFileException');
         $cf->setGroup('4567890123');
@@ -117,10 +126,11 @@ class CFileHelperTests extends PHPUnit_Framework_TestCase {
         $this->setExpectedException('CFileException');
         $cf->setGroup(4567890123);
 
-        $this->assertNotEquals($cf->setGroup($group_id), False);
+        $this->assertNotEquals($cf->setGroup($group_id), false);
     }
 
-    public function testSetGroupRecursive() {
+    public function testSetGroupRecursive()
+    {
         $cf = $this->cf;
         $cf->createDir();
 
@@ -129,29 +139,31 @@ class CFileHelperTests extends PHPUnit_Framework_TestCase {
 
         $group_name = $cf->getGroup();
 
-        $this->assertNotEquals($cf->setGroup($group_name, True), False);
+        $this->assertNotEquals($cf->setGroup($group_name, true), false);
 
         $cf_sub->delete();
     }
 
-    public function testSetPermissions() {
+    public function testSetPermissions()
+    {
         $cf = $this->cf;
         $cf->create();
 
         $perms = $cf->getPermissions();
-        $this->assertNotEquals($cf->setPermissions(770), False);
-        $this->assertNotEquals($cf->setPermissions($perms), False);
+        $this->assertNotEquals($cf->setPermissions(770), false);
+        $this->assertNotEquals($cf->setPermissions($perms), false);
         $this->assertEquals($cf->getPermissions(), $perms);
     }
 
-    public function testSetPermissionsRecursive() {
+    public function testSetPermissionsRecursive()
+    {
         $cf = $this->cf;
         $cf->createDir();
 
         $cf_sub = CFileHelper::get($cf->getRealPath() . '/' . uniqid('sub'));
         $cf_sub->create();
 
-        $this->assertNotEquals($cf->setPermissions(770, True), False);
+        $this->assertNotEquals($cf->setPermissions(770, true), false);
 
         $cf_sub->delete();
     }

@@ -31,7 +31,8 @@
  * @author Stephen Clay <steve@mrclay.org>
  * @author Elan Ruusamäe <glen@delfi.ee>
  */
-class Minify_ClosureCompiler {
+class Minify_ClosureCompiler
+{
 
     /**
      * Filepath of the Closure Compiler jar file. This must be set before
@@ -69,7 +70,7 @@ class Minify_ClosureCompiler {
     public static function minify($js, $options = array())
     {
         self::_prepare();
-        if (! ($tmpFile = tempnam(self::$tempDir, 'cc_'))) {
+        if (!($tmpFile = tempnam(self::$tempDir, 'cc_'))) {
             throw new Exception('Minify_ClosureCompiler : could not create temp file.');
         }
         file_put_contents($tmpFile, $js);
@@ -78,6 +79,7 @@ class Minify_ClosureCompiler {
         if ($result_code != 0) {
             throw new Exception('Minify_ClosureCompiler : Closure Compiler execution failed.');
         }
+
         return implode("\n", $output);
     }
 
@@ -91,31 +93,32 @@ class Minify_ClosureCompiler {
             $userOptions
         );
         $cmd = self::$javaExecutable . ' -jar ' . escapeshellarg(self::$jarFile)
-             . (preg_match('/^[\\da-zA-Z0-9\\-]+$/', $o['charset'])
+            . (preg_match('/^[\\da-zA-Z0-9\\-]+$/', $o['charset'])
                 ? " --charset {$o['charset']}"
                 : '');
 
         foreach (array('compilation_level') as $opt) {
             if ($o[$opt]) {
-                $cmd .= " --{$opt} ". escapeshellarg($o[$opt]);
+                $cmd .= " --{$opt} " . escapeshellarg($o[$opt]);
             }
         }
+
         return $cmd . ' ' . escapeshellarg($tmpFile);
     }
 
     private static function _prepare()
     {
-        if (! is_file(self::$jarFile)) {
-            throw new Exception('Minify_ClosureCompiler : $jarFile('.self::$jarFile.') is not a valid file.');
+        if (!is_file(self::$jarFile)) {
+            throw new Exception('Minify_ClosureCompiler : $jarFile(' . self::$jarFile . ') is not a valid file.');
         }
-        if (! is_readable(self::$jarFile)) {
-            throw new Exception('Minify_ClosureCompiler : $jarFile('.self::$jarFile.') is not readable.');
+        if (!is_readable(self::$jarFile)) {
+            throw new Exception('Minify_ClosureCompiler : $jarFile(' . self::$jarFile . ') is not readable.');
         }
-        if (! is_dir(self::$tempDir)) {
-            throw new Exception('Minify_ClosureCompiler : $tempDir('.self::$tempDir.') is not a valid direcotry.');
+        if (!is_dir(self::$tempDir)) {
+            throw new Exception('Minify_ClosureCompiler : $tempDir(' . self::$tempDir . ') is not a valid direcotry.');
         }
-        if (! is_writable(self::$tempDir)) {
-            throw new Exception('Minify_ClosureCompiler : $tempDir('.self::$tempDir.') is not writable.');
+        if (!is_writable(self::$tempDir)) {
+            throw new Exception('Minify_ClosureCompiler : $tempDir(' . self::$tempDir . ') is not writable.');
         }
     }
 }

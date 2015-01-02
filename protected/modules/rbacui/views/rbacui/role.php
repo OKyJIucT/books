@@ -1,5 +1,5 @@
 ﻿<?php
-/* @var array $roles[] CAuthItem */
+/* @var array $roles [] CAuthItem */
 
 $keys = array_keys($roles);
 sort($keys);
@@ -11,7 +11,9 @@ $options = (count($keys) > 0) ? array_combine($keys, $keys) : array();
             <div class="col-md-2">
                 <?php echo CHtml::dropDownList('role', '', $options, array('size' => 14, 'style' => 'width:148px;', 'onchange' => 'selectAuthItem(this,"' . $this->createAbsoluteUrl('ajax/infoAuthItem') . '");')); ?>
             </div>
-            <div class="col-md-8" id="role-info"><hr></div>
+            <div class="col-md-8" id="role-info">
+                <hr>
+            </div>
             <div class="col-md-2">
                 <?php
                 if ($this->isAdmin()):

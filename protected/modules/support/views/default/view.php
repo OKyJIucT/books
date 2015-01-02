@@ -32,11 +32,11 @@ $this->breadcrumbs = array(
             <div class="col-md-2control-label ">
                 <?php
                 echo CHtml::htmlButton('Добавить ответ', array(
-                    'name' => 'saveTicket',
-                    'value' => "save",
-                    'class' => 'btn btn-success',
-                    'type' => 'submit'
-                        )
+                        'name' => 'saveTicket',
+                        'value' => "save",
+                        'class' => 'btn btn-success',
+                        'type' => 'submit'
+                    )
                 );
                 ?>
             </div>
@@ -87,7 +87,7 @@ $this->breadcrumbs = array(
                     $author = 'Вы написали';
                 }
             }
-            
+
             ?>
 
             <div class="panel <?= $panel; ?>">
@@ -96,13 +96,13 @@ $this->breadcrumbs = array(
                     <ul class="panel-controls">
                         <li class="mtop"><?= date("d M Y, H:i", $message->date); ?></li>
                     </ul>
-                </div> 
+                </div>
                 <div class="panel-body">
                     <?= $message->text; ?>
-                </div> 
+                </div>
             </div>
 
-            <?php
+        <?php
         }
         ?>
 

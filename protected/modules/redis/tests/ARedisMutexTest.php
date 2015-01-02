@@ -7,7 +7,8 @@ require_once("common.php");
  * @author Charles Pick
  * @package packages.redis.tests
  */
-class ARedisMutexTest extends CTestCase {
+class ARedisMutexTest extends CTestCase
+{
 
     /**
      * Holds the redis connection
@@ -18,7 +19,8 @@ class ARedisMutexTest extends CTestCase {
     /**
      * Tests the basic functionality
      */
-    public function testBasics() {
+    public function testBasics()
+    {
         $redis = $this->getConnection();
         $mutex1 = new ARedisMutex("TestMutex2:" . uniqid(), $redis);
         $mutex2 = new ARedisMutex($mutex1->name, $redis);
@@ -37,7 +39,8 @@ class ARedisMutexTest extends CTestCase {
     /**
      * Tests the blocking functionality
      */
-    public function testBlock() {
+    public function testBlock()
+    {
         $redis = $this->getConnection();
         $mutex1 = new ARedisMutex("TestMutex2:" . uniqid(), $redis);
         $mutex2 = new ARedisMutex($mutex1->name, $redis);
@@ -45,7 +48,7 @@ class ARedisMutexTest extends CTestCase {
         $mutex2->expiresAfter = 2;
         $this->assertTrue($mutex1->lock());
         $count = 0;
-        $mutex2->onAfterLock = function(CEvent $event) use (&$count) {
+        $mutex2->onAfterLock = function (CEvent $event) use (&$count) {
             $count++;
             $event->sender->unlock();
         };
@@ -57,7 +60,8 @@ class ARedisMutexTest extends CTestCase {
      * Sets the redis connection to use with this test
      * @param ARedisConnection $connection the connection
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         $this->_connection = $connection;
     }
 
@@ -65,17 +69,19 @@ class ARedisMutexTest extends CTestCase {
      * Gets the redis connection to use with this test
      * @return ARedisConnection the redis connection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             $this->_connection = Yii::createComponent(
-                            array(
-                                "class" => "packages.redis.ARedisConnection",
-                                "hostname" => REDIS_HOSTNAME,
-                                "port" => REDIS_PORT,
-                                "database" => REDIS_DATABASE,
-                                "password" => REDIS_PASSWORD
-            ));
+                array(
+                    "class" => "packages.redis.ARedisConnection",
+                    "hostname" => REDIS_HOSTNAME,
+                    "port" => REDIS_PORT,
+                    "database" => REDIS_DATABASE,
+                    "password" => REDIS_PASSWORD
+                ));
         }
+
         return $this->_connection;
     }
 

@@ -5,7 +5,8 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisCache extends CCache {
+class ARedisCache extends CCache
+{
 
     public $hostname = 'localhost';
     public $port = '6379';
@@ -21,7 +22,8 @@ class ARedisCache extends CCache {
      * Sets the redis connection to use for caching
      * @param ARedisConnection|string $connection the redis connection, if a string is provided, it is presumed to be a the name of an applciation component
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         if (is_string($connection)) {
             $connection = Yii::app()->{$connection};
         }
@@ -32,13 +34,15 @@ class ARedisCache extends CCache {
      * Gets the redis connection to use for caching
      * @return ARedisConnection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             if (!isset(Yii::app()->redis)) {
                 throw new CException("ARedisCache expects a 'redis' application component");
             }
             $this->_connection = Yii::app()->redis;
         }
+
         return $this->_connection;
     }
 
@@ -48,7 +52,8 @@ class ARedisCache extends CCache {
      * @param string $key a unique key identifying the cached value
      * @return string the value stored in cache, false if the value is not in the cache or expired.
      */
-    protected function getValue($key) {
+    protected function getValue($key)
+    {
         return $this->getConnection()->getClient()->get($key);
     }
 
@@ -57,7 +62,8 @@ class ARedisCache extends CCache {
      * @param array $keys a list of keys identifying the cached values
      * @return array a list of cached values indexed by the keys
      */
-    protected function getValues($keys) {
+    protected function getValues($keys)
+    {
         return $this->getConnection()->getClient()->mget($keys);
     }
 
@@ -70,7 +76,8 @@ class ARedisCache extends CCache {
      * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
      * @return boolean true if the value is successfully stored into cache, false otherwise
      */
-    protected function setValue($key, $value, $expire = 0) {
+    protected function setValue($key, $value, $expire = 0)
+    {
 
         $this->getConnection()->getClient()->set($key, $value);
         if ($expire) {
@@ -87,9 +94,10 @@ class ARedisCache extends CCache {
      * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
      * @return boolean true if the value is successfully stored into cache, false otherwise
      */
-    protected function addValue($key, $value, $expire) {
+    protected function addValue($key, $value, $expire)
+    {
         if ($expire > 0)
-            $expire+=time();
+            $expire += time();
         else
             $expire = 0;
 
@@ -99,6 +107,7 @@ class ARedisCache extends CCache {
         if ($expire) {
             $this->getConnection()->getClient()->expire($key, $expire);
         }
+
         return true;
     }
 
@@ -108,7 +117,8 @@ class ARedisCache extends CCache {
      * @param string $key key of the value to be deleted
      * @return boolean if no error happens during deletion
      */
-    protected function deleteValue($key) {
+    protected function deleteValue($key)
+    {
         return $this->getConnection()->getClient()->delete($key);
     }
 
@@ -117,8 +127,9 @@ class ARedisCache extends CCache {
      * Be careful of performing this operation if the cache is shared by multiple applications.
      * @return boolean whether flushing was successful or not
      */
-    public function flush() {
-        return (bool) $this->getConnection()->getClient()->flushDb();
+    public function flush()
+    {
+        return (bool)$this->getConnection()->getClient()->flushDb();
     }
 
 }

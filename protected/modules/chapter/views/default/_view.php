@@ -73,13 +73,13 @@ $this->breadcrumbs = array(
                         'success' => 'js:function(data){
                     $(".btn-' . $version->hash . '").val("Сохранено").removeClass("btn-warning").addClass("btn-success");
                 }'
-                            ), array(
-                        // Меняем тип элемента на submit, чтобы у пользователей
-                        // с отключенным JavaScript всё было хорошо.
-                        'type' => 'submit',
-                        'class' => 'btn btn-sm btn-warning btn-translate btn-' . $version->hash,
-                        'name' => 'save-' . $version->hash,
-                            )
+                    ), array(
+                            // Меняем тип элемента на submit, чтобы у пользователей
+                            // с отключенным JavaScript всё было хорошо.
+                            'type' => 'submit',
+                            'class' => 'btn btn-sm btn-warning btn-translate btn-' . $version->hash,
+                            'name' => 'save-' . $version->hash,
+                        )
                     );
 
                     $this->widget('ImperaviRedactorWidget', array(
@@ -112,13 +112,13 @@ $this->breadcrumbs = array(
                     'type' => 'POST', 'success' => 'js:function(data){
                     $(".btn-' . $data->id . '").val("Сохранено").removeClass("btn-warning").addClass("btn-success");
                 }'
-                        ), array(
-                    // Меняем тип элемента на submit, чтобы у пользователей
-                    // с отключенным JavaScript всё было хорошо.
-                    'type' => 'submit',
-                    'class' => 'btn btn-sm btn-warning btn-translate btn-' . $data->id,
-                    'name' => 'save-' . $data->id,
-                        )
+                ), array(
+                        // Меняем тип элемента на submit, чтобы у пользователей
+                        // с отключенным JavaScript всё было хорошо.
+                        'type' => 'submit',
+                        'class' => 'btn btn-sm btn-warning btn-translate btn-' . $data->id,
+                        'name' => 'save-' . $data->id,
+                    )
                 );
 
                 $this->widget('ImperaviRedactorWidget', array(
@@ -149,13 +149,13 @@ $this->breadcrumbs = array(
                 'success' => 'js:function(data){
                     $(".btn-' . $data->id . '").val("Сохранено").removeClass("btn-warning").addClass("btn-success");
                 }'
-                    ), array(
-                // Меняем тип элемента на submit, чтобы у пользователей
-                // с отключенным JavaScript всё было хорошо.
-                'type' => 'submit',
-                'class' => 'btn btn-sm btn-warning btn-translate btn-' . $data->id,
-                'name' => 'save-' . $data->id,
-                    )
+            ), array(
+                    // Меняем тип элемента на submit, чтобы у пользователей
+                    // с отключенным JavaScript всё было хорошо.
+                    'type' => 'submit',
+                    'class' => 'btn btn-sm btn-warning btn-translate btn-' . $data->id,
+                    'name' => 'save-' . $data->id,
+                )
             );
 
             $this->widget('ImperaviRedactorWidget', array(
@@ -176,7 +176,7 @@ $this->breadcrumbs = array(
 
             echo CHtml::endForm();
         }
-        ?> 
+        ?>
     </div>
     <div class="col-md-2">
         Комментарии

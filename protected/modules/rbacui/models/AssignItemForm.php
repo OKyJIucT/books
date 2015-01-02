@@ -5,7 +5,8 @@
  * AssignItemForm is the data structure for roles.
  * It is used for assigning authorization items to users by CAuthManager.
  */
-class AssignItemForm extends CFormModel {
+class AssignItemForm extends CFormModel
+{
 
     public $item;
     public $type;
@@ -14,7 +15,8 @@ class AssignItemForm extends CFormModel {
     /**
      * Declares the validation rules.
      */
-    public function rules() {
+    public function rules()
+    {
         return array(
             array('item, type, action', 'required'),
         );
@@ -25,7 +27,8 @@ class AssignItemForm extends CFormModel {
      * If not declared here, an attribute would have a label that is
      * the same as its name with the first letter in upper case.
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'item' => Yii::t('RbacuiModule.rbacui', 'Item'),
         );

@@ -18,7 +18,8 @@
  * @author Stephen Clay <steve@mrclay.org>
  * @author Simon Schick <simonsimcity@gmail.com>
  */
-class Minify_ImportProcessor {
+class Minify_ImportProcessor
+{
 
     public static $filesIncluded = array();
 
@@ -27,6 +28,7 @@ class Minify_ImportProcessor {
         self::$filesIncluded = array();
         self::$_isCss = (strtolower(substr($file, -4)) === '.css');
         $obj = new Minify_ImportProcessor(dirname($file));
+
         return $obj->_getContent($file);
     }
 
@@ -54,7 +56,7 @@ class Minify_ImportProcessor {
     private function _getContent($file, $is_imported = false)
     {
         $file = realpath($file);
-        if (! $file
+        if (!$file
             || in_array($file, self::$filesIncluded)
             || false === ($content = @file_get_contents($file))
         ) {
@@ -65,7 +67,7 @@ class Minify_ImportProcessor {
         $this->_currentDir = dirname($file);
 
         // remove UTF-8 BOM if present
-        if (pack("CCC",0xef,0xbb,0xbf) === substr($content, 0, 3)) {
+        if (pack("CCC", 0xef, 0xbb, 0xbf) === substr($content, 0, 3)) {
             $content = substr($content, 3);
         }
         // ensure uniform EOLs
@@ -83,8 +85,8 @@ class Minify_ImportProcessor {
                 ([a-zA-Z,\\s]*)?     # 2 = media list
                 ;                    # end token
             /x'
-            ,array($this, '_importCB')
-            ,$content
+            , array($this, '_importCB')
+            , $content
         );
 
         // You only need to rework the import-path if the script is imported
@@ -92,8 +94,8 @@ class Minify_ImportProcessor {
             // rewrite remaining relative URIs
             $content = preg_replace_callback(
                 '/url\\(\\s*([^\\)\\s]+)\\s*\\)/'
-                ,array($this, '_urlCB')
-                ,$content
+                , array($this, '_urlCB')
+                , $content
             );
         }
 
@@ -129,6 +131,7 @@ class Minify_ImportProcessor {
                 ? $m[0]
                 : "/* Minify_ImportProcessor could not fetch '{$file}' */";
         }
+
         return (!self::$_isCss || preg_match('@(?:^$|\\ball\\b)@', $mediaList))
             ? $content
             : "@media {$mediaList} {\n{$content}\n}\n";
@@ -154,6 +157,7 @@ class Minify_ImportProcessor {
                 $url = self::getPathDiff(realpath($this->_previewsDir), $path);
             }
         }
+
         return "url({$quote}{$url}{$quote})";
     }
 
@@ -170,11 +174,11 @@ class Minify_ImportProcessor {
 
         $arFrom = explode($ps, rtrim($realFrom, $ps));
         $arTo = explode($ps, rtrim($realTo, $ps));
-        while (count($arFrom) && count($arTo) && ($arFrom[0] == $arTo[0]))
-        {
+        while (count($arFrom) && count($arTo) && ($arFrom[0] == $arTo[0])) {
             array_shift($arFrom);
             array_shift($arTo);
         }
+
         return str_pad("", count($arFrom) * 3, '..' . $ps) . implode($ps, $arTo);
     }
 
@@ -211,6 +215,7 @@ class Minify_ImportProcessor {
             $path = readlink($path);
         // put initial separator that could have been lost
         $path = !$unipath ? '/' . $path : $path;
+
         return $path;
     }
 }

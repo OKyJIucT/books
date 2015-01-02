@@ -5,7 +5,8 @@
  * AttachItemForm is the data structure for authorization item form data.
  * It is used for attaching CAuthManager authorization items.
  */
-class AttachItemForm extends CFormModel {
+class AttachItemForm extends CFormModel
+{
 
     public $name;
     public $attachname;
@@ -14,7 +15,8 @@ class AttachItemForm extends CFormModel {
     /**
      * Declares the validation rules.
      */
-    public function rules() {
+    public function rules()
+    {
         return array(
             array('name, attachname, action', 'required'),
         );
@@ -25,7 +27,8 @@ class AttachItemForm extends CFormModel {
      * If not declared here, an attribute would have a label that is
      * the same as its name with the first letter in upper case.
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'name' => Yii::t('RbacuiModule.rbacui', 'Name'),
             'attachname' => Yii::t('RbacuiModule.rbacui', 'Name'),

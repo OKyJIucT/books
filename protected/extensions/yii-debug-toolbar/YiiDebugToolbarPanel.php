@@ -18,10 +18,10 @@
  * @since 1.1.7
  */
 abstract class YiiDebugToolbarPanel extends CWidget
-implements YiiDebugToolbarPanelInterface
+    implements YiiDebugToolbarPanelInterface
 {
-	
-	public $i = 'n';
+
+    public $i = 'n';
 
     const VIEWS_PATH = '/views/panels';
 
@@ -35,12 +35,12 @@ implements YiiDebugToolbarPanelInterface
      * @param boolean $autoGenerate whether to generate an ID if it is not set previously
      * @return string id of the panel.
      */
-    public function getId($autoGenerate=true)
+    public function getId($autoGenerate = true)
     {
-        if($this->_id!==null)
+        if ($this->_id !== null)
             return $this->_id;
-        elseif($autoGenerate)
-            return $this->_id='ydtb-panel-'.self::$_counter++;
+        elseif ($autoGenerate)
+            return $this->_id = 'ydtb-panel-' . self::$_counter++;
     }
 
     /**

@@ -17,11 +17,13 @@
  * @property Users $user
  * @property SupportMsg[] $supportMsgs
  */
-class Support extends CActiveRecord {
+class Support extends CActiveRecord
+{
 
     public $text;
 
-    public function behaviors() {
+    public function behaviors()
+    {
         return array(
             'PurifyText' => array(
                 'class' => 'DPurifyTextBehavior',
@@ -40,14 +42,16 @@ class Support extends CActiveRecord {
     /**
      * @return string the associated database table name
      */
-    public function tableName() {
+    public function tableName()
+    {
         return 'support';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules() {
+    public function rules()
+    {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
@@ -64,7 +68,8 @@ class Support extends CActiveRecord {
     /**
      * @return array relational rules.
      */
-    public function relations() {
+    public function relations()
+    {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
@@ -76,7 +81,8 @@ class Support extends CActiveRecord {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'id' => 'ID',
             'name' => 'Тема запроса в поддержку',
@@ -101,7 +107,8 @@ class Support extends CActiveRecord {
      * @return CActiveDataProvider the data provider that can return the models
      * based on the search/filter conditions.
      */
-    public function search() {
+    public function search()
+    {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
@@ -126,7 +133,8 @@ class Support extends CActiveRecord {
      * @param string $className active record class name.
      * @return Support the static model class
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__)
+    {
         return parent::model($className);
     }
 
@@ -134,9 +142,11 @@ class Support extends CActiveRecord {
      * Очищаем кеш после каждого добавления
      * @return type
      */
-    public function afterSave() {
+    public function afterSave()
+    {
         C::delete(C::prefix('countTicketsSupport'));
         C::clear('ticketUser_' . $this->user_id);
+
         return parent::afterSave();
     }
 

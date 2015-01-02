@@ -5,7 +5,8 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisSession extends CHttpSession {
+class ARedisSession extends CHttpSession
+{
 
     /**
      * The prefix to use when storing and retrieving sessions
@@ -29,7 +30,8 @@ class ARedisSession extends CHttpSession {
      * Initializes the application component.
      * This method overrides the parent implementation by checking if redis is available.
      */
-    public function init() {
+    public function init()
+    {
         $this->getConnection();
         parent::init();
     }
@@ -38,7 +40,8 @@ class ARedisSession extends CHttpSession {
      * Returns a value indicating whether to use custom session storage.
      * @return boolean whether to use custom storage.
      */
-    public function getUseCustomStorage() {
+    public function getUseCustomStorage()
+    {
         return true;
     }
 
@@ -48,8 +51,10 @@ class ARedisSession extends CHttpSession {
      * @param string $id session ID
      * @return string the session data
      */
-    public function readSession($id) {
+    public function readSession($id)
+    {
         $data = $this->_connection->getClient()->get($this->calculateKey($id));
+
         return $data === false ? '' : $data;
     }
 
@@ -60,10 +65,12 @@ class ARedisSession extends CHttpSession {
      * @param string $data session data
      * @return boolean whether session write is successful
      */
-    public function writeSession($id, $data) {
+    public function writeSession($id, $data)
+    {
         $key = $this->calculateKey($id);
         $this->_connection->getClient()->set($key, $data);
         $this->_connection->getClient()->expire($key, $this->getTimeout());
+
         return true;
     }
 
@@ -73,8 +80,10 @@ class ARedisSession extends CHttpSession {
      * @param string $id session ID
      * @return boolean whether session is destroyed successfully
      */
-    public function destroySession($id) {
+    public function destroySession($id)
+    {
         $this->_connection->getClient()->delete($this->calculateKey($id));
+
         return true;
     }
 
@@ -82,7 +91,8 @@ class ARedisSession extends CHttpSession {
      * Sets the redis connection to use for this session handler
      * @param ARedisConnection|string $connection the redis connection, if a string is provided, it is presumed to be a the name of an applciation component
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         if (is_string($connection))
             $connection = Yii::app()->{$connection};
         $this->_connection = $connection;
@@ -92,12 +102,14 @@ class ARedisSession extends CHttpSession {
      * Gets the redis connection to use for this session handler
      * @return ARedisConnection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             if (!isset(Yii::app()->redis))
                 throw new CException(get_class($this) . " expects a 'redis' application component");
             $this->_connection = Yii::app()->redis;
         }
+
         return $this->_connection;
     }
 
@@ -106,7 +118,8 @@ class ARedisSession extends CHttpSession {
      * @param string $id session variable name
      * @return string a safe cache key associated with the session variable name
      */
-    protected function calculateKey($id) {
+    protected function calculateKey($id)
+    {
         return $this->keyPrefix . $id . $this->keySuffix;
     }
 

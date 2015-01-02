@@ -1,6 +1,7 @@
 <?php
 
-class DefaultController extends Controller {
+class DefaultController extends Controller
+{
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -11,7 +12,8 @@ class DefaultController extends Controller {
     /**
      * @return array action filters
      */
-    public function filters() {
+    public function filters()
+    {
         return array(
             'accessControl', // perform access control for CRUD operations
             'postOnly + delete', // we only allow deletion via POST request
@@ -23,7 +25,8 @@ class DefaultController extends Controller {
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-    public function accessRules() {
+    public function accessRules()
+    {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions' => array('SaveTranslate', 'index'),
@@ -39,15 +42,17 @@ class DefaultController extends Controller {
         );
     }
 
-    public function actionIndex() {
+    public function actionIndex()
+    {
         Y::redir(array('/docs'));
     }
 
-    public function actionSaveTranslate() {
+    public function actionSaveTranslate()
+    {
         if (Y::isAjaxRequest()) {
 
             $part_id = intval($_POST['part_id']);
-         
+
             $text = strip_tags(array_shift($_POST['translate']), '<p>');
 
             if (Version::partExist(Yii::app()->user->id, $part_id)) {
@@ -55,7 +60,7 @@ class DefaultController extends Controller {
                 $criteria->condition = 'user_id = :user_id AND part_id = :part_id';
                 $criteria->params = array(':user_id' => Yii::app()->user->id, ':part_id' => $part_id);
                 $attributes = array('text' => $text);
-                
+
                 Version::model()->updateAll($attributes, $criteria);
             } else {
                 $version = new Version();
@@ -66,13 +71,13 @@ class DefaultController extends Controller {
                 $version->hash = Y::getHash();
                 $version->save();
             }
-            
+
             $criteria = new CDbCriteria();
             $criteria->condition = 'id = :id';
             $criteria->params = array(':id' => $part_id);
 
             $parts = Parts::model()->find($criteria);
-            
+
             C::clear('chapter_' . $parts->chapter_id);
 
             echo CHtml::encode('Сохранено');

@@ -19,8 +19,8 @@
  */
 class YiiDebugToolbarPanelSettings extends YiiDebugToolbarPanel
 {
-	public $i = 'k';
-	
+    public $i = 'k';
+
     public function getMenuTitle()
     {
         return YiiDebug::t('Settings');
@@ -81,12 +81,12 @@ class YiiDebugToolbarPanelSettings extends YiiDebugToolbarPanel
     private function prepareData($data)
     {
         $result = array();
-        $skip = array(); 
-        foreach ($data as $key => $value){
+        $skip = array();
+        foreach ($data as $key => $value) {
             if (in_array($key, $skip))
                 continue;
-            
-            if (is_object($value)){
+
+            if (is_object($value)) {
                 $value = array_merge(array(
                     'class' => get_class($value)
                 ), get_object_vars($value));
@@ -94,6 +94,7 @@ class YiiDebugToolbarPanelSettings extends YiiDebugToolbarPanel
             }
             $result[$key] = $value;
         }
+
         return $result;
     }
 }

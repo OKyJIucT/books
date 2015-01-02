@@ -7,7 +7,8 @@ require_once("common.php");
  * @author Vasily Gudoshnikov <vgoodvin@gmail.com>
  * @package packages.redis.tests
  */
-class ARedisStatePersisterTest extends CTestCase {
+class ARedisStatePersisterTest extends CTestCase
+{
 
     /**
      * Holds the redis connection component
@@ -18,7 +19,8 @@ class ARedisStatePersisterTest extends CTestCase {
     /**
      * Tests the basic functionality
      */
-    public function testBasics() {
+    public function testBasics()
+    {
         $persister = new ARedisStatePersister();
         $persister->setConnection($this->getConnection());
         $persister->key = 'Yii.ARedisStatePersister.test';
@@ -33,7 +35,8 @@ class ARedisStatePersisterTest extends CTestCase {
      * Sets the redis connection to use with this test
      * @param ARedisConnection $connection the connection
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         $this->_connection = $connection;
     }
 
@@ -41,17 +44,19 @@ class ARedisStatePersisterTest extends CTestCase {
      * Gets the redis connection to use with this test
      * @return ARedisConnection the redis connection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             $this->_connection = Yii::createComponent(
-                            array(
-                                "class" => "packages.redis.ARedisConnection",
-                                "hostname" => REDIS_HOSTNAME,
-                                "port" => REDIS_PORT,
-                                "database" => REDIS_DATABASE,
-                                "password" => REDIS_PASSWORD
-            ));
+                array(
+                    "class" => "packages.redis.ARedisConnection",
+                    "hostname" => REDIS_HOSTNAME,
+                    "port" => REDIS_PORT,
+                    "database" => REDIS_DATABASE,
+                    "password" => REDIS_PASSWORD
+                ));
         }
+
         return $this->_connection;
     }
 

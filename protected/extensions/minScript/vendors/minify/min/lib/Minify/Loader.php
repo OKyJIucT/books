@@ -10,7 +10,8 @@
  * @package Minify
  * @author Stephen Clay <steve@mrclay.org>
  */
-class Minify_Loader {
+class Minify_Loader
+{
     public function loadClass($class)
     {
         $file = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR;

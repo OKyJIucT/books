@@ -1,13 +1,15 @@
 <?php
 
-class AjaxController extends RbController {
+class AjaxController extends RbController
+{
 
     private $authItemTypeName = array('Operation', 'Task', 'Role');
 
     /**
      * @return array action filters
      */
-    public function filters() {
+    public function filters()
+    {
         return array(
             'accessControl',
         );
@@ -18,7 +20,8 @@ class AjaxController extends RbController {
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-    public function accessRules() {
+    public function accessRules()
+    {
         return array(
             array('allow',
                 'actions' => array('getAuthItem', 'getUsers', 'infoAuthItem', 'infoUserAssignments', 'itemList', 'itemTypeList', 'assignItem'),
@@ -36,7 +39,8 @@ class AjaxController extends RbController {
         );
     }
 
-    public function actionSaveAuthItem() {
+    public function actionSaveAuthItem()
+    {
         $json = array('error' => 'none');
         $model = new AuthItemForm;
         if (isset($_POST['AuthItemForm'])) {
@@ -69,7 +73,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionAttachAuthItem() {
+    public function actionAttachAuthItem()
+    {
         $json = array('error' => 'none');
         $model = new AttachItemForm;
         if (isset($_POST['AttachItemForm'])) {
@@ -97,7 +102,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionDeleteAuthItem() {
+    public function actionDeleteAuthItem()
+    {
         if (isset($_POST['item'])) {
             $auth = Yii::app()->authManager;
             $auth->removeAuthItem($_POST['item']);
@@ -105,7 +111,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionAssignItem() {
+    public function actionAssignItem()
+    {
         $auth = Yii::app()->authManager;
         if (isset($_POST['AssignItemForm']['item'])) {
             if ($_POST['AssignItemForm']['action'] == 'assign') {
@@ -129,7 +136,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionGetAuthItem() {
+    public function actionGetAuthItem()
+    {
         $json = array();
         if (isset($_GET['item'])) {
             $auth = Yii::app()->authManager;
@@ -144,7 +152,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionGetUsers() {
+    public function actionGetUsers()
+    {
         $json = array();
         if (isset($_GET['term'])) {
             $criteria = new CDbCriteria;
@@ -163,7 +172,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    private function getAssignedUsers($item) {
+    private function getAssignedUsers($item)
+    {
         $auth = Yii::app()->authManager;
         $criteria = new CDbCriteria;
         $criteria->order = $this->module->userNameColumn;
@@ -179,10 +189,12 @@ class AjaxController extends RbController {
                 $names[$userid] = $model->getAttribute($this->module->userNameColumn);
             }
         }
+
         return $names;
     }
 
-    public function actionInfoAuthItem() {
+    public function actionInfoAuthItem()
+    {
         if (isset($_POST['item'])) {
             $auth = Yii::app()->authManager;
             $authItem = $auth->getAuthItem($_POST['item']);
@@ -252,7 +264,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionInfoUserAssignments() {
+    public function actionInfoUserAssignments()
+    {
         if (isset($_POST['user'])) {
             $auth = Yii::app()->authManager;
             $roles = $auth->getRoles($_POST['user']);
@@ -307,7 +320,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionItemList() {
+    public function actionItemList()
+    {
         $auth = Yii::app()->authManager;
         if (isset($_POST['item']) && isset($_POST['type']) && isset($_POST['action'])) {
             if ($_POST['action'] == 'attach') {
@@ -327,7 +341,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    public function actionItemTypeList() {
+    public function actionItemTypeList()
+    {
         $auth = Yii::app()->authManager;
         if (isset($_POST['type'])) {
             $items = $auth->getAuthItems($_POST['type']);
@@ -345,7 +360,8 @@ class AjaxController extends RbController {
         Yii::app()->end();
     }
 
-    private function findParents($child) {
+    private function findParents($child)
+    {
         $auth = $child->authManager;
         $parent = array();
         $candidate = $auth->getAuthItems();
@@ -354,10 +370,12 @@ class AjaxController extends RbController {
                 $parent[$name] = $item;
             }
         }
+
         return $parent;
     }
 
-    private function detectLoop($itemName, $childName) {
+    private function detectLoop($itemName, $childName)
+    {
         $auth = Yii::app()->authManager;
         if ($childName === $itemName)
             return true;
@@ -365,10 +383,12 @@ class AjaxController extends RbController {
             if ($this->detectLoop($itemName, $child->getName()))
                 return true;
         }
+
         return false;
     }
 
-    private function allowAssign($item) {
+    private function allowAssign($item)
+    {
         if ($this->isAdmin()) {
             return true;
         } elseif ($this->module->rbacUiAdmin == $item) {
@@ -378,16 +398,20 @@ class AjaxController extends RbController {
         } elseif ($this->isAssignRole() && $this->isNotRole($item)) {
             return false;
         }
+
         return true;
     }
 
-    private function isNotRole($item) {
+    private function isNotRole($item)
+    {
         $auth = Yii::app()->authManager;
         $authItem = $auth->getAuthItem($item);
+
         return ($authItem->getType() != 2);
     }
 
-    private function showRevokable($item, $users = false) {
+    private function showRevokable($item, $users = false)
+    {
         $auth = Yii::app()->authManager;
         if ($users === false) {
             return true;
@@ -397,6 +421,7 @@ class AjaxController extends RbController {
                 return true;
             }
         }
+
         return false;
     }
 

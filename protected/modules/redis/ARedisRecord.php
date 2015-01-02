@@ -11,7 +11,8 @@
  * @author Charles Pick / PeoplePerHour.com
  * @package packages.redis
  */
-abstract class ARedisRecord extends CFormModel {
+abstract class ARedisRecord extends CFormModel
+{
 
     /**
      * The redis connection
@@ -67,7 +68,8 @@ abstract class ARedisRecord extends CFormModel {
      * See {@link CModel::scenario} on how scenario is used by models.
      * @see getScenario
      */
-    public function __construct($scenario = "insert") {
+    public function __construct($scenario = "insert")
+    {
         if ($scenario === null) {
             return;
         }
@@ -85,19 +87,21 @@ abstract class ARedisRecord extends CFormModel {
      * <pre>
      * public static function model($className=__CLASS__)
      * {
-     * 	 return parent::model($className);
+     *     return parent::model($className);
      * }
      * </pre>
      *
      * @param string $className redis record class name.
      * @return ARedisRecord redis record model instance.
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__)
+    {
         if (isset(self::$_models[$className]))
             return self::$_models[$className];
         else {
             $model = self::$_models[$className] = new $className(null);
             $model->attachBehaviors($model->behaviors());
+
             return $model;
         }
     }
@@ -108,7 +112,8 @@ abstract class ARedisRecord extends CFormModel {
      * You may override this method if you want to use a different redis connection.
      * @return ARedisConnection the redis connection used by redis record.
      */
-    public function getRedisConnection() {
+    public function getRedisConnection()
+    {
         if ($this->_connection !== null) {
             return $this->_connection;
         } elseif (self::$redis !== null) {
@@ -126,7 +131,8 @@ abstract class ARedisRecord extends CFormModel {
      * Sets the redis connection used by this redis record
      * @param ARedisConnection $connection the redis connection to use for this record
      */
-    public function setRedisConnection(ARedisConnection $connection) {
+    public function setRedisConnection(ARedisConnection $connection)
+    {
         $this->_connection = $connection;
     }
 
@@ -140,9 +146,11 @@ abstract class ARedisRecord extends CFormModel {
      * @param array $attributes list of attribute values for the redis record.
      * @return ARedisRecord the active record
      */
-    protected function instantiate($attributes) {
+    protected function instantiate($attributes)
+    {
         $class = get_class($this);
         $model = new $class(null);
+
         return $model;
     }
 
@@ -154,7 +162,8 @@ abstract class ARedisRecord extends CFormModel {
      * @return ARedisRecord the newly created redis record. The class of the object is the same as the model class.
      * Null is returned if the input data is false.
      */
-    public function populateRecord($attributes, $callAfterFind = true) {
+    public function populateRecord($attributes, $callAfterFind = true)
+    {
         if ($attributes !== false) {
             $record = $this->instantiate($attributes);
             $record->setScenario('update');
@@ -169,6 +178,7 @@ abstract class ARedisRecord extends CFormModel {
             if ($callAfterFind) {
                 $record->afterFind();
             }
+
             return $record;
         } else {
             return null;
@@ -184,7 +194,8 @@ abstract class ARedisRecord extends CFormModel {
      * If null, it means the array will be indexed by zero-based integers.
      * @return array list of redis records.
      */
-    public function populateRecords($data, $callAfterFind = true, $index = null) {
+    public function populateRecords($data, $callAfterFind = true, $index = null)
+    {
         $records = array();
         foreach ($data as $attributes) {
             if (($record = $this->populateRecord($attributes, $callAfterFind)) !== null) {
@@ -194,6 +205,7 @@ abstract class ARedisRecord extends CFormModel {
                     $records[$record->$index] = $record;
             }
         }
+
         return $records;
     }
 
@@ -202,7 +214,8 @@ abstract class ARedisRecord extends CFormModel {
      * Child classes should override this if the primary key is anything other than "id"
      * @return mixed the primary key attribute name(s). Defaults to "id"
      */
-    public function primaryKey() {
+    public function primaryKey()
+    {
         return "id";
     }
 
@@ -211,7 +224,8 @@ abstract class ARedisRecord extends CFormModel {
      * @param mixed $pk the primary key to create the redis key for
      * @return string the redis key
      */
-    public function getRedisKey($pk = null) {
+    public function getRedisKey($pk = null)
+    {
         if ($pk === null) {
             $pk = $this->getPrimaryKey();
         }
@@ -221,6 +235,7 @@ abstract class ARedisRecord extends CFormModel {
             }
             $pk = implode(":", $pk);
         }
+
         return get_class($this) . ":" . $pk;
     }
 
@@ -229,7 +244,8 @@ abstract class ARedisRecord extends CFormModel {
      * @return mixed the primary key value. An array (column name=>column value) is returned if the primary key is composite.
      * If primary key is not defined, null will be returned.
      */
-    public function getPrimaryKey() {
+    public function getPrimaryKey()
+    {
         $attribute = $this->primaryKey();
         if (!is_array($attribute)) {
             return $this->{$attribute};
@@ -238,6 +254,7 @@ abstract class ARedisRecord extends CFormModel {
         foreach ($attribute as $field) {
             $pk[$field] = $this->{$attribute};
         }
+
         return $pk;
     }
 
@@ -247,7 +264,8 @@ abstract class ARedisRecord extends CFormModel {
      * @param mixed $value the new primary key value. If the primary key is composite, the new value
      * should be provided as an array (column name=>column value).
      */
-    public function setPrimaryKey($value) {
+    public function setPrimaryKey($value)
+    {
         $this->_pk = $this->getPrimaryKey();
         $attribute = $this->primaryKey();
         if (!is_array($attribute)) {
@@ -256,6 +274,7 @@ abstract class ARedisRecord extends CFormModel {
         foreach ($value as $attribute => $attributeValue) {
             $this->{$attribute} = $attributeValue;
         }
+
         return $value;
     }
 
@@ -268,7 +287,8 @@ abstract class ARedisRecord extends CFormModel {
      * If primary key is not defined, null will be returned.
      * @since 1.1.0
      */
-    public function getOldPrimaryKey() {
+    public function getOldPrimaryKey()
+    {
         return $this->_pk;
     }
 
@@ -277,7 +297,8 @@ abstract class ARedisRecord extends CFormModel {
      * @param mixed $value the old primary key value.
      * @since 1.1.3
      */
-    public function setOldPrimaryKey($value) {
+    public function setOldPrimaryKey($value)
+    {
         $this->_pk = $value;
     }
 
@@ -286,7 +307,8 @@ abstract class ARedisRecord extends CFormModel {
      * @param boolean $runValidation whether to run validation or not, defaults to true
      * @return boolean whether the save succeeded or not
      */
-    public function save($runValidation = true) {
+    public function save($runValidation = true)
+    {
         if ($runValidation && !$this->validate()) {
             return false;
         }
@@ -302,6 +324,7 @@ abstract class ARedisRecord extends CFormModel {
             }
         } elseif ($this->getIsNewRecord() && !$this->getRedisSet()->add($this->getRedisKey())) {
             $this->addError($this->primaryKey(), "A record with this id already exists");
+
             return false;
         }
         $this->getRedisConnection()->getClient()->multi(); // enter transactional mode
@@ -312,6 +335,7 @@ abstract class ARedisRecord extends CFormModel {
         }
         $this->getRedisConnection()->getClient()->exec();
         $this->afterSave();
+
         return true;
     }
 
@@ -319,13 +343,15 @@ abstract class ARedisRecord extends CFormModel {
      * Deletes the redis record
      * @return boolean whether the delete succeeded or not
      */
-    public function delete() {
+    public function delete()
+    {
         if (!$this->beforeDelete()) {
             return false;
         }
         $this->getRedisSet()->remove($this->getRedisKey());
         $this->getRedisHash()->clear();
         $this->afterDelete();
+
         return true;
     }
 
@@ -333,8 +359,10 @@ abstract class ARedisRecord extends CFormModel {
      * Returns the number of records of this type
      * @return integer the number of rows found
      */
-    public function count() {
+    public function count()
+    {
         Yii::trace(get_class($this) . '.count()', 'packages.redis.ARedisRecord');
+
         return $this->getRedisSet()->getCount();
     }
 
@@ -343,13 +371,15 @@ abstract class ARedisRecord extends CFormModel {
      * @param mixed $pk primary key value(s). Use array for multiple primary keys. For composite key, each key value must be an array (column name=>column value).
      * @return ARedisRecord the record found. Null if none is found.
      */
-    public function findByPk($pk) {
+    public function findByPk($pk)
+    {
         Yii::trace(get_class($this) . '.findByPk()', 'packages.redis.ARedisRecord');
         $this->beforeFind();
         $hash = new ARedisHash($this->getRedisKey($pk), $this->getRedisConnection());
         if ($hash->getCount() == 0) {
             return null;
         }
+
         return $this->populateRecord($hash->toArray(), true);
     }
 
@@ -358,7 +388,8 @@ abstract class ARedisRecord extends CFormModel {
      * @param array $pks primary key values.
      * @return ARedisRecord[] the records found.
      */
-    public function findAllByPk($pks) {
+    public function findAllByPk($pks)
+    {
         Yii::trace(get_class($this) . '.findAllByPk()', 'packages.redis.ARedisRecord');
         $hashes = array();
         $redis = $this->getRedisConnection()->getClient()->multi();
@@ -374,6 +405,7 @@ abstract class ARedisRecord extends CFormModel {
             }
             $rows[] = $row;
         }
+
         return $this->populateRecords($rows, true);
     }
 
@@ -384,7 +416,8 @@ abstract class ARedisRecord extends CFormModel {
      * Defaults to false, but it will be set to true if the instance is created using
      * the new operator.
      */
-    public function getIsNewRecord() {
+    public function getIsNewRecord()
+    {
         return $this->_new;
     }
 
@@ -393,7 +426,8 @@ abstract class ARedisRecord extends CFormModel {
      * @param boolean $value whether the record is new and should be inserted when calling {@link save}.
      * @see getIsNewRecord
      */
-    public function setIsNewRecord($value) {
+    public function setIsNewRecord($value)
+    {
         $this->_new = $value;
     }
 
@@ -402,7 +436,8 @@ abstract class ARedisRecord extends CFormModel {
      * By setting {@link CModelEvent::isValid} to be false, the normal {@link save()} process will be stopped.
      * @param CModelEvent $event the event parameter
      */
-    public function onBeforeSave($event) {
+    public function onBeforeSave($event)
+    {
         $this->raiseEvent('onBeforeSave', $event);
     }
 
@@ -410,7 +445,8 @@ abstract class ARedisRecord extends CFormModel {
      * This event is raised after the record is saved.
      * @param CEvent $event the event parameter
      */
-    public function onAfterSave($event) {
+    public function onAfterSave($event)
+    {
         $this->raiseEvent('onAfterSave', $event);
     }
 
@@ -419,7 +455,8 @@ abstract class ARedisRecord extends CFormModel {
      * By setting {@link CModelEvent::isValid} to be false, the normal {@link delete()} process will be stopped.
      * @param CModelEvent $event the event parameter
      */
-    public function onBeforeDelete($event) {
+    public function onBeforeDelete($event)
+    {
         $this->raiseEvent('onBeforeDelete', $event);
     }
 
@@ -427,7 +464,8 @@ abstract class ARedisRecord extends CFormModel {
      * This event is raised after the record is deleted.
      * @param CEvent $event the event parameter
      */
-    public function onAfterDelete($event) {
+    public function onAfterDelete($event)
+    {
         $this->raiseEvent('onAfterDelete', $event);
     }
 
@@ -440,7 +478,8 @@ abstract class ARedisRecord extends CFormModel {
      * @param CModelEvent $event the event parameter
      * @see beforeFind
      */
-    public function onBeforeFind($event) {
+    public function onBeforeFind($event)
+    {
         $this->raiseEvent('onBeforeFind', $event);
     }
 
@@ -448,7 +487,8 @@ abstract class ARedisRecord extends CFormModel {
      * This event is raised after the record is instantiated by a find method.
      * @param CEvent $event the event parameter
      */
-    public function onAfterFind($event) {
+    public function onAfterFind($event)
+    {
         $this->raiseEvent('onAfterFind', $event);
     }
 
@@ -461,10 +501,12 @@ abstract class ARedisRecord extends CFormModel {
      * Make sure you call the parent implementation so that the event is raised properly.
      * @return boolean whether the saving should be executed. Defaults to true.
      */
-    protected function beforeSave() {
+    protected function beforeSave()
+    {
         if ($this->hasEventHandler('onBeforeSave')) {
             $event = new CModelEvent($this);
             $this->onBeforeSave($event);
+
             return $event->isValid;
         } else
             return true;
@@ -476,7 +518,8 @@ abstract class ARedisRecord extends CFormModel {
      * You may override this method to do postprocessing after record saving.
      * Make sure you call the parent implementation so that the event is raised properly.
      */
-    protected function afterSave() {
+    protected function afterSave()
+    {
         if ($this->hasEventHandler('onAfterSave'))
             $this->onAfterSave(new CEvent($this));
     }
@@ -488,10 +531,12 @@ abstract class ARedisRecord extends CFormModel {
      * Make sure you call the parent implementation so that the event is raised properly.
      * @return boolean whether the record should be deleted. Defaults to true.
      */
-    protected function beforeDelete() {
+    protected function beforeDelete()
+    {
         if ($this->hasEventHandler('onBeforeDelete')) {
             $event = new CModelEvent($this);
             $this->onBeforeDelete($event);
+
             return $event->isValid;
         } else
             return true;
@@ -503,7 +548,8 @@ abstract class ARedisRecord extends CFormModel {
      * You may override this method to do postprocessing after the record is deleted.
      * Make sure you call the parent implementation so that the event is raised properly.
      */
-    protected function afterDelete() {
+    protected function afterDelete()
+    {
         if ($this->hasEventHandler('onAfterDelete'))
             $this->onAfterDelete(new CEvent($this));
     }
@@ -516,7 +562,8 @@ abstract class ARedisRecord extends CFormModel {
      * If you override this method, make sure you call the parent implementation
      * so that the event is raised properly.
      */
-    protected function beforeFind() {
+    protected function beforeFind()
+    {
         if ($this->hasEventHandler('onBeforeFind')) {
             $event = new CModelEvent($this);
             // for backward compatibility
@@ -531,7 +578,8 @@ abstract class ARedisRecord extends CFormModel {
      * You may override this method to do postprocessing after each newly found record is instantiated.
      * Make sure you call the parent implementation so that the event is raised properly.
      */
-    protected function afterFind() {
+    protected function afterFind()
+    {
         if ($this->hasEventHandler('onAfterFind'))
             $this->onAfterFind(new CEvent($this));
     }
@@ -541,7 +589,8 @@ abstract class ARedisRecord extends CFormModel {
      * This method is internally used.
      * @since 1.0.11
      */
-    public function beforeFindInternal() {
+    public function beforeFindInternal()
+    {
         $this->beforeFind();
     }
 
@@ -550,7 +599,8 @@ abstract class ARedisRecord extends CFormModel {
      * This method is internally used.
      * @since 1.0.3
      */
-    public function afterFindInternal() {
+    public function afterFindInternal()
+    {
         $this->afterFind();
     }
 
@@ -558,7 +608,8 @@ abstract class ARedisRecord extends CFormModel {
      * Sets the redis hash to use with this record
      * @param ARedisIterableHash $redisHash the redis hash
      */
-    public function setRedisHash($redisHash) {
+    public function setRedisHash($redisHash)
+    {
         $this->_redisHash = $redisHash;
     }
 
@@ -566,10 +617,12 @@ abstract class ARedisRecord extends CFormModel {
      * Gets the redis hash to store the attributes for this record in
      * @return ARedisIterableHash the redis hash
      */
-    public function getRedisHash() {
+    public function getRedisHash()
+    {
         if ($this->_redisHash === null) {
             $this->_redisHash = new ARedisHash($this->getRedisKey(), $this->getRedisConnection());
         }
+
         return $this->_redisHash;
     }
 
@@ -577,7 +630,8 @@ abstract class ARedisRecord extends CFormModel {
      * Sets the redis set that contains the ids of the models of this type
      * @param ARedisIterableSet $redisSet the redis set
      */
-    public function setRedisSet($redisSet) {
+    public function setRedisSet($redisSet)
+    {
         $this->_redisSet = $redisSet;
     }
 
@@ -585,10 +639,12 @@ abstract class ARedisRecord extends CFormModel {
      * Gets the redis set that contains the ids of the models of this type
      * @return ARedisIterableSet the redis set
      */
-    public function getRedisSet() {
+    public function getRedisSet()
+    {
         if ($this->_redisSet === null) {
             $this->_redisSet = new ARedisSet(get_class($this), $this->getRedisConnection());
         }
+
         return $this->_redisSet;
     }
 

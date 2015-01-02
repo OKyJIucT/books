@@ -8,6 +8,6 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<h1 class="text-center">Добавление документа</h1>
+    <h1 class="text-center">Добавление документа</h1>
 
 <?php $this->renderPartial('_form', array('model' => $model)); ?>

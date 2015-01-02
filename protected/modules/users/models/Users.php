@@ -12,21 +12,24 @@
  * @property integer $last_visit
  * @property integer $role
  */
-class Users extends CActiveRecord {
+class Users extends CActiveRecord
+{
 
     public $invite;
 
     /**
      * @return string the associated database table name
      */
-    public function tableName() {
+    public function tableName()
+    {
         return 'users';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules() {
+    public function rules()
+    {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
@@ -53,14 +56,15 @@ class Users extends CActiveRecord {
 
             /* search */
             array('id, email, password, username, reg_date, ref_id', 'safe', 'on' => 'search'),
-                /* search */
+            /* search */
         );
     }
 
     /**
      * @return array relational rules.
      */
-    public function relations() {
+    public function relations()
+    {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
@@ -78,7 +82,8 @@ class Users extends CActiveRecord {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'id' => 'ID',
             'email' => 'Email',
@@ -103,7 +108,8 @@ class Users extends CActiveRecord {
      * @return CActiveDataProvider the data provider that can return the models
      * based on the search/filter conditions.
      */
-    public function search() {
+    public function search()
+    {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
@@ -126,7 +132,8 @@ class Users extends CActiveRecord {
      * @param string $className active record class name.
      * @return Users the static model class
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__)
+    {
         return parent::model($className);
     }
 
@@ -135,14 +142,16 @@ class Users extends CActiveRecord {
      * @param type $password
      * @return type
      */
-    public static function cryptPass($password) {
+    public static function cryptPass($password)
+    {
         return crypt($password);
     }
 
     /**
      * Отправка запроса о том, что юзер находится онлайн
      */
-    public static function setOnline() {
+    public static function setOnline()
+    {
 
         $criteria = new CDbCriteria();
         $criteria->condition = 'id = :id';
@@ -157,7 +166,8 @@ class Users extends CActiveRecord {
      * Получение списка онлайн игроков
      * @return type
      */
-    public static function whoOnline() {
+    public static function whoOnline()
+    {
 
         $criteria = new CDbCriteria();
         $criteria->condition = 'last_visit > :last_visit';
@@ -173,7 +183,8 @@ class Users extends CActiveRecord {
      * @param type $id
      * @return type
      */
-    public static function getUser($id) {
+    public static function getUser($id)
+    {
 
         $cacheId = C::prefix('profile', $id);
 
@@ -190,7 +201,8 @@ class Users extends CActiveRecord {
         return $profile;
     }
 
-    public function beforeSave() {
+    public function beforeSave()
+    {
         if ($this->isNewRecord) {
             $criteria = new CDbCriteria();
             $criteria->condition = 'code = :code';
@@ -206,13 +218,16 @@ class Users extends CActiveRecord {
             // удаляем использованный инвайт
             $invite->delete();
         }
+
         return parent::beforeSave();
     }
 
-    public function afterSave() {
+    public function afterSave()
+    {
         if ($this->isNewRecord) {
             Invites::generateInvite($this->id, 5);
         }
+
         return parent::afterSave();
     }
 

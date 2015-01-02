@@ -1,4 +1,4 @@
 <?php
-return array (
-  'template' => 'default',
+return array(
+    'template' => 'default',
 );

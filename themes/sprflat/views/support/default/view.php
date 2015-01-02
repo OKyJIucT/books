@@ -44,11 +44,11 @@ $this->breadcrumbs = array(
                     ),
                 ));
                 echo CHtml::htmlButton('Отправить', array(
-                    'name' => 'saveTicket',
-                    'value' => "save",
-                    'class' => 'btn btn-success mbottom pull-right',
-                    'type' => 'submit'
-                        )
+                        'name' => 'saveTicket',
+                        'value' => "save",
+                        'class' => 'btn btn-success mbottom pull-right',
+                        'type' => 'submit'
+                    )
                 );
                 ?>
                 <?php echo $form->error($model, 'text'); ?>
@@ -81,16 +81,17 @@ $this->breadcrumbs = array(
                 <div class="panel <?= $panel; ?> showControls">
                     <div class="panel-heading ui-draggable-handle">
                         <h3 class="panel-title"><?= $author; ?></h3>
+
                         <div class="panel-controls panel-controls-show">
                             <a href="javascript: void();"><?= date("d M Y, H:i", $message->date); ?></a>
                         </div>
-                    </div> 
+                    </div>
                     <div class="panel-body">
                         <?= $message->text; ?>
-                    </div> 
+                    </div>
                 </div>
 
-                <?php
+            <?php
             }
             ?>
 

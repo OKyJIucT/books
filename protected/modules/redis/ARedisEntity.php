@@ -21,7 +21,8 @@
  * @package packages.redis
  * @author Charles Pick
  */
-abstract class ARedisEntity extends CBehavior {
+abstract class ARedisEntity extends CBehavior
+{
 
     /**
      * The name of the redis entity (key)
@@ -46,7 +47,8 @@ abstract class ARedisEntity extends CBehavior {
      * @param string $name the name of the entity
      * @param ARedisConnection|string $connection the redis connection to use with this entity
      */
-    public function __construct($name = null, $connection = null) {
+    public function __construct($name = null, $connection = null)
+    {
         if ($name !== null) {
             $this->name = $name;
         }
@@ -60,7 +62,8 @@ abstract class ARedisEntity extends CBehavior {
      * @throws CException if no name is set
      * @param CComponent $owner the owner component
      */
-    public function attach($owner) {
+    public function attach($owner)
+    {
         parent::attach($owner);
         if ($this->name === null) {
             throw new CException("No name specified for " . get_class($this));
@@ -83,7 +86,8 @@ abstract class ARedisEntity extends CBehavior {
      * Detaches the entity from a component
      * @param CComponent $owner the owner component
      */
-    public function detach($owner) {
+    public function detach($owner)
+    {
         parent::detach($owner);
         if (method_exists($owner, "getPrimaryKey")) {
             $this->name = $this->_oldName;
@@ -94,7 +98,8 @@ abstract class ARedisEntity extends CBehavior {
      * Sets the redis connection to use for this entity
      * @param ARedisConnection|string $connection the redis connection, if a string is provided, it is presumed to be a the name of an applciation component
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         if (is_string($connection)) {
             $connection = Yii::app()->{$connection};
         }
@@ -105,21 +110,24 @@ abstract class ARedisEntity extends CBehavior {
      * Gets the redis connection to use for this entity
      * @return ARedisConnection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             if (!isset(Yii::app()->redis)) {
                 throw new CException(get_class($this) . " expects a 'redis' application component");
             }
             $this->_connection = Yii::app()->redis;
         }
+
         return $this->_connection;
     }
 
     /**
-     * Sets the expiration time in seconds to this entity 
-     *  @param integer number of expiration for this entity in seconds
+     * Sets the expiration time in seconds to this entity
+     * @param integer number of expiration for this entity in seconds
      */
-    public function expire($seconds) {
+    public function expire($seconds)
+    {
         return $this->getConnection()->expire($this->name, $seconds);
     }
 

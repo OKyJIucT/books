@@ -26,6 +26,7 @@ class YiiDebugToolbarResourceUsage extends CWidget
         if (null === $this->_loadTime) {
             $this->_loadTime = $this->owner->owner->getLoadTime();
         }
+
         return $this->_loadTime;
     }
 

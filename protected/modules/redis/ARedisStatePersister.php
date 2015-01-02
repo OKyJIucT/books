@@ -21,7 +21,8 @@
  * @author Vasily Gudoshnikov <vgoodvin@gmail.com>
  * @package packages.redis
  */
-class ARedisStatePersister extends CApplicationComponent implements IStatePersister {
+class ARedisStatePersister extends CApplicationComponent implements IStatePersister
+{
 
     /**
      * Holds the redis connection
@@ -39,7 +40,8 @@ class ARedisStatePersister extends CApplicationComponent implements IStatePersis
      * Initializes the application component.
      * This method overrides the parent implementation by checking if redis is available.
      */
-    public function init() {
+    public function init()
+    {
         $this->getConnection();
         parent::init();
     }
@@ -48,7 +50,8 @@ class ARedisStatePersister extends CApplicationComponent implements IStatePersis
      * Sets the redis connection to use for this session handler
      * @param ARedisConnection|string $connection the redis connection, if a string is provided, it is presumed to be a the name of an applciation component
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         if (is_string($connection)) {
             $connection = Yii::app()->{$connection};
         }
@@ -59,13 +62,15 @@ class ARedisStatePersister extends CApplicationComponent implements IStatePersis
      * Gets the redis connection to use for this session handler
      * @return ARedisConnection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             if (!isset(Yii::app()->redis)) {
                 throw new CException(get_class($this) . " expects a 'redis' application component");
             }
             $this->_connection = Yii::app()->redis;
         }
+
         return $this->_connection;
     }
 
@@ -73,8 +78,10 @@ class ARedisStatePersister extends CApplicationComponent implements IStatePersis
      * Loads state data from persistent storage.
      * @return mixed state data. Null if no state data available.
      */
-    public function load() {
+    public function load()
+    {
         $content = $this->_connection->client->get($this->key);
+
         return ($content !== false) ? unserialize($content) : null;
     }
 
@@ -82,7 +89,8 @@ class ARedisStatePersister extends CApplicationComponent implements IStatePersis
      * Saves application state in persistent storage.
      * @param mixed $state state data (must be serializable).
      */
-    public function save($state) {
+    public function save($state)
+    {
         $this->_connection->client->set($this->key, serialize($state));
     }
 

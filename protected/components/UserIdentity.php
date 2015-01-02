@@ -5,13 +5,15 @@
  * It contains the authentication method that checks if the provided
  * data can identity the user.
  */
-class UserIdentity extends CUserIdentity {
+class UserIdentity extends CUserIdentity
+{
 
     // Будем хранить id.
     protected $_id;
 
     // Данный метод вызывается один раз при аутентификации пользователя.
-    public function authenticate() {
+    public function authenticate()
+    {
         // Производим стандартную аутентификацию, описанную в руководстве.
         $user = Users::model()->find('LOWER(username)=?', array(strtolower($this->username)));
 
@@ -25,10 +27,12 @@ class UserIdentity extends CUserIdentity {
         } else {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         }
+
         return !$this->errorCode;
     }
 
-    public function getId() {
+    public function getId()
+    {
         return $this->_id;
     }
 

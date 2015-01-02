@@ -7,7 +7,8 @@ require_once("common.php");
  * @author Charles Pick
  * @package packages.redis.tests
  */
-class ARedisHashTest extends CTestCase {
+class ARedisHashTest extends CTestCase
+{
 
     /**
      * Holds the redis connection
@@ -18,7 +19,8 @@ class ARedisHashTest extends CTestCase {
     /**
      * Tests the basic functionality
      */
-    public function testBasics() {
+    public function testBasics()
+    {
         $redis = $this->getConnection();
         $set = new ARedisHash("TestHash:" . uniqid(), $redis);
         $this->assertTrue($set->add("oranges", 2.40));
@@ -34,17 +36,19 @@ class ARedisHashTest extends CTestCase {
         $this->assertEquals(0, $set->getCount());
     }
 
-    public function testBehaviors() {
+    public function testBehaviors()
+    {
         $component = new CComponent;
         $hash = new ARedisHash("testAttribute" . uniqid(), $this->getConnection());
         $component->attachBehavior("testAttribute", $hash);
         $this->assertTrue(isset($component->testAttribute));
         $this->assertTrue($component->testAttribute->add("test", true));
-        $this->assertTrue((bool) $component->testAttribute['test']);
+        $this->assertTrue((bool)$component->testAttribute['test']);
         $component->testAttribute->clear();
     }
 
-    public function testInterfaces() {
+    public function testInterfaces()
+    {
         $redis = $this->getConnection();
         $set = new ARedisHash("TestHash:" . uniqid(), $redis);
 
@@ -64,7 +68,8 @@ class ARedisHashTest extends CTestCase {
      * Sets the redis connection to use with this test
      * @param ARedisConnection $connection the connection
      */
-    public function setConnection($connection) {
+    public function setConnection($connection)
+    {
         $this->_connection = $connection;
     }
 
@@ -72,17 +77,19 @@ class ARedisHashTest extends CTestCase {
      * Gets the redis connection to use with this test
      * @return ARedisConnection the redis connection
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if ($this->_connection === null) {
             $this->_connection = Yii::createComponent(
-                            array(
-                                "class" => "packages.redis.ARedisConnection",
-                                "hostname" => REDIS_HOSTNAME,
-                                "port" => REDIS_PORT,
-                                "database" => REDIS_DATABASE,
-                                "password" => REDIS_PASSWORD
-            ));
+                array(
+                    "class" => "packages.redis.ARedisConnection",
+                    "hostname" => REDIS_HOSTNAME,
+                    "port" => REDIS_PORT,
+                    "database" => REDIS_DATABASE,
+                    "password" => REDIS_PASSWORD
+                ));
         }
+
         return $this->_connection;
     }
 

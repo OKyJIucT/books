@@ -13,14 +13,16 @@
  * @author Charles Pick
  * @package packages.redis
  */
-class ARedisList extends ARedisIterableEntity {
+class ARedisList extends ARedisIterableEntity
+{
 
     /**
      * Adds an item to the list
      * @param mixed $item the item to add
      * @return boolean true if the item was added, otherwise false
      */
-    public function add($item) {
+    public function add($item)
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
@@ -29,6 +31,7 @@ class ARedisList extends ARedisIterableEntity {
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -37,7 +40,8 @@ class ARedisList extends ARedisIterableEntity {
      * @param mixed $item the item to remove
      * @return boolean true if the item was removed, otherwise false
      */
-    public function remove($item) {
+    public function remove($item)
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
@@ -46,6 +50,7 @@ class ARedisList extends ARedisIterableEntity {
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -54,7 +59,8 @@ class ARedisList extends ARedisIterableEntity {
      * @param mixed $item the item to add
      * @return boolean true if the item was added, otherwise false
      */
-    public function push($item) {
+    public function push($item)
+    {
         return $this->add($item);
     }
 
@@ -63,7 +69,8 @@ class ARedisList extends ARedisIterableEntity {
      * @param mixed $item the item to add
      * @return boolean true if the item was added, otherwise false
      */
-    public function unshift($item) {
+    public function unshift($item)
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
@@ -72,6 +79,7 @@ class ARedisList extends ARedisIterableEntity {
         }
         $this->_data = null;
         $this->_count = null;
+
         return true;
     }
 
@@ -79,13 +87,15 @@ class ARedisList extends ARedisIterableEntity {
      * Removes and returns the first item from the list
      * @return mixed the item that was removed from the list
      */
-    public function shift() {
+    public function shift()
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
         $item = $this->getConnection()->getClient()->lpop($this->name);
         $this->_data = null;
         $this->_count = null;
+
         return $item;
     }
 
@@ -93,26 +103,30 @@ class ARedisList extends ARedisIterableEntity {
      * Removes and returns the last item from the list
      * @return mixed the item that was removed from the list
      */
-    public function pop() {
+    public function pop()
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
         $item = $this->getConnection()->getClient()->rpop($this->name);
         $this->_data = null;
         $this->_count = null;
+
         return $item;
     }
 
     /**
      * Gets a range of items in the list
      * @param integer $start the 0 based index to start from
-     * @param integer $stop  the 0 based index to end at
+     * @param integer $stop the 0 based index to end at
      * @return array the items in the range
      */
-    public function range($start = 0, $stop = -1) {
+    public function range($start = 0, $stop = -1)
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
+
         return $this->getConnection()->getClient()->lrange($this->name, $start, $stop);
     }
 
@@ -122,10 +136,12 @@ class ARedisList extends ARedisIterableEntity {
      * @param integer $stop the 0 based index to end at
      * @return boolean true if the trim was successful
      */
-    public function trim($start, $stop) {
+    public function trim($start, $stop)
+    {
         if ($this->name === null) {
             throw new CException(get_class($this) . " requires a name!");
         }
+
         return $this->getConnection()->getClient()->ltrim($this->name, $start, $stop) ? true : false;
     }
 
@@ -133,13 +149,15 @@ class ARedisList extends ARedisIterableEntity {
      * Gets the number of items in the list
      * @return integer the number of items in the list
      */
-    public function getCount() {
+    public function getCount()
+    {
         if ($this->_count === null) {
             if ($this->name === null) {
                 throw new CException(get_class($this) . " requires a name!");
             }
-            $this->_count = (int) $this->getConnection()->getClient()->lSize($this->name);
+            $this->_count = (int)$this->getConnection()->getClient()->lSize($this->name);
         }
+
         return $this->_count;
     }
 
@@ -148,10 +166,12 @@ class ARedisList extends ARedisIterableEntity {
      * @param boolean $forceRefresh whether to force a refresh or not
      * @return array the members in the list
      */
-    public function getData($forceRefresh = false) {
+    public function getData($forceRefresh = false)
+    {
         if ($forceRefresh || $this->_data === null) {
             $this->_data = $this->range(0, -1);
         }
+
         return $this->_data;
     }
 
@@ -161,7 +181,8 @@ class ARedisList extends ARedisIterableEntity {
      * @param mixed $data the data to be copied from, must be an array or object implementing Traversable
      * @throws CException If data is neither an array nor a Traversable.
      */
-    public function copyFrom($data) {
+    public function copyFrom($data)
+    {
         if (is_array($data) || ($data instanceof Traversable)) {
             if ($this->_count > 0)
                 $this->clear();
@@ -180,7 +201,8 @@ class ARedisList extends ARedisIterableEntity {
      * @param integer $offset the offset to check on
      * @return boolean
      */
-    public function offsetExists($offset) {
+    public function offsetExists($offset)
+    {
         return ($offset >= 0 && $offset < $this->getCount());
     }
 
@@ -190,7 +212,8 @@ class ARedisList extends ARedisIterableEntity {
      * @param integer $offset the offset to retrieve item.
      * @return mixed the item at the offset
      */
-    public function offsetGet($offset) {
+    public function offsetGet($offset)
+    {
         return $this->_data[$offset];
     }
 
@@ -200,7 +223,8 @@ class ARedisList extends ARedisIterableEntity {
      * @param integer $offset the offset to set item
      * @param mixed $item the item value
      */
-    public function offsetSet($offset, $item) {
+    public function offsetSet($offset, $item)
+    {
         $this->add($item);
     }
 
@@ -209,7 +233,8 @@ class ARedisList extends ARedisIterableEntity {
      * This method is required by the interface ArrayAccess.
      * @param integer $offset the offset to unset item
      */
-    public function offsetUnset($offset) {
+    public function offsetUnset($offset)
+    {
         $this->remove($this->_data[$offset]);
     }
 

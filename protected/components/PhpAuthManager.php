@@ -6,9 +6,11 @@
  * and open the template in the editor.
  */
 
-class PhpAuthManager extends CPhpAuthManager {
+class PhpAuthManager extends CPhpAuthManager
+{
 
-    public function init() {
+    public function init()
+    {
         // Иерархию ролей расположим в файле auth.php в директории config приложения
         if ($this->authFile === null) {
             $this->authFile = Yii::getPathOfAlias('application.config.auth') . '.php';
