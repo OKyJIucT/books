@@ -55,7 +55,17 @@ return CMap::mergeArray(
         'components' => array(
             'clientScript' => array(
                 'class' => "ext.minScript.components.ExtMinScript",
-                'minScriptDebug' => false
+//                'minScriptLmCache' => 600,
+                'packages' => array(
+                    // Уникальное имя пакета
+                    'ZeroClipboard' => array(
+                        // Где искать подключаемые файлы JS и CSS
+                        'baseUrl' => '/static/js/',
+                        'js' => array('ZeroClipboard.min.js'),
+                        // Зависимость от другого пакета
+                        'depends' => array('jquery'),
+                    ),
+                )
             ),
             'user' => array(
                 'class' => 'WebUser',
