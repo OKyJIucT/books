@@ -9,7 +9,8 @@
  * @version 1.1.5 / 29.09.2011
  * @link http://github.com/Svyatov/Yii-shortcut
  */
-class Y {
+class Y
+{
 
     /**
      * @var array Кэш компонентов приложения
@@ -22,7 +23,8 @@ class Y {
      * @return CFormatter
      * @since 1.2.0
      */
-    public static function format() {
+    public static function format()
+    {
         return self::_getComponent('format');
     }
 
@@ -31,7 +33,8 @@ class Y {
      * @return CClientScript
      * @since 1.2.0
      */
-    public static function script() {
+    public static function script()
+    {
         return self::_getComponent('clientScript');
     }
 
@@ -40,7 +43,8 @@ class Y {
      * @return CHttpSession
      * @since 1.2.0
      */
-    public static function session() {
+    public static function session()
+    {
         return self::_getComponent('session');
     }
 
@@ -50,7 +54,8 @@ class Y {
      * @return mixed Удаленное значение переменной или null, если такой переменной не найдено
      * @since 1.2.0
      */
-    public static function sessionDelete($key) {
+    public static function sessionDelete($key)
+    {
         return self::_getComponent('session')->remove($key);
     }
 
@@ -61,7 +66,8 @@ class Y {
      * @return mixed
      * @since 1.2.0
      */
-    public static function sessionGet($key, $defaultValue = null) {
+    public static function sessionGet($key, $defaultValue = null)
+    {
         return self::_getComponent('session')->get($key, $defaultValue);
     }
 
@@ -71,7 +77,8 @@ class Y {
      * @param mixed $value Значение переменной
      * @since 1.2.0
      */
-    public static function sessionSet($key, $value) {
+    public static function sessionSet($key, $value)
+    {
         self::_getComponent('session')->add($key, $value);
     }
 
@@ -84,7 +91,8 @@ class Y {
      * @return CDbCommand
      * @since 1.1.5
      */
-    public static function dbCmd($query = null, $dbId = 'db') {
+    public static function dbCmd($query = null, $dbId = 'db')
+    {
         return self::_getComponent($dbId)->createCommand($query);
     }
 
@@ -97,7 +105,8 @@ class Y {
      * @return mixed
      * @since 1.1.2
      */
-    public static function getGet($name, $defaultValue = null) {
+    public static function getGet($name, $defaultValue = null)
+    {
         return self::_getValueByComplexKeyFromArray($name, $_GET, $defaultValue);
     }
 
@@ -110,7 +119,8 @@ class Y {
      * @return mixed
      * @since 1.1.2
      */
-    public static function getPost($name, $defaultValue = null) {
+    public static function getPost($name, $defaultValue = null)
+    {
         return self::_getValueByComplexKeyFromArray($name, $_POST, $defaultValue);
     }
 
@@ -123,7 +133,8 @@ class Y {
      * @return mixed
      * @since 1.1.2
      */
-    public static function getRequest($name, $defaultValue = null) {
+    public static function getRequest($name, $defaultValue = null)
+    {
         return self::_getValueByComplexKeyFromArray($name, $_REQUEST, $defaultValue);
     }
 
@@ -133,7 +144,8 @@ class Y {
      * @return \PDO
      * @since 1.1.3
      */
-    public static function getPdo($dbId = 'db') {
+    public static function getPdo($dbId = 'db')
+    {
         return self::_getComponent($dbId)->getPdoInstance();
     }
 
@@ -142,7 +154,8 @@ class Y {
      * @param bool $absolute Вернуть ли абсолютный URL, по умолчанию false (@since 1.1.0)
      * @return string
      */
-    public static function baseUrl($absolute = false) {
+    public static function baseUrl($absolute = false)
+    {
         return self::_getComponent('request')->getBaseUrl($absolute);
     }
 
@@ -151,7 +164,8 @@ class Y {
      * @return bool
      * @since 1.1.0
      */
-    public static function isSecureConnection() {
+    public static function isSecureConnection()
+    {
         return self::_getComponent('request')->getIsSecureConnection();
     }
 
@@ -160,7 +174,8 @@ class Y {
      * @return bool
      * @since 1.1.0
      */
-    public static function isAjaxRequest() {
+    public static function isAjaxRequest()
+    {
         return self::_getComponent('request')->getIsAjaxRequest();
     }
 
@@ -169,7 +184,8 @@ class Y {
      * @return bool
      * @since 1.1.0
      */
-    public static function isPutRequest() {
+    public static function isPutRequest()
+    {
         return self::_getComponent('request')->getIsPutRequest();
     }
 
@@ -178,7 +194,8 @@ class Y {
      * @return bool
      * @since 1.1.0
      */
-    public static function isDeleteRequest() {
+    public static function isDeleteRequest()
+    {
         return self::_getComponent('request')->getIsDeleteRequest();
     }
 
@@ -187,7 +204,8 @@ class Y {
      * @return bool
      * @since 1.1.0
      */
-    public static function isPostRequest() {
+    public static function isPostRequest()
+    {
         return self::_getComponent('request')->getIsPostRequest();
     }
 
@@ -196,7 +214,8 @@ class Y {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return ICache
      */
-    public static function cache($cacheId = 'cache') {
+    public static function cache($cacheId = 'cache')
+    {
         return self::_getComponent($cacheId);
     }
 
@@ -206,7 +225,8 @@ class Y {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return boolean
      */
-    public static function cacheDelete($id, $cacheId = 'cache') {
+    public static function cacheDelete($id, $cacheId = 'cache')
+    {
         return self::_getComponent($cacheId)->delete($id);
     }
 
@@ -216,7 +236,8 @@ class Y {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return mixed
      */
-    public static function cacheGet($id, $cacheId = 'cache') {
+    public static function cacheGet($id, $cacheId = 'cache')
+    {
         return self::_getComponent($cacheId)->get($id);
     }
 
@@ -229,18 +250,21 @@ class Y {
      * @param string $cacheId ID кэш-компонента (@since 1.1.3)
      * @return boolean
      */
-    public static function cacheSet($id, $value, $expire = 0, $dependency = null, $cacheId = 'cache') {
+    public static function cacheSet($id, $value, $expire = 0, $dependency = null, $cacheId = 'cache')
+    {
         return self::_getComponent($cacheId)->set($id, $value, $expire, $dependency);
     }
 
     /**
      * Очистка кеша
      */
-    public static function cacheFlush() {
+    public static function cacheFlush()
+    {
         Yii::app()->cache->flush();
     }
 
-    public static function getPrefix($data) {
+    public static function getPrefix($data)
+    {
         switch ($data) {
             case 'profile':
                 return 'profile_info_';
@@ -256,7 +280,8 @@ class Y {
      * @param string $name Имя куки
      * @return CHttpCookie|null Объект удаленной куки или null, если куки с таким именем нет
      */
-    public static function cookieDelete($name) {
+    public static function cookieDelete($name)
+    {
         return self::_getComponent('request')->getCookies()->remove($name);
     }
 
@@ -266,7 +291,8 @@ class Y {
      * @param mixed $defaultValue Значение, возвращаемое в случае отсутствия куки с заданным именем (@since 1.1.0)
      * @return mixed
      */
-    public static function cookieGet($name, $defaultValue = null) {
+    public static function cookieGet($name, $defaultValue = null)
+    {
         $cookie = self::_getComponent('request')->getCookies()->itemAt($name);
 
         if ($cookie) {
@@ -284,7 +310,8 @@ class Y {
      * @param string $path Путь на сайте, для которого кука действительна
      * @param string $domain Домен, для которого кука действительна
      */
-    public static function cookieSet($name, $value, $expire = null, $path = '/', $domain = null) {
+    public static function cookieSet($name, $value, $expire = null, $path = '/', $domain = null)
+    {
         $cookie = new CHttpCookie($name, $value);
         $cookie->expire = $expire ? ($expire + time()) : 0;
         $cookie->path = $path ? $path : '';
@@ -296,7 +323,8 @@ class Y {
      * Возвращает значение токена CSRF
      * @return string
      */
-    public static function csrf() {
+    public static function csrf()
+    {
         return self::_getComponent('request')->getCsrfToken();
     }
 
@@ -304,7 +332,8 @@ class Y {
      * Возвращает имя токена CSRF (по умолчанию YII_CSRF_TOKEN)
      * @return string
      */
-    public static function csrfName() {
+    public static function csrfName()
+    {
         return self::_getComponent('request')->csrfTokenName;
     }
 
@@ -318,7 +347,8 @@ class Y {
      *
      * @return string
      */
-    public static function csrfJsParam() {
+    public static function csrfJsParam()
+    {
         $request = self::_getComponent('request');
 
         return $request->csrfTokenName . ":'" . $request->getCsrfToken() . "'";
@@ -329,7 +359,8 @@ class Y {
      * @param mixed $var Переменная для вывода
      * @param boolean $doEnd Остановить ли дальнейшее выполнение приложения, по умолчанию - true
      */
-    public static function dump($var, $doEnd = true) {
+    public static function dump($var, $doEnd = true)
+    {
         echo '<pre>';
         CVarDumper::dump($var, 10, true);
         echo '</pre>';
@@ -343,7 +374,8 @@ class Y {
      * Выводит текст и завершает приложение (применяется в ajax-действиях)
      * @param string $text Текст для вывода
      */
-    public static function end($text = '') {
+    public static function end($text = '')
+    {
         echo $text;
         Yii::app()->end();
     }
@@ -354,7 +386,8 @@ class Y {
      * @param int $options JSON опции (JSON_HEX_QUOT, JSON_HEX_TAG, JSON_HEX_AMP, JSON_HEX_APOS,
      * JSON_NUMERIC_CHECK, JSON_PRETTY_PRINT, JSON_UNESCAPED_SLASHES, JSON_FORCE_OBJECT) (@since 1.1.3)
      */
-    public static function endJson($data, $options = 0) {
+    public static function endJson($data, $options = 0)
+    {
 //        echo json_encode($data, $options);
         echo CJSON::encode($data);
         Yii::app()->end();
@@ -366,7 +399,8 @@ class Y {
      * @param string $msg Сообщение извещения или null, чтобы получить сообщение
      * @return string
      */
-    public static function flash($key, $msg = null) {
+    public static function flash($key, $msg = null)
+    {
         $user = self::_getComponent('user');
 
         if ($msg === null) {
@@ -383,7 +417,8 @@ class Y {
      * @param mixed $context
      * @param type $logLevel
      */
-    public static function noticeFlash($message, $context = '', $logLevel = null) {
+    public static function noticeFlash($message, $context = '', $logLevel = null)
+    {
         Yii::import('ext.userFlash.EUserFlash');
         EUserFlash::setNoticeMessage($message, $context, $logLevel);
     }
@@ -394,7 +429,8 @@ class Y {
      * @param mixed $context
      * @param type $logLevel
      */
-    public static function successFlash($message, $context = '', $logLevel = null) {
+    public static function successFlash($message, $context = '', $logLevel = null)
+    {
         Yii::import('ext.userFlash.EUserFlash');
         EUserFlash::setSuccessMessage($message, $context, $logLevel);
     }
@@ -405,7 +441,8 @@ class Y {
      * @param mixed $context
      * @param type $logLevel
      */
-    public static function warningFlash($message, $context = '', $logLevel = null) {
+    public static function warningFlash($message, $context = '', $logLevel = null)
+    {
         Yii::import('ext.userFlash.EUserFlash');
         EUserFlash::setWarningMessage($message, $context, $logLevel);
     }
@@ -416,7 +453,8 @@ class Y {
      * @param mixed $context
      * @param type $logLevel
      */
-    public static function errorFlash($message, $context = '', $logLevel = null) {
+    public static function errorFlash($message, $context = '', $logLevel = null)
+    {
         Yii::import('ext.userFlash.EUserFlash');
         EUserFlash::setErrorMessage($message, $context, $logLevel);
     }
@@ -429,7 +467,8 @@ class Y {
      * @return bool
      * @since 1.1.2
      */
-    public static function hasFlash($key) {
+    public static function hasFlash($key)
+    {
         return self::_getComponent('user')->hasFlash($key);
     }
 
@@ -440,7 +479,8 @@ class Y {
      * @param string $route Маршрут куда редиректить
      * @param array $params Дополнительные параметры маршрута
      */
-    public static function flashRedir($key, $msg, $route, $params = array()) {
+    public static function flashRedir($key, $msg, $route, $params = array())
+    {
         self::_getComponent('user')->setFlash($key, $msg);
         self::_getComponent('request')->redirect(self::url($route, $params));
     }
@@ -451,7 +491,8 @@ class Y {
      * @return boolean
      * @since 1.0.2
      */
-    public static function hasAccess($roleName) {
+    public static function hasAccess($roleName)
+    {
         return self::_getComponent('user')->checkAccess($roleName);
     }
 
@@ -459,7 +500,8 @@ class Y {
      * Возвращает true, если пользователь авторизован, иначе - false
      * @return boolean
      */
-    public static function isAuthed() {
+    public static function isAuthed()
+    {
         return !self::_getComponent('user')->getIsGuest();
     }
 
@@ -467,7 +509,8 @@ class Y {
      * Возвращает true, если пользователь гость и неавторизован, иначе - false
      * @return boolean
      */
-    public static function isGuest() {
+    public static function isGuest()
+    {
         return self::_getComponent('user')->getIsGuest();
     }
 
@@ -478,7 +521,8 @@ class Y {
      * @param mixed $defaultValue Значение, возвращаемое в случае отсутствия ключа
      * @return mixed
      */
-    public static function param($key, $defaultValue = null) {
+    public static function param($key, $defaultValue = null)
+    {
         return self::_getValueByComplexKeyFromArray($key, Yii::app()->getParams(), $defaultValue);
     }
 
@@ -486,7 +530,8 @@ class Y {
      * Редиректит по указанному маршруту
      * @param array $url Параметры маршрута
      */
-    public static function redir($url = array()) {
+    public static function redir($url = array())
+    {
         $route = reset($url);
         unset($url[0]);
         Yii::app()->getComponent('request')->redirect(self::url($route, $url));
@@ -497,7 +542,8 @@ class Y {
      * @param string $route Маршрут
      * @param array $params Дополнительные параметры маршрута
      */
-    public static function redirAuthed($route, $params = array()) {
+    public static function redirAuthed($route, $params = array())
+    {
         if (!self::_getComponent('user')->getIsGuest()) {
             self::_getComponent('request')->redirect(self::url($route, $params));
         }
@@ -508,7 +554,8 @@ class Y {
      * @param string $route Маршрут
      * @param array $params Дополнительные параметры маршрута
      */
-    public static function redirGuest($route, $params = array()) {
+    public static function redirGuest($route, $params = array())
+    {
         if (self::_getComponent('user')->getIsGuest()) {
             self::_getComponent('request')->redirect(self::url($route, $params));
         }
@@ -518,7 +565,8 @@ class Y {
      * Возвращает request-компонент приложения
      * @return CHttpRequest
      */
-    public static function request() {
+    public static function request()
+    {
         return self::_getComponent('request');
     }
 
@@ -527,7 +575,8 @@ class Y {
      * @param boolean $return Определяет возвращать результат или сразу выводить
      * @return string
      */
-    public static function stats($return = false) {
+    public static function stats($return = false)
+    {
 
         if (Y::hasAccess('administrator')) {
             $stats = '';
@@ -558,7 +607,8 @@ class Y {
      * @param array $params Дополнительные параметры маршрута
      * @return string
      */
-    public static function url($route, $params = array()) {
+    public static function url($route, $params = array())
+    {
         if (is_object($controller = Yii::app()->getController())) {
             return $controller->createUrl($route, $params);
         }
@@ -570,7 +620,8 @@ class Y {
      * Возвращает user-компонент приложения
      * @return CWebUser
      */
-    public static function user() {
+    public static function user()
+    {
         return self::_getComponent('user');
     }
 
@@ -578,7 +629,8 @@ class Y {
      * Возвращает Id текущего юзера
      * @return mixed
      */
-    public static function userId() {
+    public static function userId()
+    {
         return self::_getComponent('user')->getId();
     }
 
@@ -586,7 +638,8 @@ class Y {
      * Возвращает Id текущего юзера
      * @return mixed
      */
-    public static function userName() {
+    public static function userName()
+    {
         return self::_getComponent('user')->getUsername();
     }
 
@@ -597,7 +650,8 @@ class Y {
      * @return CComponent
      * @since 1.2.0
      */
-    private static function _getComponent($componentName) {
+    private static function _getComponent($componentName)
+    {
         if (!isset(self::$_componentsCache[$componentName])) {
             self::$_componentsCache[$componentName] = Yii::app()->getComponent($componentName);
         }
@@ -613,7 +667,8 @@ class Y {
      * @param mixed $defaultValue Значение, возвращаемое в случае отсутствия ключа
      * @return mixed
      */
-    private static function _getValueByComplexKeyFromArray($key, $array, $defaultValue = null) {
+    private static function _getValueByComplexKeyFromArray($key, $array, $defaultValue = null)
+    {
         if (strpos($key, '.') === false) {
             return (isset($array[$key])) ? $array[$key] : $defaultValue;
         }
@@ -643,7 +698,8 @@ class Y {
      * @param string $db значение по умолчанию 'db'
      * @return CDbCommand
      */
-    public static function command($sql = null, $db = 'db') {
+    public static function command($sql = null, $db = 'db')
+    {
         return self::db($db)->createCommand($sql);
     }
 
@@ -652,7 +708,8 @@ class Y {
      * @param string $db значение по умолчанию 'db'
      * @return CDbConnection
      */
-    public static function db($db = 'db') {
+    public static function db($db = 'db')
+    {
         return self::_getComponent($db);
     }
 
@@ -665,7 +722,8 @@ class Y {
      * @param string $groupField
      * @return array
      */
-    public static function listData($models, $valueField = 'id', $textField = 'val', $groupField = '') {
+    public static function listData($models, $valueField = 'id', $textField = 'val', $groupField = '')
+    {
         return CHtml::listData($models, $valueField, $textField, $groupField);
     }
 
@@ -677,25 +735,27 @@ class Y {
      * @param string $user имя CWebUser компонента
      * @return boolean
      */
-    public static function checkAccess($operation, $params = array(), $allowCaching = true, $user = 'user') {
+    public static function checkAccess($operation, $params = array(), $allowCaching = true, $user = 'user')
+    {
         return self::_getComponent($user)->checkAccess($operation, $params, $allowCaching);
     }
 
     /**
-     * Возвращает 
-     * @return EMongoDB 
+     * Возвращает
+     * @return EMongoDB
      */
-    public static function mongo() {
+    public static function mongo()
+    {
         return self::_getComponent('mongodb');
     }
 
-    public static function mongoCollection($name) {
-        return self::_getComponent('mongodb')
-                        ->getDbInstance()
-                        ->selectCollection($name);
+    public static function mongoCollection($name)
+    {
+        return self::_getComponent('mongodb')->getDbInstance()->selectCollection($name);
     }
 
-    public static function sendMail($to, $subject, $message, $view = 'info') {
+    public static function sendMail($to, $subject, $message, $view = 'info')
+    {
         $mail = new YiiMailer();
         $mail->setFrom(Yii::app()->params['mail'], 'Bookswood.ru');
         $mail->setTo($to);
@@ -713,13 +773,15 @@ class Y {
         }
     }
 
-    public static function isAdmin() {
+    public static function isAdmin()
+    {
         if (Y::hasAccess('administrator'))
             return true;
         throw new CHttpException(403, 'Нет доступа к данному действию или разделу');
     }
 
-    public static function error($code) {
+    public static function error($code)
+    {
         switch ($code) {
             case '403':
                 throw new CHttpException(403, 'Нет доступа к данному действию или разделу');
@@ -735,7 +797,8 @@ class Y {
         }
     }
 
-    public static function genPass($number = 12) {
+    public static function genPass($number = 12)
+    {
         /* $arr = array('a', 'b', 'c', 'd', 'e', 'f',
           'g', 'h', 'i', 'j', 'k', 'l',
           'm', 'n', 'o', 'p', 'r', 's',
@@ -758,6 +821,7 @@ class Y {
             $index = rand(0, count($arr) - 1);
             $pass .= $arr[$index];
         }
+
         return $pass;
     }
 
@@ -765,7 +829,8 @@ class Y {
      * Создаем папку по текущей дате и возвращаем к ней путь
      * @return string
      */
-    public static function getDir($date = false, $startDir = false) {
+    public static function getDir($date = false, $startDir = false)
+    {
 
         $year = date('Y', time());
         $month = date('m', time());
@@ -787,20 +852,24 @@ class Y {
             return date("/Y/m/d/", $date);
     }
 
-    public static function getHash() {
+    public static function getHash()
+    {
         return hash('crc32b', strrev(md5(time() . rand(100000, 9999999))));
     }
 
-    public static function purify($data) {
+    public static function purify($data)
+    {
         $p = new CHtmlPurifier;
         $p->options = array(
             'HTML.SafeObject' => true,
             'Output.FlashCompat' => true,
         );
+
         return $p->purify($data);
     }
 
-    public static function cut($string, $length = 400) {
+    public static function cut($string, $length = 400)
+    {
         if (mb_strlen($string) < $length)
             return $string;
 
@@ -820,7 +889,8 @@ class Y {
      * @param type $chapter
      * @return type
      */
-    public static function getProcess($chapter) {
+    public static function getProcess($chapter)
+    {
         $cacheId = C::prefix('getProcess', $chapter);
 
         $count = C::get($cacheId);
@@ -857,7 +927,8 @@ class Y {
      * Счетчик количества документов
      * @return type
      */
-    public static function countDocs() {
+    public static function countDocs()
+    {
         $cacheId = C::prefix('countDocs');
 
         $count = C::get($cacheId);
@@ -871,18 +942,19 @@ class Y {
     }
 
     // делаем кликабельными ссылки в истории
-    public static function urlClick($str) {
+    public static function urlClick($str)
+    {
         $_urlregex = '/(?:(?:ht|f)tp(?:s?)\:\/\/|~\/|\/)?(?:\w+:\w+@)?(?:(?:[-\w]+\.)+(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|travel|[a-z]{2}))(?::[\d]{1,5})?(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?:#(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)?/';
 
-        $str = ( is_array($str) ) ? $str[0] : $str;
+        $str = (is_array($str)) ? $str[0] : $str;
 
         return preg_replace_callback(
-                $_urlregex, // регулярки для поиска URL
-                create_function(
-                        // Использование одиночных кавычек в данном случае принципиально,
-                        // альтернатива - экранировать все символы '$'
-                        '$url', 'return "<a href=\"$url[0]\">".$url[0]."</a>";'
-                ), $str // исходный текст
+            $_urlregex, // регулярки для поиска URL
+            create_function(
+            // Использование одиночных кавычек в данном случае принципиально,
+            // альтернатива - экранировать все символы '$'
+                '$url', 'return "<a href=\"$url[0]\">".$url[0]."</a>";'
+            ), $str // исходный текст
         );
     }
 
@@ -890,7 +962,8 @@ class Y {
      * Счетчик количества документов
      * @return type
      */
-    public static function countTickets() {
+    public static function countTickets()
+    {
 
         if (Y::hasAccess('administrator')) {
             $criteria = new CDbCriteria();
@@ -914,10 +987,12 @@ class Y {
      * @param type $ticket
      * @return string
      */
-    public static function ticketStatus($ticket) {
+    public static function ticketStatus($ticket)
+    {
 
         if ($ticket->status == '2') {
             $return = '<span class="label label-dark pull-right">Закрыт</span>';
+
             return $return;
         }
 
