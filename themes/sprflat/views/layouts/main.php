@@ -13,7 +13,11 @@
         <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css"/>
         <![endif]-->
         <?php
-        Yii::app()->clientScript->registerCssFile(Yii::app()->assetManager->publish('static/css/main.min.css'));
+        Yii::app()->clientScript->registerCssFile(
+            Yii::app()->assetManager->publish(
+                Yii::app()->request->baseUrl . 'static/css/main.min.css'
+            )
+        );
 
         Yii::app()->clientScript->registerScriptFile(
             Yii::app()->assetManager->publish(
