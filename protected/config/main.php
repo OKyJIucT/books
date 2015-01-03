@@ -1,8 +1,6 @@
 <?php
 
 $main_local = dirname(__FILE__) . '/main-local.php';
-$db_local = dirname(__FILE__) . '/db-local.php';
-$mail_local = dirname(__FILE__) . '/mail-local.php';
 
 return CMap::mergeArray(
     array(
@@ -119,7 +117,5 @@ return CMap::mergeArray(
         // using Yii::app()->params['paramName']
         'params' => array(),
     ),
-    file_exists($main_local) ? require $main_local : array(),
-    file_exists($db_local) ? require $db_local : array(),
-    file_exists($mail_local) ? require $mail_local : array()
+    file_exists($main_local) ? require $main_local : array()
 );
