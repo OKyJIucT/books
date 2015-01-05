@@ -19,6 +19,8 @@
             )
         );
 
+        Yii::app()->clientScript->registerPackage('jquery', CClientScript::POS_END);
+
         Yii::app()->clientScript->registerScriptFile(
             Yii::app()->assetManager->publish(
                 Yii::app()->request->baseUrl . 'static/plugins/core/pace/pace.min.js'
