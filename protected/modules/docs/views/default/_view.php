@@ -1,4 +1,4 @@
-<div class="col-md-4 post">
+<div class="col-xs-12 col-sm-6 col-md-4 post">
 
     <div class="post-item">
         <h4 class="post-title">
