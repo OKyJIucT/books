@@ -104,6 +104,7 @@ class DefaultController extends Controller
             $model->docs_id = $doc->id;
             $model->user_id = Yii::app()->user->id;
             $model->date = time();
+            $model->path = '';
 
             $model->save();
 
