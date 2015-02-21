@@ -109,14 +109,18 @@
                         <?php echo $form->error($reg, 'email'); ?>
                         <i class="fa-envelope s16 left-input-icon"></i>
                     </div>
-                    <!-- col-lg-12 end here -->
+                </div>
+
+                <div class="form-group">
                     <div class="col-lg-12 mt15">
                         <!-- col-lg-12 start here -->
                         <?php echo $form->textField($reg, 'password', array('class' => 'form-control left-icon', 'placeholder' => "Пароль")); ?>
                         <?php echo $form->error($reg, 'password'); ?>
                         <i class="fa-lock s16 left-input-icon"></i>
                     </div>
-                    <!-- col-lg-12 end here -->
+                </div>
+
+                <div class="form-group">
                     <div class="col-lg-12 mt15">
                         <!-- col-lg-12 start here -->
                         <?php echo $form->textField($reg, 'invite', array('class' => 'form-control left-icon', 'placeholder' => "Код приглашения")); ?>
@@ -125,6 +129,7 @@
                     </div>
                     <!-- col-lg-12 end here -->
                 </div>
+
                 <div class="form-group">
                     <div class="col-lg-12">
                         <!-- col-lg-12 start here -->
