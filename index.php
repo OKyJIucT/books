@@ -1,4 +1,9 @@
 <?php
+
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('Europe/Moscow');
+}
+
 $json = json_decode($json, true);
 // change the following paths if necessary
 $yii = dirname(__FILE__) . '/framework/yii.php';
