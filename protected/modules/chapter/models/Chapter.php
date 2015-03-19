@@ -58,7 +58,7 @@ class Chapter extends CActiveRecord
             array('name, name_en', 'length', 'max' => 32),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, docs_id, name, name_en, path, user_id, date', 'safe', 'on' => 'search'),
+            array('id, docs_id, name, name_en, user_id, date', 'safe', 'on' => 'search'),
         );
     }
 
