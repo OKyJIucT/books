@@ -69,7 +69,7 @@ class Docs extends CActiveRecord
         // class name for the relations automatically generated below.
         return array(
             'accesses' => array(self::HAS_MANY, 'Access', 'docs_id', 'order' => 'role ASC'),
-            'chapters' => array(self::HAS_MANY, 'Chapter', 'docs_id'),
+            'chapters' => array(self::HAS_MANY, 'Chapter', 'docs_id', 'order' => 'name ASC'),
             'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
             'parts' => array(self::HAS_MANY, 'Parts', 'docs_id'),
         );
