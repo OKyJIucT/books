@@ -82,10 +82,14 @@ return array(
             'allowAutoLogin' => true,
         ),
         'cache' => array(
-            'class' => 'CRedisCache',
-            'hostname' => 'localhost',
-            'port' => 6379,
-            'database' => 1,
+            'class' => 'CMemCache',
+            'servers' => array(
+                array(
+                    'host' => 'localhost',
+                    'port' => 11211,
+                    'weight' => 60,
+                )
+            ),
             'behaviors' => array(
                 'clear' => array(
                     'class' => 'application.components.TaggingBehavior',
